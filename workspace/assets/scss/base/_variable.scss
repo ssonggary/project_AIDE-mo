@@ -1,8 +1,59 @@
 //---------------------------------------------------
 // variable : 기본 재사용 선언 스타일
 //---------------------------------------------------
+$default-font-size: 15px;
 
+// - font family
 $pretendard: "Pretendard";
+
+// - font weight
+$font-weight-thin: 100;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+$font-weight-bolder: 800;
+$font-weight-extrabold: 900;
+
+// - primary colors
+$color-primary: #ff8200;
+
+// - secondary colors
+$color-secondary-1: #fff3e7;
+$color-secondary-2: #fff7ef;
+
+// - gray colors
+$color-gray-10: #1d2d47;
+$color-gray-9: #515961;
+$color-gray-8: #6e7780;
+$color-gray-7: #8c959f;
+$color-gray-6: #a9b0b8;
+$color-gray-5: #c0c6cc;
+$color-gray-4: #e1e3e5;
+$color-gray-3: #eceff4;
+$color-gray-2: #f2f5f7;
+$color-gray-1: #f2f5fa;
+
+// - white color
+$color-white: #ffffff;
+
+// - 시스템 colors
+$color-info: #0565f0;
+$color-success: #27bd6b;
+$color-erorr: #f24d40;
+$color-warning: #ffa500;
+$color-neutrality: #8c959f;
+
+//- disabled color
+$color-disabled-1: #ffdab3;
+$color-disabled-2: #8c959f;
+
+// - shadow color
+$shadow1: 0px 1px 6px 0px rgba(33, 37, 41, 0.04), 0px 1px 1px 0px rgba(33, 37, 41, 0.02);
+$shadow2: 0px 1px 16px 0px rgba(33, 37, 41, 0.04), 0px 6px 10px 0px rgba(33, 37, 41, 0.02);
+$shadow3: 0px 2px 22px -1px rgba(33, 37, 41, 0.04), 0px 8px 10px 0px rgba(33, 37, 41, 0.02);
+
+// - path
 $path-img: "../img/";
 $path-img-guide: $path-img + "guide/";
 $path-img-header: $path-img + "header/";
@@ -13,47 +64,48 @@ $path-img-ico: $path-img + "ico/";
 $path-img-main: $path-img + "main/";
 $path-img-temp: $path-img + "@temp/";
 
-//color
-$color-primary: #ff8200;
-$color-red: #f24d40;
-$color-orange: #ffa500;
-$color-green: #27bd6b;
-$color-blue: #0b5cc7;
-$color-fff: #fff;
-$color-000: #000;
-$color-111: #111;
-$color-666: #666;
-$color-999: #999;
-$color-f3f3f3: #f3f3f3;
-$color-f6f6f6: #f6f6f6;
-$color-f9f9f9: #f9f9f9;
-$color-e6e6e6: #e6e6e6;
-$color-eee: #eee;
-$color-ccc: #ccc;
-
-$default-color: $color-111;
-$default-font-size: 12px;
-//$default-layout-size:100%;
-
-//easing
-$easing-type1: cubic-bezier(0.77, 0.06, 0.28, 0.85);
-$easing-type2: cubic-bezier(0.77, 0, 0.175, 1);
-
-// z-index
+// - z-index
 $z-index: (
-  overlay-layer: 10060,
-  overlay-dimmed: 10050,
-  layer: 10040,
-  dimmed: 10030,
-  sticky: 10010,
-  header: 10000,
-  go-top: 10000,
-  navigation: 100,
-  footer: 90,
-  triangle: 60,
-  navigation-rainbow: 50,
-  share-type: 41,
-  share: 40,
+  overlay-layer: 1030,
+  overlay-dimmed: 1020,
+  layer: 1010,
+  dimmed: 100,
+  tooltip: 50,
+  sticky: 50,
+  aside: 45,
+  header: 40,
+  navigation: 30,
+  footer: 20,
+  triangle: 10,
+  teachingBubble: 5,
   default: 1,
   below: -1,
-);
+) !default;
+
+// - easings
+$easings: (
+  in-sine: cubic-bezier(0.47, 0, 0.745, 0.715),
+  out-sine: cubic-bezier(0.39, 0.575, 0.565, 1),
+  inout-sine: cubic-bezier(0.39, 0.575, 0.565, 1),
+  in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53),
+  out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94),
+  inout-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94),
+  in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19),
+  out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1),
+  inout-cubic: cubic-bezier(0.215, 0.61, 0.355, 1),
+  in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22),
+  out-quart: cubic-bezier(0.165, 0.84, 0.44, 1),
+  inout-quart: cubic-bezier(0.165, 0.84, 0.44, 1),
+  in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06),
+  out-quint: cubic-bezier(0.23, 1, 0.32, 1),
+  inout-quint: cubic-bezier(0.23, 1, 0.32, 1),
+  in-expo: cubic-bezier(0.95, 0.05, 0.795, 0.035),
+  out-expo: cubic-bezier(0.19, 1, 0.22, 1),
+  inout-expo: cubic-bezier(0.19, 1, 0.22, 1),
+  in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.335),
+  out-circ: cubic-bezier(0.075, 0.82, 0.165, 1),
+  inout-circ: cubic-bezier(0.075, 0.82, 0.165, 1),
+  in-back: cubic-bezier(0.6, -0.28, 0.735, 0.045),
+  out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275),
+  inout-back: cubic-bezier(0.68, -0.55, 0.265, 1.55),
+) !default;

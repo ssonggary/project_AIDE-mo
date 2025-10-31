@@ -226,3 +226,27 @@ textarea::-ms-input-placeholder {
   font-weight: 700;
   src: url(/assets/fonts/Pretendard-Bold.woff2) format("woff2"), url(/assets/fonts/Pretendard-Bold.woff) format("woff"), url(/assets/fonts/Pretendard-Bold.otf) format("opentype");
 }
+/* 3. component */
+/* 버튼 컴포넌트 ============================== */
+/* button basic ============================== */
+.button {
+  display: block;
+  width: 100%;
+  min-height: 3.3333333333rem;
+  padding: 0.9333333333rem 1.0666666667rem;
+  border-radius: 8px;
+  background-color: #ff8200;
+}
+.button__text {
+  font-size: 1.0666666667rem;
+  font-weight: 700;
+  line-height: 1.4666666667rem;
+  font-family: "Pretendard";
+  color: #ffffff;
+}
+.button--disabled,
+.button .button[disabled] {
+  cursor: default;
+  pointer-events: none;
+  background-color: #ffdab3;
+}

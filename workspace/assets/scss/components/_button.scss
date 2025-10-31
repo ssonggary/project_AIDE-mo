@@ -1,0 +1,26 @@
+@use "modules" as *;
+
+/* 버튼 컴포넌트 ============================== */
+
+/* button basic ============================== */
+.button {
+  display: block;
+  width: 100%;
+  min-height: rem(50px);
+  padding: rem(14px) rem(16px);
+  border-radius: 8px;
+  background-color: $color-primary;
+  &__text {
+    font-size: rem(16px);
+    font-weight: 700;
+    line-height: rem(22px);
+    font-family: "Pretendard";
+    color: $color-white;
+  }
+  &--disabled,
+  .button[disabled] {
+    cursor: default;
+    pointer-events: none;
+    background-color: $color-disabled-1;
+  }
+}

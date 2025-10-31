@@ -226,6 +226,259 @@ textarea::-ms-input-placeholder {
   font-weight: 700;
   src: url(/assets/fonts/Pretendard-Bold.woff2) format("woff2"), url(/assets/fonts/Pretendard-Bold.woff) format("woff"), url(/assets/fonts/Pretendard-Bold.otf) format("opentype");
 }
+/* 3. component */
+/* 버튼 컴포넌트 ============================== */
+/* button basic ============================== */
+.button {
+  display: block;
+  width: 100%;
+  min-height: 3.3333333333rem;
+  padding: 0.9333333333rem 1.0666666667rem;
+  border-radius: 8px;
+  background-color: #ff8200;
+}
+.button__text {
+  font-size: 1.0666666667rem;
+  font-weight: 700;
+  line-height: 1.4666666667rem;
+  font-family: "Pretendard";
+  color: #ffffff;
+}
+.button--disabled,
+.button .button[disabled] {
+  cursor: default;
+  pointer-events: none;
+  background-color: #ffdab3;
+}
+
+/* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript */
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+code[class*=language-],
+pre[class*=language-] {
+  color: black;
+  background: none;
+  text-shadow: 0 1px white;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+code[class*=language-]::-moz-selection,
+code[class*=language-] ::-moz-selection,
+pre[class*=language-]::-moz-selection,
+pre[class*=language-] ::-moz-selection {
+  text-shadow: none;
+  background: #b3d4fc;
+}
+code[class*=language-]::selection,
+code[class*=language-] ::selection,
+pre[class*=language-]::selection,
+pre[class*=language-] ::selection {
+  text-shadow: none;
+  background: #b3d4fc;
+}
+
+/* 프린트 시 */
+@media print {
+  code[class*=language-],
+  pre[class*=language-] {
+    text-shadow: none;
+  }
+}
+/* 블록 코드 영역 */
+pre[class*=language-] {
+  margin: 0.5em 0;
+  overflow: auto;
+}
+
+/* 배경 공통 */
+:not(pre) > code[class*=language-],
+pre[class*=language-] {
+  background: #f5f2f0;
+}
+
+/* Inline code */
+:not(pre) > code[class*=language-] {
+  padding: 0.1em;
+  border-radius: 0.3em;
+  white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: slategray;
+}
+
+.token.punctuation {
+  color: #999;
+}
+
+.namespace {
+  opacity: 0.7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #a67f59;
+  background: hsla(0, 0%, 100%, 0.5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #07a;
+}
+
+.token.function {
+  color: #dd4a68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: #e90;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.code-box-copy {
+  position: relative;
+  font-size: 13px;
+}
+
+.code-box-copy pre[class*=language-] {
+  border: 1px solid #ddd;
+  border-radius: 2px;
+}
+
+.code-box-copy__btn {
+  opacity: 0;
+  position: absolute;
+  top: 11px;
+  right: 11px;
+  width: 36px;
+  height: 36px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  color: #333;
+  border-radius: 2px;
+  -webkit-transition: opacity 0.25s ease-in-out, background-color 0.25s ease-in-out, border-color 0.25s ease-in-out;
+  transition: opacity 0.25s ease-in-out, background-color 0.25s ease-in-out, border-color 0.25s ease-in-out;
+}
+
+.code-box-copy__btn::before {
+  display: inline-block;
+  content: " ";
+  vertical-align: middle;
+  width: 16px;
+  height: 16px;
+  background: url(../img/guide/ic-copy.svg) no-repeat 0 0;
+}
+
+.code-box-copy:hover .code-box-copy__btn {
+  opacity: 1;
+}
+
+.code-box-copy__btn:disabled {
+  background-color: #eee;
+  border-color: #ccc;
+  color: #333;
+  pointer-events: none;
+}
+
+.code-box-copy__btn:hover {
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  color: #333;
+}
+
+.code-box-copy__btn:focus,
+.code-box-copy__btn:active {
+  outline: 0;
+}
+
+.code-box-copy__tooltip {
+  display: none;
+  position: absolute;
+  bottom: -webkit-calc(100% + 11px);
+  bottom: calc(100% + 11px);
+  right: 0;
+  width: 80px;
+  padding: 6px 0;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  font-size: 13px;
+}
+
+.code-box-copy__tooltip::after {
+  display: block;
+  position: absolute;
+  right: 13px;
+  bottom: -5px;
+  content: " ";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 5px 0 5px;
+  border-color: #333 transparent transparent transparent;
+}
+
+.guide-codeCopy {
+  margin-top: 20px;
+}
+
 .guide-layout {
   width: 100%;
   height: 100%;
@@ -329,6 +582,9 @@ textarea::-ms-input-placeholder {
 .guide-section .guide-item {
   padding: 30px 0;
 }
+.guide-section .guide-item:first-child {
+  padding-top: 0;
+}
 .guide-section .guide-typo__list {
   padding-left: 15px;
 }
@@ -374,4 +630,60 @@ textarea::-ms-input-placeholder {
   font-weight: 400;
   margin-top: 4px;
   text-transform: uppercase;
+}
+
+.guide-comp ~ .guide-comp {
+  margin-top: 30px;
+}
+.guide-comp__head {
+  margin-bottom: 10px;
+}
+.guide-comp__tit {
+  color: #212529;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 28px;
+  display: inline-flex;
+  align-items: center;
+}
+.guide-comp__tit::before {
+  content: "";
+  display: inline-flex;
+  width: 5px;
+  height: 5px;
+  border-radius: 100%;
+  background-color: #212529;
+  margin: 0 8px;
+}
+.guide-comp__body {
+  padding-left: 20px;
+}
+.guide-comp__cont ~ .guide-comp__cont {
+  margin-top: 15px;
+}
+.guide-comp__cate {
+  display: block;
+  margin-bottom: 5px;
+  color: #212529;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.guide-codeCopy {
+  margin-top: 20px;
+}
+.guide-codeCopy .code-box-copy {
+  position: relative;
+  font-size: 13px;
+  margin-top: 5px;
+}
+.guide-codeCopy .code-box-copy pre,
+.guide-codeCopy .code-box-copy pre[class*=language-] {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #f5f2f0;
+}
+.guide-codeCopy .code-box-copy pre > code {
+  display: block;
 }

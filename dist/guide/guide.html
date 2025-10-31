@@ -90,8 +90,15 @@
       </div>
     </div>
 
+    <script src="/assets/js/library/jquery-3.7.1.min.js"></script>
     <script src="/assets/js/commonUI.js"></script>
 
+    <!-- guide에서만 사용되는 js -->
+    <script src="../assets/js/library/guide/code-box-copy.js"></script>
+    <script src="../assets/js/library/guide/clipboard.min.js"></script>
+    <script src="../assets/js/library/guide/prism.min.js"></script>
+    <script src="../assets/js/guide/guide.js"></script>
+    <!-- //guide에서만 사용되는 js -->
 
     <script type="text/javascript">
       window.addEventListener("DOMContentLoaded", function () {
@@ -261,6 +268,24 @@
           },
         };
       });
+
+      // 문서 전체에 한 번만
+      $(document).on("click", '[data-js="copyCode"] [data-js="copyCode__showBtn"]', function () {
+        const $wrap = $(this).closest('[data-js="copyCode"]');
+        $wrap.find('[data-js="copyCode__code"]').stop(true, true).slideDown();
+        $wrap.find('[data-js="copyCode__showBtn"]').hide();
+        $wrap.find('[data-js="copyCode__hideBtn"]').show();
+      });
+
+      $(document).on("click", '[data-js="copyCode"] [data-js="copyCode__hideBtn"]', function () {
+        const $wrap = $(this).closest('[data-js="copyCode"]');
+        $wrap.find('[data-js="copyCode__code"]').stop(true, true).slideUp();
+        $wrap.find('[data-js="copyCode__showBtn"]').show();
+        $wrap.find('[data-js="copyCode__hideBtn"]').hide();
+      });
+      if (window.Prism) {
+        Prism.highlightAllUnder ? Prism.highlightAllUnder(contEl) : Prism.highlightAll();
+      }
     </script>
   </body>
 </html>

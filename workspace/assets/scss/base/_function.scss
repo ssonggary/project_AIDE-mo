@@ -1,0 +1,51 @@
+@use "variable" as *;
+
+//---------------------------------------------------
+// functions
+//---------------------------------------------------
+
+//percent
+@function percent($current, $container) {
+  @if $container {
+    @return calc($current / $container) * 100%;
+  } @else {
+    @error '$container is not defained';
+  }
+}
+
+// rem
+@function rem($current, $container: $default-font-size) {
+  @if $container {
+    @return calc($current / $container) * 1rem;
+  } @else {
+    @error '$container is not defained';
+  }
+}
+
+//vw
+@function vw($current, $container) {
+  @return calc($current / $container) * 100vw;
+}
+
+//em
+@function em($px, $base) {
+  @return calc($px / $base) * 1em;
+}
+
+//ratio
+@function ratio($numerator, $denominator) {
+  @if $denominator {
+    @return calc($denominator / $numerator);
+  } @else {
+    @error '$denominator is not defained';
+  }
+}
+
+//z-index
+@function z($key) {
+  @if not map-has-key($z-index, $key) {
+    @warn "No layer found for `#{$key}` in $z-index map. Property omitted.";
+  }
+
+  @return map-get($z-index, $key);
+}

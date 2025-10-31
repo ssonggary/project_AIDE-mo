@@ -1,0 +1,40 @@
+//---------------------------------------------------
+// font : 폰트 스타일
+//---------------------------------------------------
+$font-path: "/assets/fonts";
+
+/* 
+ * Pretendard v1.3.9 - https://github.com/orioncactus/pretendard/tree/main
+ */
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 400;
+  src: url(#{$font-path}/Pretendard-Regular.woff2) format("woff2"),
+    url(#{$font-path}/Pretendard-Regular.woff) format("woff"),
+    url(#{$font-path}/Pretendard-Regular.otf) format("opentype");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  src: url(#{$font-path}/Pretendard-Medium.woff2) format("woff2"),
+    url(#{$font-path}/Pretendard-Medium.woff) format("woff"),
+    url(#{$font-path}/Pretendard-Medium.otf) format("opentype");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  src: url(#{$font-path}/Pretendard-SemiBold.woff2) format("woff2"),
+    url(#{$font-path}/Pretendard-SemiBold.woff) format("woff"),
+    url(#{$font-path}/Pretendard-SemiBold.otf) format("opentype");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 700;
+  src: url(#{$font-path}/Pretendard-Bold.woff2) format("woff2"),
+    url(#{$font-path}/Pretendard-Bold.woff) format("woff"),
+    url(#{$font-path}/Pretendard-Bold.otf) format("opentype");
+}

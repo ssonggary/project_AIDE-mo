@@ -1,0 +1,59 @@
+//---------------------------------------------------
+// variable : 기본 재사용 선언 스타일
+//---------------------------------------------------
+
+$pretendard: "Pretendard";
+$path-img: "../img/";
+$path-img-guide: $path-img + "guide/";
+$path-img-header: $path-img + "header/";
+$path-img-common: $path-img + "common/";
+$path-img-footer: $path-img + "footer/";
+$path-img-contents: $path-img + "contents/";
+$path-img-ico: $path-img + "ico/";
+$path-img-main: $path-img + "main/";
+$path-img-temp: $path-img + "@temp/";
+
+//color
+$color-primary: #ff8200;
+$color-red: #f24d40;
+$color-orange: #ffa500;
+$color-green: #27bd6b;
+$color-blue: #0b5cc7;
+$color-fff: #fff;
+$color-000: #000;
+$color-111: #111;
+$color-666: #666;
+$color-999: #999;
+$color-f3f3f3: #f3f3f3;
+$color-f6f6f6: #f6f6f6;
+$color-f9f9f9: #f9f9f9;
+$color-e6e6e6: #e6e6e6;
+$color-eee: #eee;
+$color-ccc: #ccc;
+
+$default-color: $color-111;
+$default-font-size: 12px;
+//$default-layout-size:100%;
+
+//easing
+$easing-type1: cubic-bezier(0.77, 0.06, 0.28, 0.85);
+$easing-type2: cubic-bezier(0.77, 0, 0.175, 1);
+
+// z-index
+$z-index: (
+  overlay-layer: 10060,
+  overlay-dimmed: 10050,
+  layer: 10040,
+  dimmed: 10030,
+  sticky: 10010,
+  header: 10000,
+  go-top: 10000,
+  navigation: 100,
+  footer: 90,
+  triangle: 60,
+  navigation-rainbow: 50,
+  share-type: 41,
+  share: 40,
+  default: 1,
+  below: -1,
+);

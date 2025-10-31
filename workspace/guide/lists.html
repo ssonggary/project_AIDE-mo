@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  @@include('./include/head.html', {title: '퍼블 가이드', cssArr: ['guide']})
+  <body>
+    <div class="guide-layout">
+      <header class="header">
+        <h1 class="logo">
+          <img src="../assets/img/common/aide_logo.svg" alt="AIDE 로고" />
+        </h1>
+        <nav class="gnb">
+          <ul class="gnb-menu">
+            <li><a href="lists.html" target="_self">퍼블리스트</a></li>
+            <li><a href="guide.html" target="_self">컴포넌트</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div class="container">
+        <main class="content lists">
+          <div class="inner">
+            <div class="guide-title-wrap">
+              <h3 id="guideTitle" class="guide-title">Guide</h3>
+            </div>
+            <div id="guideCont"></div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    @@include('./include/script.html')
+
+    <script></script>
+  </body>
+</html>

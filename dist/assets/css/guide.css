@@ -1,0 +1,314 @@
+@charset "UTF-8";
+/* 1. 모듈 로드 (변수, 믹스인, 함수) */
+/* 2. 베이스 스타일 */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  background: #fff;
+}
+
+html {
+  font-size: 12px;
+}
+
+body {
+  background: #fff;
+  -webkit-text-size-adjust: none;
+  word-wrap: break-word;
+  word-break: break-all;
+  color: initial !important;
+  font-size: 15px;
+  min-width: auto !important;
+}
+
+body,
+input,
+select,
+textarea,
+button {
+  border: none;
+  color: #888;
+  font-family: "Pretendard", "Roboto", Arial, AppleGothic, verdana, sans-serif !important;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+table {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+fieldset {
+  border: 0;
+}
+
+img {
+  border: 0;
+  vertical-align: top;
+  max-width: 100%;
+}
+
+address,
+cite,
+code,
+em {
+  font-style: normal;
+  font-weight: normal;
+}
+
+label,
+img,
+input,
+select,
+textarea,
+button {
+  vertical-align: middle;
+}
+
+.hide,
+caption,
+legend {
+  line-height: 0;
+  font-size: 1px;
+  overflow: hidden;
+}
+
+hr {
+  display: none;
+}
+
+main,
+header,
+section,
+nav,
+footer,
+aside,
+article,
+figure {
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  background: 0;
+  cursor: pointer;
+}
+
+select {
+  appearance: none;
+  cursor: pointer;
+}
+
+input[type=text][class*=md], input[type=tel][class*=md], input[type=time][class*=md], input[type=text][class*=md], input[type=password][class*=md], input[type=search][class*=md], input[type=email][class*=md], input[type=file][class*=md], input[type=url][class*=md], input[type=number][class*=md], input[type=date][class*=md] {
+  height: 50px;
+  padding: 0 12px;
+  border-radius: 4px;
+  vertical-align: middle;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+textarea {
+  width: 100%;
+  background: #fff;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  appearance: none;
+  border-radius: 0px;
+}
+textarea[readonly], textarea[disabled] {
+  padding: 11px;
+  font-size: 1.6rem;
+  color: #666;
+  font-weight: normal;
+  line-height: 140%;
+  height: 78px;
+  background-color: #f9f9f9;
+  border: 1px solid #e6e6e6;
+}
+textarea::-webkit-input-placeholder {
+  color: #b5b5b5;
+  font-size: 1.6rem;
+  line-height: 100%;
+}
+textarea:focus {
+  border: 1px solid #111;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+input::-ms-clear,
+input::-ms-reveal {
+  display: none;
+}
+
+input::-webkit-input-placeholder,
+input::-moz-placeholder,
+input:-ms-input-placeholder,
+input::-ms-input-placeholder,
+input::placeholder,
+textarea::-webkit-input-placeholder,
+textarea::-moz-placeholder,
+textarea:-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+  color: #999;
+}
+
+input:-ms-input-placeholder {
+  color: #999;
+}
+
+input::-ms-input-placeholder {
+  color: #999;
+}
+
+textarea:-ms-input-placeholder {
+  color: #999;
+}
+
+textarea::-ms-input-placeholder {
+  color: #999;
+}
+
+:root {
+  color-scheme: light;
+}
+
+/* 
+ * Pretendard v1.3.9 - https://github.com/orioncactus/pretendard/tree/main
+ */
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 400;
+  src: url(/assets/fonts/Pretendard-Regular.woff2) format("woff2"), url(/assets/fonts/Pretendard-Regular.woff) format("woff"), url(/assets/fonts/Pretendard-Regular.otf) format("opentype");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  src: url(/assets/fonts/Pretendard-Medium.woff2) format("woff2"), url(/assets/fonts/Pretendard-Medium.woff) format("woff"), url(/assets/fonts/Pretendard-Medium.otf) format("opentype");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  src: url(/assets/fonts/Pretendard-SemiBold.woff2) format("woff2"), url(/assets/fonts/Pretendard-SemiBold.woff) format("woff"), url(/assets/fonts/Pretendard-SemiBold.otf) format("opentype");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 700;
+  src: url(/assets/fonts/Pretendard-Bold.woff2) format("woff2"), url(/assets/fonts/Pretendard-Bold.woff) format("woff"), url(/assets/fonts/Pretendard-Bold.otf) format("opentype");
+}
+.guide-layout {
+  width: 100%;
+  height: 100%;
+  color: #111;
+}
+.guide-layout .header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ccc;
+}
+.guide-layout .header .gnb .gnb-menu {
+  display: flex;
+  gap: 5px;
+}
+.guide-layout .container {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 57px);
+}
+.guide-layout .aside {
+  position: fixed;
+  top: 57px;
+  left: 0;
+  z-index: 1;
+  width: 20rem;
+  height: 100%;
+  padding-top: 0.8333333333rem;
+  background-color: #fff;
+  border-right: 1px solid #ccc;
+  overflow-y: auto;
+}
+.guide-layout .nav {
+  width: 100%;
+}
+.guide-layout .nav__item {
+  width: 100%;
+  height: 50px;
+}
+.guide-layout .nav__item .link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 10px 20px;
+  font-size: 18px;
+  text-align: left;
+}
+.guide-layout .nav__item .link.active {
+  font-weight: 700;
+}
+.guide-layout .nav__title {
+  border-top: 1px solid #eee;
+  margin-top: 10px;
+  padding: 10px 20px;
+  color: #666;
+}
+.guide-layout .sub-nav {
+  padding-left: 12px;
+}
+.guide-layout .content {
+  width: 100%;
+  padding-left: 240px;
+  overflow-y: auto;
+}
+.guide-layout .content.lists {
+  padding-left: 0;
+}
+.guide-layout .content .inner {
+  padding: 20px 30px 60px;
+}
+.guide-layout .content .guide-title-wrap {
+  margin-bottom: 24px;
+}
+.guide-layout .content .guide-title {
+  font-size: 30px;
+  color: #363636;
+  line-height: 29px;
+  font-weight: 700;
+}
+.guide-layout .content .guide-cont {
+  padding: 50px 30px;
+  border: 1px solid #eee;
+  border-radius: 15px;
+}

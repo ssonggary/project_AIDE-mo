@@ -94,19 +94,64 @@
     <script src="/assets/js/commonUI.js"></script>
 
     <!-- guide에서만 사용되는 js -->
-    <script src="../assets/js/library/guide/code-box-copy.js"></script>
     <script src="../assets/js/library/guide/clipboard.min.js"></script>
+    <script src="../assets/js/library/guide/code-box-copy.js"></script>
     <script src="../assets/js/library/guide/prism.min.js"></script>
     <script src="../assets/js/guide/guide.js"></script>
     <!-- //guide에서만 사용되는 js -->
 
     <script type="text/javascript">
+      // ---------------- 공통 초기화 함수 ----------------
+      function initGuide(root) {
+        const $root = $(root);
+
+        // 1) code-box-copy 플러그인 초기화 (중복 방지)
+        $root.find(".code-box-copy").each(function () {
+          const $box = $(this);
+          if ($box.data("cbc-inited")) return; // 중복 방지
+          $box.codeBoxCopy({
+            tooltipText: "Copied",
+            tooltipShowTime: 1000,
+            tooltipFadeInTime: 300,
+            tooltipFadeOutTime: 300,
+          });
+          $box.data("cbc-inited", true);
+        });
+
+        // 2) 코드 보기/닫기 토글
+        $root.find('[data-js="copyCode"]').each(function () {
+          const $wrap = $(this);
+          const $box = $wrap.find('[data-js="copyCode__code"]');
+          const $show = $wrap.find('[data-js="copyCode__showBtn"]');
+          const $hide = $wrap.find('[data-js="copyCode__hideBtn"]');
+
+          $show.off(".copyCode").on("click.copyCode", function () {
+            $box.stop(true, true).slideDown();
+            $show.hide();
+            $hide.show();
+          });
+
+          $hide.off(".copyCode").on("click.copyCode", function () {
+            $box.stop(true, true).slideUp();
+            $show.show();
+            $hide.hide();
+          });
+        });
+
+        // 3) Prism 문법 하이라이트
+        if (window.Prism) {
+          if (Prism.highlightAllUnder) Prism.highlightAllUnder(root);
+          else Prism.highlightAll(); // 구버전 호환
+        }
+      }
+
+      // ---------------- SPA 네비게이션 로직 ----------------
       window.addEventListener("DOMContentLoaded", function () {
         const LNB = document.getElementById("LNB");
         const titleEl = document.getElementById("guideTitle");
         const contEl = document.getElementById("guideCont");
 
-        // 라우트 맵 수집 (route -> {url,title,el})
+        // 라우트 맵 수집 (route -> {url, title, el})
         const routeMap = {};
         LNB.querySelectorAll("button.link[data-route][data-url]").forEach((btn) => {
           routeMap[btn.dataset.route] = {
@@ -116,11 +161,11 @@
           };
         });
 
-        // 초기 진입 라우트 결정(#/route 또는 ?comp=route) -> 없으면 첫 버튼
+        // 초기 진입 라우트 결정
         const initial = getRouteFromLocation() || Object.keys(routeMap)[0];
         navigate(initial, { replace: true });
 
-        // 어사이드 클릭(버튼)
+        // 어사이드 클릭 (버튼)
         LNB.addEventListener("click", function (e) {
           const btn = e.target.closest("button.link[data-route][data-url]");
           if (!btn) return;
@@ -179,13 +224,16 @@
               contEl.scrollTop = 0;
             }
 
-            // 페이지별 초기화 훅 (필요 시 버튼에 data-js-page 지정)
+            // ✅ 새로 삽입된 콘텐츠 초기화 (코드복사 + Prism 등)
+            initGuide(contEl);
+
+            // 페이지별 훅
             const hook = item.el.getAttribute("data-js-page");
             if (hook && pageInit[hook]) {
               setTimeout(() => pageInit[hook](contEl), 0);
             }
 
-            // 주소 동기화(#/route)
+            // 주소 동기화
             const h = "#/" + encodeURIComponent(route);
             if (push) history.pushState({ route }, "", h);
             else if (replace) history.replaceState({ route }, "", h);
@@ -239,6 +287,7 @@
             xhr.send();
           });
         }
+
         // 동적으로 삽입된 <script> 실행 (src/inline 모두)
         function runScripts(root) {
           const scripts = root.querySelectorAll("script");
@@ -257,35 +306,16 @@
           });
         }
 
-        // 페이지 별 초기화 훅(원하시는 이름으로 자유 확장)
+        // 페이지별 초기화 훅
         const pageInit = {
           Button(root) {
-            // 예: root.querySelector(...) 범위로 초기화
-            // dropdown.set({ el:'#dropdown_1', cb: console.log });
+            // 예시: root.querySelector(...) 가능
           },
           TextField(root) {
-            // ...
+            // 예시
           },
         };
       });
-
-      // 문서 전체에 한 번만
-      $(document).on("click", '[data-js="copyCode"] [data-js="copyCode__showBtn"]', function () {
-        const $wrap = $(this).closest('[data-js="copyCode"]');
-        $wrap.find('[data-js="copyCode__code"]').stop(true, true).slideDown();
-        $wrap.find('[data-js="copyCode__showBtn"]').hide();
-        $wrap.find('[data-js="copyCode__hideBtn"]').show();
-      });
-
-      $(document).on("click", '[data-js="copyCode"] [data-js="copyCode__hideBtn"]', function () {
-        const $wrap = $(this).closest('[data-js="copyCode"]');
-        $wrap.find('[data-js="copyCode__code"]').stop(true, true).slideUp();
-        $wrap.find('[data-js="copyCode__showBtn"]').show();
-        $wrap.find('[data-js="copyCode__hideBtn"]').hide();
-      });
-      if (window.Prism) {
-        Prism.highlightAllUnder ? Prism.highlightAllUnder(contEl) : Prism.highlightAll();
-      }
     </script>
   </body>
 </html>

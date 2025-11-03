@@ -280,7 +280,7 @@ textarea::-ms-input-placeholder {
   line-height: 0.1333333333rem;
 }
 
-.button-group {
+.buttonGroup {
   display: flex;
   align-items: center;
   justify-content: center;

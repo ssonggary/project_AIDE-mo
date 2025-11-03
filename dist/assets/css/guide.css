@@ -250,6 +250,42 @@ textarea::-ms-input-placeholder {
   pointer-events: none;
   background-color: #ffdab3;
 }
+.button--secondary {
+  background-color: #fff3e7;
+}
+.button--secondary .button__text {
+  color: #ff8200;
+}
+.button--gray {
+  background-color: #f2f5fa;
+}
+.button--gray .button__text {
+  color: #92a1b7;
+}
+.button--line {
+  background-color: #ffffff;
+  border: 1px solid #ff8200;
+}
+.button--line .button__text {
+  color: #ff8200;
+}
+.button--mini {
+  padding: 0.3333333333rem 0.8rem;
+  width: auto;
+  display: inline-block;
+  min-height: 1.8666666667rem;
+}
+.button--mini .button__text {
+  font-size: 0.8666666667rem;
+  line-height: 0.1333333333rem;
+}
+
+.button-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
 
 /* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript */
 /**
@@ -482,7 +518,7 @@ pre[class*=language-] {
 .guide-layout {
   width: 100%;
   height: 100%;
-  color: #1d2d47;
+  color: #515961;
 }
 .guide-layout .header {
   position: fixed;
@@ -541,7 +577,7 @@ pre[class*=language-] {
   border-top: 1px solid #eee;
   margin-top: 10px;
   padding: 10px 20px;
-  color: #1d2d47;
+  color: #515961;
 }
 .guide-layout .sub-nav {
   padding-left: 12px;

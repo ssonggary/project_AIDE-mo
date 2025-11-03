@@ -4,6 +4,7 @@
 
 /* button basic ============================== */
 .button {
+  $root: ".button";
   display: block;
   width: 100%;
   min-height: rem(50px);
@@ -23,4 +24,48 @@
     pointer-events: none;
     background-color: $color-disabled-1;
   }
+
+  // ** secndary 버튼
+  &--secondary {
+    background-color: $color-secondary-1;
+    #{$root}__text {
+      color: $color-primary;
+    }
+  }
+
+  // ** gray 버튼
+  &--gray {
+    background-color: $color-gray-1;
+    #{$root}__text {
+      color: $color-gray-7;
+    }
+  }
+
+  // ** line 버튼
+  &--line {
+    background-color: $color-white;
+    border: 1px solid $color-primary;
+    #{$root}__text {
+      color: $color-primary;
+    }
+  }
+
+  &--mini {
+    padding: rem(5px) rem(12px);
+    width: auto;
+    display: inline-block;
+    min-height: rem(28px);
+    #{$root}__text {
+      font-size: rem(13px);
+      line-height: rem(2px);
+    }
+  }
+}
+
+// ** button-group
+.button-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }

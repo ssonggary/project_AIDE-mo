@@ -27,35 +27,36 @@ pre[class*="language-"] {
   -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
-
-  &::-moz-selection,
-  ::-moz-selection {
-    text-shadow: none;
-    background: #b3d4fc;
-  }
-
-  &::selection,
-  ::selection {
-    text-shadow: none;
-    background: #b3d4fc;
-  }
 }
 
-/* 프린트 시 */
+pre[class*="language-"]::-moz-selection,
+pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection,
+code[class*="language-"] ::-moz-selection {
+  text-shadow: none;
+  background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection,
+pre[class*="language-"] ::selection,
+code[class*="language-"]::selection,
+code[class*="language-"] ::selection {
+  text-shadow: none;
+  background: #b3d4fc;
+}
+
 @media print {
   code[class*="language-"],
   pre[class*="language-"] {
     text-shadow: none;
   }
 }
-
-/* 블록 코드 영역 */
+/* Code blocks */
 pre[class*="language-"] {
   margin: 0.5em 0;
   overflow: auto;
 }
 
-/* 배경 공통 */
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
   background: #f5f2f0;
@@ -437,50 +438,5 @@ pre[class*="language-"] {
     font-size: 14px;
     font-weight: 500;
     line-height: 20px;
-  }
-}
-
-.guide-codeCopy {
-  margin-top: 20px;
-  .code-box-copy {
-    position: relative;
-    font-size: 13px;
-    margin-top: 5px;
-    pre,
-    pre[class*="language-"] {
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      background: #f5f2f0;
-    }
-    pre > code {
-      display: block;
-    }
-    // &__btn {
-    //   opacity: 0;
-    //   position: absolute;
-    //   top: 11px;
-    //   right: 11px;
-    //   width: 36px;
-    //   height: 36px;
-    //   background-color: #eee;
-    //   border: 1px solid #ccc;
-    //   color: #333;
-    //   border-radius: 2px;
-    //   -webkit-transition: opacity 0.25s ease-in-out, background-color 0.25s ease-in-out, border-color 0.25s ease-in-out;
-    //   transition: opacity 0.25s ease-in-out, background-color 0.25s ease-in-out, border-color 0.25s ease-in-out;
-    //   &::before {
-    //     display: inline-block;
-    //     content: " ";
-    //     vertical-align: middle;
-    //     width: 16px;
-    //     height: 16px;
-    //     // background: url(../img/guide/ic-copy.svg) no-repeat 0 0;
-    //   }
-    // }
-    // &:hover {
-    //   .code-box-copy__btn {
-    //     opacity: 1;
-    //   }
-    // }
   }
 }

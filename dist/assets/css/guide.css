@@ -277,35 +277,35 @@ pre[class*=language-] {
   -ms-hyphens: none;
   hyphens: none;
 }
-code[class*=language-]::-moz-selection,
-code[class*=language-] ::-moz-selection,
+
 pre[class*=language-]::-moz-selection,
-pre[class*=language-] ::-moz-selection {
-  text-shadow: none;
-  background: #b3d4fc;
-}
-code[class*=language-]::selection,
-code[class*=language-] ::selection,
-pre[class*=language-]::selection,
-pre[class*=language-] ::selection {
+pre[class*=language-] ::-moz-selection,
+code[class*=language-]::-moz-selection,
+code[class*=language-] ::-moz-selection {
   text-shadow: none;
   background: #b3d4fc;
 }
 
-/* 프린트 시 */
+pre[class*=language-]::selection,
+pre[class*=language-] ::selection,
+code[class*=language-]::selection,
+code[class*=language-] ::selection {
+  text-shadow: none;
+  background: #b3d4fc;
+}
+
 @media print {
   code[class*=language-],
   pre[class*=language-] {
     text-shadow: none;
   }
 }
-/* 블록 코드 영역 */
+/* Code blocks */
 pre[class*=language-] {
   margin: 0.5em 0;
   overflow: auto;
 }
 
-/* 배경 공통 */
 :not(pre) > code[class*=language-],
 pre[class*=language-] {
   background: #f5f2f0;
@@ -668,22 +668,4 @@ pre[class*=language-] {
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
-}
-
-.guide-codeCopy {
-  margin-top: 20px;
-}
-.guide-codeCopy .code-box-copy {
-  position: relative;
-  font-size: 13px;
-  margin-top: 5px;
-}
-.guide-codeCopy .code-box-copy pre,
-.guide-codeCopy .code-box-copy pre[class*=language-] {
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  background: #f5f2f0;
-}
-.guide-codeCopy .code-box-copy pre > code {
-  display: block;
 }

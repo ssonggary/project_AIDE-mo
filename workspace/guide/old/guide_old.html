@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- @ @include('./include/head.html', {title: '퍼블 가이드', cssArr: ['guide']}) -->
+  <body>
+    <div class="guide-layout">
+      <header class="header">
+        <h1 class="logo">
+          <img src="../assets/img/common/aide_logo.svg" alt="AIDE 로고" />
+        </h1>
+        <nav class="gnb">
+          <ul class="gnb-menu">
+            <li><a href="lists.html" target="_self">퍼블리스트</a></li>
+            <li><a href="guide.html" target="_self">컴포넌트</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <div class="container">
+        <aside class="aside" id="LNB">
+          <ul class="nav">
+            <li class="nav__item">
+              <button type="button" class="link" data-route="all" data-url="./components_all.html">All</button>
+            </li>
+            <li class="nav__item">
+              <button type="button" class="link" data-route="typography" data-url="./typography.html">
+                Typography
+              </button>
+            </li>
+            <li class="nav__item">
+              <button type="button" class="link" data-route="color" data-url="./color.html">Color</button>
+            </li>
+            <li>
+              <h2 class="nav__title">components</h2>
+              <ul class="sub-nav">
+                <li class="nav__item">
+                  <button type="button" class="link" data-route="button" data-url="./button.html" data-js-page="Button">
+                    Button
+                  </button>
+                </li>
+                <li class="nav__item">
+                  <button
+                    type="button"
+                    class="link"
+                    data-route="textfield"
+                    data-url="./textfield.html"
+                    data-js-page="TextField"
+                  >
+                    Text Field
+                  </button>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </aside>
+
+        <main class="content">
+          <div class="inner">
+            <div class="guide-title-wrap">
+              <h3 id="guideTitle" class="guide-title">Guide</h3>
+            </div>
+            <div id="guideCont" class="guide-cont"></div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <!-- @ @include('./include/script.html') -->
+    <!-- guide에서만 사용되는 js -->
+    <script src="../assets/js/library/guide/clipboard.min.js"></script>
+    <script src="../assets/js/library/guide/code-box-copy.js"></script>
+    <script src="../assets/js/library/guide/prism.min.js"></script>
+    <!-- <script src="../assets/js/guide/guide.js"></script> -->
+    <!-- //guide에서만 사용되는 js -->
+
+    <script type="text/javascript">
+      // ---------------- 공통 초기화 함수 ----------------
+      function initGuide(root) {
+        const $root = $(root);
+
+        // 1) code-box-copy 플러그인 초기화 (중복 방지)
+        $root.find(".code-box-copy").each(function () {
+          const $box = $(this);
+          if ($box.data("cbc-inited")) return; // 중복 방지
+          $box.codeBoxCopy({
+            tooltipText: "Copied",
+            tooltipShowTime: 1000,
+            tooltipFadeInTime: 300,
+            tooltipFadeOutTime: 300,
+          });
+          $box.data("cbc-inited", true);
+        });
+
+        // 2) 코드 보기/닫기 토글
+        $root.find('[data-js="copyCode"]').each(function () {
+          const $wrap = $(this);
+          const $box = $wrap.find('[data-js="copyCode__code"]');
+          const $show = $wrap.find('[data-js="copyCode__showBtn"]');
+          const $hide = $wrap.find('[data-js="copyCode__hideBtn"]');
+
+          $show.off(".copyCode").on("click.copyCode", function () {
+            $box.stop(true, true).slideDown();
+            $show.hide();
+            $hide.show();
+          });
+
+          $hide.off(".copyCode").on("click.copyCode", function () {
+            $box.stop(true, true).slideUp();
+            $show.show();
+            $hide.hide();
+          });
+        });
+
+        // 3) Prism 문법 하이라이트
+        if (window.Prism) {
+          if (Prism.highlightAllUnder) Prism.highlightAllUnder(root);
+          else Prism.highlightAll(); // 구버전 호환
+        }
+      }
+
+      // ---------------- SPA 네비게이션 로직 ----------------
+      window.addEventListener("DOMContentLoaded", function () {
+        const LNB = document.getElementById("LNB");
+        const titleEl = document.getElementById("guideTitle");
+        const contEl = document.getElementById("guideCont");
+
+        // 라우트 맵 수집 (route -> {url, title, el})
+        const routeMap = {};
+        LNB.querySelectorAll("button.link[data-route][data-url]").forEach((btn) => {
+          routeMap[btn.dataset.route] = {
+            url: btn.dataset.url,
+            title: btn.textContent.trim(),
+            el: btn,
+          };
+        });
+
+        // 초기 진입 라우트 결정
+        const initial = getRouteFromLocation() || Object.keys(routeMap)[0];
+        navigate(initial, { replace: true });
+
+        // 어사이드 클릭 (버튼)
+        LNB.addEventListener("click", function (e) {
+          const btn = e.target.closest("button.link[data-route][data-url]");
+          if (!btn) return;
+          navigate(btn.dataset.route);
+        });
+
+        // 뒤/앞 이동
+        window.addEventListener("popstate", function () {
+          const route = getRouteFromLocation() || Object.keys(routeMap)[0];
+          navigate(route, { push: false });
+        });
+
+        // ---------------- Core ----------------
+        async function navigate(route, opts = {}) {
+          const { push = true, replace = false } = opts;
+          const item = routeMap[route];
+          if (!item) return;
+
+          // 활성 상태
+          LNB.querySelectorAll("button.link").forEach((el) => el.classList.remove("active"));
+          item.el.classList.add("active");
+
+          // 타이틀
+          if (titleEl) titleEl.textContent = item.title;
+
+          // 로딩 표시
+          contEl.setAttribute("aria-busy", "true");
+
+          // 캐시 우회(개발 편의)
+          const bust = Math.floor(Math.random() * 10000);
+          const { path, hash } = splitUrl(item.url);
+          const url = path + (path.includes("?") ? "&" : "?") + "v=" + bust + (hash ? "#" + hash : "");
+
+          try {
+            // fetch 우선, 실패 시 XHR fallback
+            let html;
+            try {
+              const res = await fetch(url, { credentials: "same-origin" });
+              if (!res.ok) throw new Error(res.status + " " + res.statusText);
+              html = await res.text();
+            } catch {
+              html = await xhrText(url);
+            }
+
+            // 콘텐츠 교체
+            contEl.innerHTML = html;
+
+            // 삽입된 <script> 실행
+            runScripts(contEl);
+
+            // 내부 앵커 스크롤
+            if (hash) {
+              const target = contEl.querySelector("#" + CSS.escape(hash));
+              if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+            } else {
+              contEl.scrollTop = 0;
+            }
+
+            // ✅ 새로 삽입된 콘텐츠 초기화 (코드복사 + Prism 등)
+            initGuide(contEl);
+
+            // 페이지별 훅
+            const hook = item.el.getAttribute("data-js-page");
+            if (hook && pageInit[hook]) {
+              setTimeout(() => pageInit[hook](contEl), 0);
+            }
+
+            // 주소 동기화
+            const h = "#/" + encodeURIComponent(route);
+            if (push) history.pushState({ route }, "", h);
+            else if (replace) history.replaceState({ route }, "", h);
+          } catch (err) {
+            contEl.innerHTML =
+              '<div style="padding:16px;color:#b00020;">로드 실패: ' + escapeHtml(String(err)) + "</div>";
+          } finally {
+            contEl.setAttribute("aria-busy", "false");
+          }
+        }
+
+        // ---------------- Utils ----------------
+        function splitUrl(u) {
+          const [path, rawHash] = u.split("#");
+          return { path, hash: rawHash || "" };
+        }
+        function getRouteFromLocation() {
+          if (location.hash.startsWith("#/")) {
+            try {
+              return decodeURIComponent(location.hash.slice(2));
+            } catch {}
+          }
+          const m = /[?&]comp=([^&]+)/.exec(location.search);
+          if (m) {
+            try {
+              return decodeURIComponent(m[1]);
+            } catch {}
+          }
+          return null;
+        }
+        function escapeHtml(s) {
+          return s.replace(
+            /[&<>"']/g,
+            (m) =>
+              ({
+                "&": "&amp;",
+                "<": "&lt;",
+                ">": "&gt;",
+                '"': "&quot;",
+                "'": "&#39;",
+              }[m])
+          );
+        }
+        function xhrText(u) {
+          return new Promise((resolve, reject) => {
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", u, true);
+            xhr.onload = () =>
+              xhr.status === 200 ? resolve(xhr.responseText) : reject(new Error("XHR " + xhr.status));
+            xhr.onerror = () => reject(new Error("XHR 네트워크 오류"));
+            xhr.send();
+          });
+        }
+
+        // 동적으로 삽입된 <script> 실행 (src/inline 모두)
+        function runScripts(root) {
+          const scripts = root.querySelectorAll("script");
+          scripts.forEach((oldS) => {
+            const s = document.createElement("script");
+            for (const { name, value } of Array.from(oldS.attributes)) {
+              if (name === "type" && value && value !== "text/javascript") continue;
+              s.setAttribute(name, value);
+            }
+            if (oldS.src) s.src = oldS.src;
+            else s.textContent = oldS.textContent;
+
+            document.body.appendChild(s);
+            document.body.removeChild(s);
+            oldS.remove();
+          });
+        }
+
+        // 페이지별 초기화 훅
+        const pageInit = {
+          Button(root) {
+            // 예시: root.querySelector(...) 가능
+          },
+          TextField(root) {
+            // 예시
+          },
+        };
+      });
+    </script>
+  </body>
+</html>

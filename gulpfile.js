@@ -37,6 +37,9 @@ function server(cb) {
   cb && cb();
 }
 
+// server: baseDir는 dist
+// browserSync.init({ server: { baseDir: "./dist" }, open: false, notify: false });
+
 function clean() {
   return deleteAsync([
     DEST_PATH.HTML,
@@ -48,33 +51,51 @@ function clean() {
   ]);
 }
 
+// function include() {
+//   return src(PATH.HTML + "/*.html")
+//     .pipe(
+//       fileinclude({
+//         context: { cssArr: [], jsArr: [] },
+//         prefix: "@@",
+//         basepath: "@file", // ← 상대 기준
+//         indent: true,
+//       })
+//     )
+//     .pipe(dest(DEST_PATH.HTML))
+//     .pipe(browserSync.stream());
+// }
+
+// guide/html 모두: 부분 파일은 제외하고 빌드
 function include() {
-  return src(PATH.HTML + "/*.html")
-    .pipe(
-      fileinclude({
-        context: { cssArr: [], jsArr: [] },
-        prefix: "@@",
-        basepath: "@file", // ← 상대 기준
-        indent: true,
-      })
-    )
-    .pipe(dest(DEST_PATH.HTML))
-    .pipe(browserSync.stream());
+  return src([PATH.HTML + "/**/*.html", "!" + PATH.HTML + "/include/**"])
+    .pipe(fileinclude({ prefix: "@@", basepath: "@file", indent: true }))
+    .pipe(dest(DEST_PATH.HTML));
 }
 
+// function guide() {
+//   return src(PATH.GUIDE + "/*.html")
+//     .pipe(
+//       fileinclude({
+//         context: { cssArr: [], jsArr: [] },
+//         prefix: "@@",
+//         basepath: "workspace/html",
+//         // basepath: "@file", // ← 상대 기준
+//         indent: true,
+//       })
+//     )
+//     .pipe(dest(DEST_PATH.GUIDE))
+//     .pipe(browserSync.stream());
+// }
+
 function guide() {
-  return src(PATH.GUIDE + "/*.html")
-    .pipe(
-      fileinclude({
-        context: { cssArr: [], jsArr: [] },
-        prefix: "@@",
-        basepath: "workspace/html",
-        indent: true,
-      })
-    )
+  return src([
+    PATH.GUIDE + "/**/*.html",
+    "!" + PATH.GUIDE + "/include/**",
+    "!" + PATH.GUIDE + "/**/*_old.html", // 있으면 제외
+  ])
+    .pipe(fileinclude({ prefix: "@@", basepath: "@file", indent: true }))
     .pipe(dest(DEST_PATH.GUIDE))
-    .pipe(browserSync.stream());
-  done();
+    .on("end", () => browserSync.reload()); // ★ HTML은 reload
 }
 
 function style() {
@@ -98,7 +119,6 @@ function style() {
     //   })
     // )
   );
-  done();
 }
 
 // ✅ js → scripts 로 변경
@@ -115,6 +135,8 @@ function img() {
 }
 
 function watching() {
+  watch([PATH.GUIDE + "/**/*.html", "!" + PATH.GUIDE + "/include/**"], guide);
+  watch([PATH.GUIDE + "/include/**/*.html"], guide); // partial도 감시
   watch(PATH.HTML + "/**/*.html", include); // ← 각자 감시
   watch(PATH.GUIDE + "/**/*.html", guide);
   watch(PATH.ASSETS.STYLE + "/**/*.scss", style);

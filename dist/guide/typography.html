@@ -1,3 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+	<meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+  />
+  <meta name="format-detection" content="telephone=no" />
+  <title>title | AIDE APP</title>
+  <link rel="shortcut icon"type="image/x-icon" href="../assets/img/favicon.ico"/>
+	<link rel="stylesheet" href="../assets/css/guide.css">
+</head>
+  
+  <body>
+    <div class="guide-layout">
+      <header class="header">
+        <h1 class="logo"><img src="../assets/img/common/aide_logo.svg" alt="AIDE 로고" /></h1>
+        <nav class="gnb">
+          <ul class="gnb-menu">
+            <li><a href="lists.html">퍼블리스트</a></li>
+            <li><a href="guide.html">컴포넌트</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <div class="container">
+        <aside class="aside" id="LNB">
+          <ul class="nav">
+            <li class="nav__item"><a class="link" href="./guide.html">All</a></li>
+            <li class="nav__item"><a class="link" href="./typography.html">Typography</a></li>
+            <li class="nav__item"><a class="link" href="./color.html">Color</a></li>
+            <li>
+              <h2 class="nav__title">components</h2>
+              <ul class="sub-nav">
+                <li class="nav__item"><a class="link" href="./button.html">Button</a></li>
+                <li class="nav__item"><a class="link" href="./textfield.html">Text Field</a></li>
+              </ul>
+            </li>
+          </ul>
+        </aside>
+        <main class="content">
+          <div class="inner">
+            <div class="guide-title-wrap">
+              <h3 id="guideTitle" class="guide-title">Typography</h3>
+            </div>
+            <div id="guideCont" class="guide-cont">
+              <!-- //guide-cont -->
+
+
+
 <section class="guide-section">
   <div class="guide-item">
     <div class="guide-item__head">
@@ -59,3 +111,69 @@
     </div>
   </div>
 </section>
+
+          <!-- //guide-cont -->
+          </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  <script src="../assets/js/library/jquery-3.7.1.min.js"></script>
+  <script src="../assets/js/commonUI.js"></script>
+  <script src="../assets/js/library/guide/prism.min.js"></script>
+  <script src="../assets/js/library/guide/clipboard.min.js"></script>
+  <script src="../assets/js/library/guide/code-box-copy.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+      // 1) LNB active 처리 + 타이틀 동기화
+      const current = location.pathname.split('/').pop();
+      const links = document.querySelectorAll('#LNB .link');
+      links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === current));
+      const active = document.querySelector('#LNB .link.active');
+      const titleEl = document.getElementById('guideTitle');
+      if (active && titleEl) titleEl.textContent = active.textContent.trim();
+
+      // 2) 코드 복사 플러그인
+      $('.code-box-copy').codeBoxCopy({
+        tooltipText: 'Copied',
+        tooltipShowTime: 1000,
+        tooltipFadeInTime: 300,
+        tooltipFadeOutTime: 300,
+      });
+
+      // 3) 코드 보기/닫기 토글
+      $('[data-js="copyCode"]').each(function () {
+        const $wrap = $(this);
+        const $box  = $wrap.find('[data-js="copyCode__code"]');
+        const $show = $wrap.find('[data-js="copyCode__showBtn"]');
+        const $hide = $wrap.find('[data-js="copyCode__hideBtn"]');
+
+        $show.off('.copyCode').on('click.copyCode', () => {
+          $box.stop(true,true).slideDown();
+          $show.hide();
+          $hide.show();
+
+          // 열릴 때 해당 섹션만 Prism 하이라이트(접힌 상태에서도 안전)
+          if (window.Prism) {
+            const container = $wrap[0];
+            container.querySelectorAll('pre code[class*="language-"], code[class*="language-"]').forEach(node => {
+              Prism.highlightElement(node);
+            });
+          }
+        });
+        $hide.off('.copyCode').on('click.copyCode', () => {
+          $box.stop(true,true).slideUp();
+          $show.show();
+          $hide.hide();
+        });
+      });
+
+      // 4) 초회 진입 시 전역 하이라이트 (이미 펼쳐져 있는 블록 대비)
+      if (window.Prism) Prism.highlightAll();
+    });
+</script>
+
+</body>
+</html>

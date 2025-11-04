@@ -35,7 +35,7 @@
 
   // ** gray 버튼
   &--gray {
-    background-color: $color-gray-1;
+    background-color: $color-gray-2;
     #{$root}__text {
       color: $color-gray-7;
     }
@@ -62,7 +62,7 @@
   }
 }
 
-// ** buttonGroup
+/* buttonGroup ============================== */
 .buttonGroup {
   display: flex;
   align-items: center;

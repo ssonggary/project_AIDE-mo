@@ -116,44 +116,48 @@ select {
   cursor: pointer;
 }
 
-input[type=text][class*=md], input[type=tel][class*=md], input[type=time][class*=md], input[type=text][class*=md], input[type=password][class*=md], input[type=search][class*=md], input[type=email][class*=md], input[type=file][class*=md], input[type=url][class*=md], input[type=number][class*=md], input[type=date][class*=md] {
-  height: 50px;
-  padding: 0 12px;
-  border-radius: 4px;
-  vertical-align: middle;
+input,
+textarea {
+  appearance: none; /* 브라우저의 기본 스타일을 제거합니다. */
+  border: none; /* 테두리를 제거합니다. */
+  outline: none; /* 외곽선을 제거합니다. */
+  background-color: transparent; /* 배경색을 투명하게 설정합니다. */
+  margin: 0; /* 마진을 제거합니다. */
+  padding: 0; /* 안쪽 여백을 제거합니다. */
+  font-family: inherit; /* 폰트 패밀리를 상위 요소로부터 상속받습니다. */
+  font-size: inherit; /* 폰트 크기를 상위 요소로부터 상속받습니다. */
+  line-height: inherit; /* 줄 높이를 상위 요소로부터 상속받습니다. */
+  vertical-align: middle; /* 수직 정렬을 가운데로 설정합니다. */
+  box-sizing: border-box; /* 상자 모델을 변경하여 패딩과 테두리를 요소의 크기에 포함시킵니다. */
+  /* 추가적인 스타일을 필요에 따라 적용합니다. */
 }
 
-input[type=number]::-webkit-outer-spin-button,
-input[type=number]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-text-fill-color: #000;
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+  box-shadow: 0 0 0px 1000px #fff inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input:autofill,
+input:autofill:hover,
+input:autofill:focus,
+input:autofill:active {
+  -webkit-text-fill-color: #000;
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+  box-shadow: 0 0 0px 1000px #fff inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input[type=password] {
+  font-size: 3.5rem;
 }
 
 textarea {
-  width: 100%;
-  background: #fff;
-  -webkit-appearance: none;
-  -webkit-border-radius: 0;
-  appearance: none;
-  border-radius: 0px;
-}
-textarea[readonly], textarea[disabled] {
-  padding: 11px;
-  font-size: 1.6rem;
-  color: #666;
-  font-weight: normal;
-  line-height: 140%;
-  height: 78px;
-  background-color: #f9f9f9;
-  border: 1px solid #e6e6e6;
-}
-textarea::-webkit-input-placeholder {
-  color: #b5b5b5;
-  font-size: 1.6rem;
-  line-height: 100%;
-}
-textarea:focus {
-  border: 1px solid #111;
+  resize: none; /* textarea의 크기 조절 기능을 비활성화합니다. */
 }
 
 *,
@@ -280,9 +284,59 @@ textarea::-ms-input-placeholder {
   line-height: 0.1333333333rem;
 }
 
+/* buttonGroup ============================== */
 .buttonGroup {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
+}
+
+/* text field 컴포넌트 ============================== */
+/* button basic ============================== */
+.textField__feild {
+  position: relative;
+  width: 100%;
+}
+.textField__label {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 8px;
+  font-size: 0.9333333333rem;
+  line-height: 1.3333333333rem;
+  font-weight: 600;
+  color: #363f4c;
+  line-height: 1.3333333333rem;
+}
+.textField__label .required {
+  position: absolute;
+  top: 2px;
+  right: -12px;
+  display: inline-block;
+  color: #f24d40;
+}
+.textField__input {
+  display: block;
+  width: 100%;
+  height: 2.9333333333rem;
+  background-color: #fbfbfc;
+  border: 1px solid #ececed;
+  border-radius: 8px;
+  padding: 0.8rem 2.8rem 0.8rem 0.8rem;
+  font-size: 0.9333333333rem;
+  line-height: 1.3333333333rem;
+  color: #363f4c;
+}
+.textField__input::placeholder {
+  color: #acb0b6;
+}
+.textField__input:focus {
+  border: 1px solid #10161f;
+}
+.textField .notifText {
+  margin-top: 8px;
+}
+.textField .notifText__text {
+  font-size: 0.8rem;
+  line-height: 1.2rem;
 }

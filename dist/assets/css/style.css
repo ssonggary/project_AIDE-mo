@@ -383,7 +383,6 @@ textarea::-ms-input-placeholder {
 
 /* 4. layout */
 /* 헤더 컴포넌트 ============================== */
-/* basic ============================== */
 .header {
   width: 100%;
   height: 2.9333333333rem;
@@ -442,4 +441,47 @@ textarea::-ms-input-placeholder {
 .header__action .action-btn.before .action-btn__icon {
   width: 1.6rem;
   height: 1.6rem;
+}
+
+/* 바텀 네비게이션 컴포넌트 ============================== */
+.buttomNavigation {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 4rem;
+  padding-bottom: 0.6666666667rem;
+}
+.buttomNavigation__inner {
+  width: 100%;
+  height: 100%;
+}
+.buttomNavigation__nav {
+  display: flex;
+  align-items: center;
+  padding: 0 0.8rem;
+}
+.buttomNavigation__item {
+  width: 20%;
+}
+.buttomNavigation__link {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.buttomNavigation__icon {
+  width: 1.8666666667rem;
+  height: 1.8666666667rem;
+  background-color: #ffdab3;
+}
+.buttomNavigation__title {
+  font-size: 0.6666666667rem;
+  font-weight: 700;
+  line-height: 1.0666666667rem;
+  color: #92a1b7;
 }

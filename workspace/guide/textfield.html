@@ -1,4 +1,4 @@
-@@include('./include/guide-top.html', {"pageTitle": "Button"})
+@@include('./include/guide-top.html', {"title": "퍼블가이드", "pageTitle": "Button"})
 
 <section class="guide-section">
   <div class="guide-item">
@@ -22,6 +22,12 @@
                   <div class="notifText">
                     <span class="notifText__text">비밀번호는 8 ~ 20자로, 영문·숫자·특수문자를 반드시 포함해야 합니다</span>
                   </div>
+                  <div class="notifText">
+                    <span class="notifText__text notifText__text--red">비밀번호는 8 ~ 20자로, 영문·숫자·특수문자를 반드시 포함해야 합니다</span>
+                  </div>
+                  <div class="notifText">
+                    <span class="notifText__text notifText__text--green">비밀번호는 8 ~ 20자로, 영문·숫자·특수문자를 반드시 포함해야 합니다</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -42,7 +48,7 @@
               </div>
             </div>
           </div>
-          <div class="guide-comp__cont">
+          <!-- <div class="guide-comp__cont">
             <span class="guide-comp__cate">Disabled</span>
             <div class="guide-comp__item">
               <div>
@@ -52,6 +58,24 @@
                       타이틀
                     </label>
                     <input class="textField__input" type="text" id="textFeild_3" placeholder="플레이스홀더">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+          <div class="guide-comp__cont">
+            <span class="guide-comp__cate">유효성 체크 후 에러</span>
+            <div class="guide-comp__item">
+              <div>
+                <div class="textField is-erorr">
+                  <div class="textField__feild">
+                    <label class="textField__label" for="textFeild_4">
+                      타이틀
+                    </label>
+                    <input class="textField__input" type="text" id="textFeild_4" placeholder="플레이스홀더">
+                  </div>
+                  <div class="notifText">
+                    <span class="notifText__text">새비밀번호가 일치하지 않습니다</span>
                   </div>
                 </div>
               </div>
@@ -69,14 +93,21 @@
               <div class="code-box-copy">
                 <button class="code-box-copy__btn" data-clipboard-target="#button_code_1" title="Copy"></button>
                 <pre><code class="language-html" id="button_code_1">
-  &lt;button class=&quot;button&quot; type=&quot;button&quot;&gt;
-    &lt;span class=&quot;button__text&quot;&gt;텍스트&lt;/span&gt;
-  &lt;/button&gt;
-
-  &lt;!-- 공통 : disabled 시 class=&quot;button--disabled&quot; 추가, disabled 속성 추가 --&gt;
-  &lt;button class=&quot;button button--disabled&quot; type=&quot;button&quot; disabled&gt;
-    &lt;span class=&quot;button__text&quot;&gt;텍스트&lt;/span&gt;
-  &lt;/button&gt;
+  &lt;!-- 에러 시 : .textField에 class='is-erorr' --&gt;
+  &lt;div class="textField"&gt;
+    &lt;!-- 텍스트 필드 --&gt;
+    &lt;div class="textField__feild"&gt;
+      &lt;label class="textField__label" for="textFeild_id"&gt;
+        타이틀
+      &lt;/label&gt;
+      &lt;!-- disabled, readonly시 input에 속성 추가 --&gt;
+      &lt;input class="textField__input" type="text" id="textFeild_id" placeholder="플레이스홀더"&gt;
+    &lt;/div&gt;
+    &lt;!-- 안내텍스트 --&gt;
+    &lt;div class="notifText"&gt;
+      &lt;span class="notifText__text"&gt;안내 텍스트&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
       </code></pre>
               </div>
             </div>

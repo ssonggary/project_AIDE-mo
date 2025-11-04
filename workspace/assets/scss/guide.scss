@@ -235,7 +235,7 @@ pre[class*="language-"] {
   width: 100%;
   height: 100%;
   color: $color-gray-10;
-  .header {
+  .guide-header {
     position: fixed;
     top: 0;
     left: 0;
@@ -309,7 +309,7 @@ pre[class*="language-"] {
     &.lists {
       padding-left: 0;
     }
-    .inner {
+    & > .inner {
       padding: 20px 30px 60px;
     }
     .guide-title-wrap {

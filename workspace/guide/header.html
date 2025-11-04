@@ -1,0 +1,99 @@
+@@include('./include/guide-top.html', {"title": "퍼블가이드", "pageTitle": "Header"})
+
+<!-- 가이드 확인용 css -->
+<style>
+  .header {
+    position: relative !important;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+  }
+</style>
+<section class="guide-section">
+  <div class="guide-item">
+    <div class="guide-item__body">
+      <div class="guide-comp">
+        <div class="guide-comp__body">
+          <div class="guide-comp__cont">
+            <span class="guide-comp__cate">Title</span>
+            <div class="guide-comp__item">
+              <div>
+                <header class="header">
+                  <div class="header__inner">
+                    <div class="header__title-wrap">
+                      <h1 class="header__title">타이틀</h1>
+                    </div>
+                  </div>
+                </header>
+              </div>
+            </div>
+          </div>
+          <div class="guide-comp__cont">
+            <span class="guide-comp__cate">Title + Button</span>
+            <div class="guide-comp__item">
+              <div>
+                <header class="header">
+                  <div class="header__inner">
+                    <div class="header__title-wrap">
+                      <h1 class="header__title">타이틀</h1>
+                    </div>
+                    <div class="header__action">
+                      <div class="left-action">
+                        <button type="button" class="action-btn before">
+                          <span class="action-btn__icon"><i class="icon icon--left-arrow"></i></span>
+                          <span class="action-btn__text hidden">뒤로가기</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </header>
+              </div>
+            </div>
+          </div>
+          <div class="guide-codeCopy" data-js="copyCode">
+            <div class="guide-codeCopy__head">
+              <button class="button button--mini" type="button" data-js="copyCode__showBtn">
+                <span class="button__text">Html 코드 보기</span></button
+              ><button class="button button--mini" type="button" data-js="copyCode__hideBtn" style="display: none">
+                <span class="button__text">코드 닫기</span>
+              </button>
+            </div>
+            <div class="guide-codeCopy__body" data-js="copyCode__code" style="display: none">
+              <div class="code-box-copy">
+                <button class="code-box-copy__btn" data-clipboard-target="#button_code_1" title="Copy"></button>
+                <pre><code class="language-html" id="button_code_1">
+  &lt;!-- 타이틀만 있는 스타일 --&gt;
+  &lt;header class="header"&gt;
+    &lt;div class="header__inner"&gt;
+      &lt;div class="header__title-wrap"&gt;
+        &lt;h1 class="header__title"&gt;타이틀&lt;/h1&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/header&gt;
+
+	&lt;!-- 타이틀과 버튼이 있는 스타일 --&gt;
+	&lt;header class="header"&gt;
+    &lt;div class="header__inner"&gt;
+      &lt;div class="header__title-wrap"&gt;
+        &lt;h1 class="header__title"&gt;타이틀&lt;/h1&gt;
+      &lt;/div&gt;
+      &lt;div class="header__action"&gt;
+        &lt;div class="left-action"&gt;
+          &lt;button type="button" class="action-btn before"&gt;
+            &lt;span class="action-btn__icon"&gt;&lt;i class="icon icon--left-arrow"&gt;&lt;/i&gt;&lt;/span&gt;
+            &lt;span class="action-btn__text hidden"&gt;뒤로가기&lt;/span&gt;
+          &lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/header&gt;
+      </code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+@@include('./include/guide-bottom.html')

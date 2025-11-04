@@ -2,9 +2,10 @@
 
 /* text field 컴포넌트 ============================== */
 
-/* button basic ============================== */
+/* textField basic ============================== */
 
 .textField {
+  $root: ".textField";
   &__feild {
     position: relative;
     width: 100%;
@@ -49,6 +50,24 @@
     &__text {
       font-size: rem(12px);
       line-height: rem(18px);
+      color: $color-gray-9;
+      &--red {
+        color: $color-erorr;
+      }
+      &--green {
+        color: $color-success;
+      }
+    }
+  }
+
+  // erorr
+  &.is-erorr {
+    .textField__input {
+      border-color: $color-erorr;
+      background-color: #fff2f1;
+    }
+    .notifText__text {
+      color: $color-erorr;
     }
   }
 }

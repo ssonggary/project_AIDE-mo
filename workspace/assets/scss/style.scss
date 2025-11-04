@@ -2,6 +2,7 @@
 
 /* 1. 모듈 로드 (변수, 믹스인, 함수) */
 @forward "modules";
+@forward "common";
 
 /* 2. 베이스 스타일 */
 @forward "base/reset";
@@ -12,3 +13,7 @@
 /* 3. component */
 @forward "components/button";
 @forward "components/textField";
+@forward "components/icon";
+
+/* 4. layout */
+@forward "layout/header";

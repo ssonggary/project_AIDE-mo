@@ -942,7 +942,7 @@ pre[class*=language-] {
 }
 
 .pub-list {
-  padding: 0 20px;
+  padding: 20px 30px 50px;
 }
 .pub-list__info {
   display: flex;
@@ -968,6 +968,9 @@ pre[class*=language-] {
   width: 100%;
   margin-bottom: 12px;
   position: relative;
+}
+.pub-list .pub-table ~ .pub-table {
+  margin-top: 30px;
 }
 .pub-list .pub-table__title {
   margin-bottom: 8px;
@@ -1031,7 +1034,7 @@ pre[class*=language-] {
 .pub-list .pub-table td.state.confirmed {
   color: green;
 }
-.pub-list .pub-table table tbody:hover {
+.pub-list .pub-table table tbody tr:hover {
   background-color: #fbfbfc;
   transition: all 0.1s ease-in-out;
 }

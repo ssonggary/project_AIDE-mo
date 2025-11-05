@@ -443,7 +443,7 @@ pre[class*="language-"] {
 
 // 퍼블리스트
 .pub-list {
-  padding: 0 20px;
+  padding: 20px 30px 50px;
   &__info {
     display: flex;
     justify-content: end;
@@ -469,6 +469,9 @@ pre[class*="language-"] {
     width: 100%;
     margin-bottom: 12px;
     position: relative;
+    & ~ .pub-table {
+      margin-top: 30px;
+    }
     &__title {
       margin-bottom: 8px;
       font-size: 25px;
@@ -534,11 +537,9 @@ pre[class*="language-"] {
         }
       }
     }
-    table tbody {
-      &:hover {
-        background-color: $color-gray-1;
-        transition: all 0.1s ease-in-out;
-      }
+    table tbody tr:hover {
+      background-color: $color-gray-1;
+      transition: all 0.1s ease-in-out;
     }
   }
 }

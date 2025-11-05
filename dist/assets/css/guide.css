@@ -380,6 +380,9 @@ textarea::-ms-input-placeholder {
 .icon--left-arrow {
   background-image: url(../img/icon/icon_left_arrow.svg);
 }
+.icon--bottom-arrow {
+  background-image: url(../img/icon/icon_bottom_arrow.svg);
+}
 
 /* 4. layout */
 /* 헤더 컴포넌트 ============================== */
@@ -936,4 +939,99 @@ pre[class*=language-] {
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
+}
+
+.pub-list {
+  padding: 0 20px;
+}
+.pub-list__info {
+  display: flex;
+  justify-content: end;
+  padding: 0 1.3333333333rem;
+}
+.pub-list__info .page-title,
+.pub-list__info .page-data {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 45px;
+}
+.pub-list__info .page-title {
+  margin-right: 10px;
+}
+.pub-list__info .page-title ~ .page-title {
+  margin-left: 10px;
+}
+.pub-list__info .page-data {
+  font-weight: 400;
+}
+.pub-list .pub-table {
+  width: 100%;
+  margin-bottom: 12px;
+  position: relative;
+}
+.pub-list .pub-table__title {
+  margin-bottom: 8px;
+  font-size: 25px;
+}
+.pub-list .pub-table th {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: center;
+  color: #212833;
+  padding: 10px 8px;
+  background-color: #fff3e7;
+}
+.pub-list .pub-table table thead th {
+  border-right: 1px solid #f2f5fa;
+  border-bottom: 1px solid #f2f5fa;
+}
+.pub-list .pub-table table tbody td {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: center;
+  color: #212833;
+  padding: 10px 10px;
+  border-right: 1px solid #ececed;
+  border-bottom: 1px solid #ececed;
+}
+.pub-list .pub-table table tbody td:last-child {
+  border-right: 0;
+}
+.pub-list .pub-table td.name {
+  text-align: left;
+}
+.pub-list .pub-table td .link {
+  text-decoration: underline;
+}
+.pub-list .pub-table td.state {
+  font-weight: bold;
+}
+.pub-list .pub-table td.state.wait::before {
+  content: "대기중";
+}
+.pub-list .pub-table td.state.del::before {
+  content: "취소";
+  color: #999;
+}
+.pub-list .pub-table td.state.ing {
+  color: blue;
+}
+.pub-list .pub-table td.state.ing2::before {
+  content: "추가";
+  color: #9622d2;
+}
+.pub-list .pub-table td.state.finish {
+  color: #f24d40;
+}
+.pub-list .pub-table td.state.confirming {
+  color: orange;
+}
+.pub-list .pub-table td.state.confirmed {
+  color: green;
+}
+.pub-list .pub-table table tbody:hover {
+  background-color: #fbfbfc;
+  transition: all 0.1s ease-in-out;
 }

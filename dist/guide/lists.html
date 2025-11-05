@@ -1,33 +1,161 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
-  @ @include('./include/head.html', {title: '퍼블 가이드', cssArr: ['guide']})
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>퍼블리스트 | AIDE APP</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.ico" />
+    <link rel="stylesheet" href="../assets/css/guide.css" />
+  </head>
   <body>
     <div class="guide-layout">
-      <header class="header">
-        <h1 class="logo">
-          <img src="../assets/img/common/aide_logo.svg" alt="AIDE 로고" />
-        </h1>
+      <header class="guide-header">
+        <h1 class="logo"><img src="../assets/img/common/aide_logo.svg" alt="AIDE 로고" /></h1>
         <nav class="gnb">
           <ul class="gnb-menu">
-            <li><a href="lists.html" target="_self">퍼블리스트</a></li>
-            <li><a href="guide.html" target="_self">컴포넌트</a></li>
+            <li>
+              <a href="lists.html" class="button button--mini"><span class="button__text">퍼블리스트</span></a>
+            </li>
+            <li>
+              <a href="guide.html" class="button button--mini button--line"
+                ><span class="button__text">컴포넌트</span></a
+              >
+            </li>
           </ul>
         </nav>
       </header>
-      <div class="container">
-        <main class="content lists">
-          <div class="inner">
-            <div class="guide-title-wrap">
-              <h3 id="guideTitle" class="guide-title">Guide</h3>
+      <main class="container">
+        <div class="inner">
+          <!--
+              퍼블 진행 상태 표시
+              .state.finish -> 완료
+              .state.wait -> 대기중
+              .state.del -> 취소
+              .state.ing -> 진행중
+              .state.confirming -> 검수중
+              .state.confirmed -> 컨펌완료
+          -->
+          <div class="pub-list">
+            <dl class="pub-list__info">
+              <dt class="page-title">총페이지</dt>
+              <dd class="page-data total"></dd>
+              <dt class="page-title">완료</dt>
+              <dd class="page-data finish"></dd>
+              <dt class="page-title">진척률</dt>
+              <dd class="page-data percent"></dd>
+            </dl>
+
+            <div class="pub-table">
+              <h3 class="pub-table__title">공통</h3>
+              <div class="table-area">
+                <table class="pub-table">
+                  <caption class="hidden">
+                    공통 페이지
+                  </caption>
+                  <colgroup>
+                    <col style="width: 300px" />
+                    <col style="width: auto" />
+                    <col style="width: auto" />
+                    <col style="width: 100px" />
+                    <col style="width: 100px" />
+                    <col style="width: 100px" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th class="th name">화면명</th>
+                      <th class="th id">서비스ID</th>
+                      <th class="th history">변경이력</th>
+                      <th class="th state">상태</th>
+                      <th class="th date">등록일</th>
+                      <th class="th author">작업자</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="data-tr">
+                      <td class="td name">홈 > 스플래쉬</td>
+                      <td class="td id">
+                        <a href="../html/pages/APP_020100.html" target="_blank" class="link">APP_020100</a>
+                      </td>
+                      <td class="td history">-</td>
+                      <td class="td state"></td>
+                      <td class="td date">251105</td>
+                      <td class="td author">송가혜</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
-            <div id="guideCont"></div>
           </div>
-        </main>
-      </div>
+        </div>
+      </main>
     </div>
 
-    @ @include('./include/script.html')
+    <script src="../assets/js/library/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/commonUI.js"></script>
+    <script>
+      /* 값 구하기 */
+      $(".pub-list").each(function () {
+        let $total = $(".pub-list").find("tr.data-tr").length; //총 페이지 갯수
+        let $finish = $(".pub-list").find("tr.data-tr .finish").length; //완료 갯수
+        let $delete = $(".pub-list").find("tr.data-tr .delete").length; //삭제 갯수
+        let $duple = $(".pub-list").find("tr.data-tr .duple").length; //중복 갯수
+        let $percent = Math.floor((($finish + $delete + $duple) / $total) * 100); // 진척률
 
-    <script></script>
+        $(".pub-list").find(".page-data.total").text($total);
+        // $('.pub-list').find('.page_finish').text($finish);
+        $(".pub-list")
+          .find(".page-data.finish")
+          .text($finish + $delete + $duple);
+        $(".pub-list").find(".page-data.percent").text(`${$percent} %`);
+      });
+
+      $(".pub-table tr").each(function () {
+        const $state_confirming = $(this).find(".state").hasClass("confirming");
+        const $state_confirmed = $(this).find(".state").hasClass("confirmed");
+        const $state_ing = $(this).find(".state").hasClass("ing");
+        const $state_finish = $(this).find(".state").hasClass("finish");
+        const $state_duplicate = $(this).find(".state").hasClass("duple");
+        const $state_del = $(this).find(".state").hasClass("delete");
+        const $state = $(this).find(".state");
+
+        if ($state_confirming) {
+          $(this).css({
+            "background-color": "rgba(253, 227, 167, 0.5)",
+          });
+          $state.text("컨펌중");
+        }
+        if ($state_confirmed) {
+          $(this).css({
+            "background-color": "rgba(183, 244, 216, 0.5)",
+          });
+          $state.text("컨펌완료");
+        }
+        if ($state_ing) {
+          $(this).css({
+            "background-color": "rgba(183, 244, 216, 0.5)",
+          });
+          $state.text("작업중");
+        }
+        if ($state_finish) {
+          $state.text("완료");
+        }
+        if ($state_duplicate) {
+          $(this).css({
+            "text-decoration": "line-through",
+            "background-color": "gray",
+          });
+          $state.text("중복");
+        }
+        if ($state_del) {
+          $(this).css({
+            "text-decoration": "line-through",
+            "background-color": "gray",
+          });
+          $state.text("삭제");
+        }
+      });
+    </script>
   </body>
-</html> -->
+</html>

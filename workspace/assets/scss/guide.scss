@@ -440,3 +440,105 @@ pre[class*="language-"] {
     line-height: 20px;
   }
 }
+
+// 퍼블리스트
+.pub-list {
+  padding: 0 20px;
+  &__info {
+    display: flex;
+    justify-content: end;
+    padding: 0 rem(20px);
+    .page-title,
+    .page-data {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 45px;
+    }
+    .page-title {
+      margin-right: 10px;
+      & ~ .page-title {
+        margin-left: 10px;
+      }
+    }
+    .page-data {
+      font-weight: 400;
+    }
+  }
+
+  .pub-table {
+    width: 100%;
+    margin-bottom: 12px;
+    position: relative;
+    &__title {
+      margin-bottom: 8px;
+      font-size: 25px;
+    }
+    th {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 20px;
+      text-align: center;
+      color: $color-gray-10;
+      padding: 10px 8px;
+      background-color: $color-secondary-1;
+    }
+    table thead th {
+      border-right: 1px solid $color-gray-2;
+      border-bottom: 1px solid $color-gray-2;
+    }
+    table tbody td {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+      text-align: center;
+      color: $color-gray-10;
+      padding: 10px 10px;
+      border-right: 1px solid $color-gray-3;
+      border-bottom: 1px solid $color-gray-3;
+      &:last-child {
+        border-right: 0;
+      }
+    }
+    td {
+      &.name {
+        text-align: left;
+      }
+      .link {
+        text-decoration: underline;
+      }
+      &.state {
+        font-weight: bold;
+
+        &.wait::before {
+          content: "대기중";
+        }
+        &.del::before {
+          content: "취소";
+          color: #999;
+        }
+        &.ing {
+          color: blue;
+        }
+        &.ing2::before {
+          content: "추가";
+          color: #9622d2;
+        }
+        &.finish {
+          color: #f24d40;
+        }
+        &.confirming {
+          color: orange;
+        }
+        &.confirmed {
+          color: green;
+        }
+      }
+    }
+    table tbody {
+      &:hover {
+        background-color: $color-gray-1;
+        transition: all 0.1s ease-in-out;
+      }
+    }
+  }
+}

@@ -380,6 +380,9 @@ textarea::-ms-input-placeholder {
 .icon--left-arrow {
   background-image: url(../img/icon/icon_left_arrow.svg);
 }
+.icon--bottom-arrow {
+  background-image: url(../img/icon/icon_bottom_arrow.svg);
+}
 
 /* 4. layout */
 /* 헤더 컴포넌트 ============================== */

@@ -17,7 +17,7 @@
     font-size: rem(14px);
     line-height: rem(20px);
     font-weight: 600;
-    color: $color-gray-10;
+    color: $color-gray-9;
     line-height: rem(20px);
     .required {
       position: absolute;
@@ -37,7 +37,7 @@
     padding: rem(12px) rem(42px) rem(12px) rem(12px);
     font-size: rem(14px);
     line-height: rem(20px);
-    color: $color-gray-10;
+    color: $color-gray-9;
     &::placeholder {
       color: #acb0b6;
     }
@@ -50,7 +50,7 @@
     &__text {
       font-size: rem(12px);
       line-height: rem(18px);
-      color: $color-gray-9;
+      color: $color-gray-8;
       &--red {
         color: $color-erorr;
       }

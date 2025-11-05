@@ -14,6 +14,7 @@
   &__inner {
     width: 100%;
     height: 100%;
+    padding-top: rem(4px);
   }
   &__nav {
     display: flex;
@@ -30,11 +31,49 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    &.on {
+      .buttomNavigation__title {
+        color: $color-gray-10;
+      }
+      .buttomNavigation__icon {
+        &.home {
+          background: url(../img/icon/icon_home_on.svg);
+        }
+        &.smart-key {
+          background: url(../img/icon/icon_smartKey_on.svg);
+        }
+        &.car-state {
+          background: url(../img/icon/icon_carState_on.svg);
+        }
+        &.my-pattern {
+          background: url(../img/icon/icon_myPattern_on.svg);
+        }
+        &.more {
+          background: url(../img/icon/icon_more_on.svg);
+        }
+      }
+    }
   }
   &__icon {
     width: rem(28px);
     height: rem(28px);
-    background-color: $color-disabled-1;
+
+    &.home {
+      background: url(../img/icon/icon_home.svg);
+    }
+    &.smart-key {
+      background: url(../img/icon/icon_smartKey.svg);
+    }
+    &.car-state {
+      background: url(../img/icon/icon_carState.svg);
+    }
+    &.my-pattern {
+      background: url(../img/icon/icon_myPattern.svg);
+    }
+    &.more {
+      background: url(../img/icon/icon_more.svg);
+    }
   }
   &__title {
     font-size: rem(10px);

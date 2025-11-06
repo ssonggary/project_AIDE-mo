@@ -307,6 +307,11 @@ textarea::-ms-input-placeholder {
   gap: 8px;
 }
 
+/* buttonWrap ============================== */
+.button-wrap {
+  padding: 0.8rem 1.0666666667rem;
+}
+
 /* text field 컴포넌트 ============================== */
 /* textField basic ============================== */
 .textField__feild {
@@ -370,6 +375,50 @@ textarea::-ms-input-placeholder {
   color: #f24d40;
 }
 
+/* 회사코드 입력 ============================== */
+.company-code {
+  padding: 2rem 0;
+}
+.company-code__form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.company-code__label {
+  width: 3.3333333333rem;
+  height: 3.6666666667rem;
+}
+.company-code__input {
+  width: 100%;
+  height: 3.6666666667rem;
+  padding: 1.1333333333rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.4666666667rem;
+  color: #10161f;
+  border: 1px solid #dfe4ed;
+  border-radius: 16px;
+}
+.company-code__input:focus {
+  border-color: #ff8200;
+}
+.company-code .notifText {
+  display: none;
+  margin-top: 0.5333333333rem;
+}
+.company-code .notifText__text {
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+  color: #f24d40;
+}
+.company-code.erorr .company-code__input {
+  border-color: #f24d40;
+}
+.company-code.erorr .notifText {
+  display: block;
+}
+
 /* 아이콘 모음 ============================== */
 .icon {
   width: 100%;
@@ -387,9 +436,41 @@ textarea::-ms-input-placeholder {
 /* 4. layout */
 /* ----------------------- 레이아웃 ----------------------- */
 .content {
+  position: relative;
   width: 100%;
   min-height: 100vh;
   padding: 2.9333333333rem 0 4rem;
+}
+.content .inner {
+  width: 100%;
+  min-height: 100vh;
+  padding: 0 1.3333333333rem 6.2666666667rem;
+  overflow-y: auto;
+}
+.content--full {
+  padding: 0;
+}
+.content--full .page-title {
+  margin: 4.2666666667rem 0 2rem;
+}
+.content--full .page-title .title {
+  font-size: 1.7333333333rem;
+  line-height: 2.2666666667rem;
+  font-family: 700;
+  color: #10161f;
+}
+.content--full .page-title .sub-title {
+  margin-top: 0.8rem;
+  font-size: 1rem;
+  line-height: 1.4666666667rem;
+  color: #363f4d;
+}
+.content--full .button-wrap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-bottom: 2.1333333333rem;
 }
 
 /* 헤더 컴포넌트 ============================== */

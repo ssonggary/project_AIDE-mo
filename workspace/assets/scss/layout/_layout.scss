@@ -2,7 +2,42 @@
 
 /* ----------------------- 레이아웃 ----------------------- */
 .content {
+  position: relative;
   width: 100%;
   min-height: 100vh;
   padding: rem(44px) 0 rem(60px);
+
+  .inner {
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 rem(20px) rem(94px);
+    overflow-y: auto;
+  }
+
+  &--full {
+    padding: 0;
+
+    .page-title {
+      margin: rem(64px) 0 rem(30px);
+      .title {
+        font-size: rem(26px);
+        line-height: rem(34px);
+        font-family: 700;
+        color: $color-gray-11;
+      }
+      .sub-title {
+        margin-top: rem(12px);
+        font-size: rem(15px);
+        line-height: rem(22px);
+        color: #363f4d;
+      }
+    }
+    .button-wrap {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding-bottom: rem(32px);
+    }
+  }
 }

@@ -71,3 +71,52 @@
     }
   }
 }
+
+/* 회사코드 입력 ============================== */
+.company-code {
+  padding: rem(30px) 0;
+  &__form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+  &__label {
+    width: rem(50px);
+    height: rem(55px);
+  }
+  &__input {
+    width: 100%;
+    height: rem(55px);
+    padding: rem(17px);
+    font-size: rem(18px);
+    font-weight: 600;
+    line-height: rem(22px);
+    color: $color-gray-11;
+    border: 1px solid $color-gray-4;
+    border-radius: 16px;
+    &:focus {
+      border-color: $color-primary;
+    }
+  }
+
+  .notifText {
+    display: none;
+    margin-top: rem(8px);
+    &__text {
+      font-size: rem(12px);
+      line-height: rem(18px);
+      color: $color-erorr;
+    }
+  }
+
+  // 에러시
+  &.erorr {
+    .company-code__input {
+      border-color: $color-erorr;
+    }
+    .notifText {
+      display: block;
+    }
+  }
+}

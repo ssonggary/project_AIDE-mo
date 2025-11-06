@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+  @@include('../include/head.html', {pageTitle: '회사코드입력', cssArr: ['style']})
+  <body>
+    <div class="content content--full">
+      <div class="inner">
+        <div class="page-title">
+          <h1 class="title">
+            서비스 이용을 위한<br />
+            코드 등록 안내
+          </h1>
+          <p class="sub-title">
+            발급받은 회사 코드를 입력해 주세요<br />
+            회사 코드는 회원가입 초대 메일에서 확인 가능합니다
+          </p>
+        </div>
+        <!-- error시 .company-code에 class="erorr" 추가 -->
+        <div class="company-code">
+          <div class="company-code__form" aria-label="회사코드 6자리 입력">
+            <label for="colde-1" class="company-code__label">
+              <span class="hidden">1번째 숫자</span>
+              <input
+                class="company-code__input"
+                type="text"
+                inputmode="numeric"
+                pattern="[0-9]*"
+                maxlength="1"
+                id="colde-1"
+              />
+            </label>
+            <label for="colde-2" class="company-code__label">
+              <span class="hidden">2번째 숫자</span>
+              <input
+                class="company-code__input"
+                type="text"
+                inputmode="numeric"
+                pattern="[0-9]*"
+                maxlength="1"
+                id="colde-2"
+              />
+            </label>
+            <label for="colde-3" class="company-code__label">
+              <span class="hidden">3번째 숫자</span>
+              <input
+                class="company-code__input"
+                type="text"
+                inputmode="numeric"
+                pattern="[0-9]*"
+                maxlength="1"
+                id="colde-3"
+              />
+            </label>
+            <label for="colde-4" class="company-code__label">
+              <span class="hidden">4번째 숫자</span>
+              <input
+                class="company-code__input"
+                type="text"
+                inputmode="numeric"
+                pattern="[0-9]*"
+                maxlength="1"
+                id="colde-4"
+              />
+            </label>
+            <label for="colde-5" class="company-code__label">
+              <span class="hidden">5번째 숫자</span>
+              <input
+                class="company-code__input"
+                type="text"
+                inputmode="numeric"
+                pattern="[0-9]*"
+                maxlength="1"
+                id="colde-5"
+              />
+            </label>
+            <label for="colde-6" class="company-code__label">
+              <span class="hidden">2번째 숫자</span>
+              <input
+                class="company-code__input"
+                type="text"
+                inputmode="numeric"
+                pattern="[0-9]*"
+                maxlength="1"
+                id="colde-6"
+              />
+            </label>
+          </div>
+          <!-- .company-code에 class="erorr"추가시 노출되는 텍스트 -->
+          <div class="notifText">
+            <span class="notifText__text"
+              >일치하는 회사코드가 존재하지 않습니다<br />
+              확인 후 다시 입력해 주세요</span
+            >
+          </div>
+        </div>
+      </div>
+      <div class="button-wrap">
+        <button class="button" type="button"><span class="button__text">확인</span></button>
+      </div>
+    </div>
+    <!-- script -->
+    @@include('../include/script.html')
+  </body>
+</html>

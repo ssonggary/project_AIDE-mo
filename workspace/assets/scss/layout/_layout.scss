@@ -1,0 +1,8 @@
+@use "modules" as *;
+
+/* ----------------------- 레이아웃 ----------------------- */
+.content {
+  width: 100%;
+  min-height: 100vh;
+  padding: rem(44px) 0 rem(60px);
+}

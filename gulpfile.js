@@ -68,7 +68,16 @@ function clean() {
 // guide/html 모두: 부분 파일은 제외하고 빌드
 function include() {
   return src([PATH.HTML + "/**/*.html", "!" + PATH.HTML + "/include/**"])
-    .pipe(fileinclude({ prefix: "@@", basepath: "@file", indent: true }))
+    .pipe(
+      fileinclude({
+        prefix: "@@",
+        basepath: "@file",
+        indent: true,
+        context: {
+          hasAction: false,
+        },
+      })
+    )
     .pipe(dest(DEST_PATH.HTML));
 }
 

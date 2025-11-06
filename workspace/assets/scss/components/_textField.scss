@@ -74,11 +74,12 @@
 
 /* 회사코드 입력 ============================== */
 .company-code {
-  padding: rem(30px) 0;
+  margin: rem(30px) 0;
   &__form {
     width: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 7px;
   }
   &__label {

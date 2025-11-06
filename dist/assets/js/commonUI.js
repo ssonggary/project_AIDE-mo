@@ -1,1 +1,4 @@
-// console.log("Gulp 테스트: JS 로드 완료!");
+// import { CodePinInput } from "/assets/js/components/codePinInput.js";
+
+// // 자동 초기화
+// CodePinInput.autoInit('[data-module="code-pin"]');

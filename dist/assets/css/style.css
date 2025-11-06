@@ -325,7 +325,7 @@ textarea::-ms-input-placeholder {
   font-size: 0.9333333333rem;
   line-height: 1.3333333333rem;
   font-weight: 600;
-  color: #363f4c;
+  color: #363f4d;
   line-height: 1.3333333333rem;
 }
 .textField__label .required {
@@ -345,7 +345,7 @@ textarea::-ms-input-placeholder {
   padding: 0.8rem 2.8rem 0.8rem 0.8rem;
   font-size: 0.9333333333rem;
   line-height: 1.3333333333rem;
-  color: #363f4c;
+  color: #363f4d;
 }
 .textField__input::placeholder {
   color: #acb0b6;
@@ -377,12 +377,13 @@ textarea::-ms-input-placeholder {
 
 /* 회사코드 입력 ============================== */
 .company-code {
-  padding: 2rem 0;
+  margin: 2rem 0;
 }
 .company-code__form {
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 7px;
 }
 .company-code__label {

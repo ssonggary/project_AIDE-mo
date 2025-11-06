@@ -255,6 +255,15 @@ pre[class*="language-"] {
         gap: 5px;
       }
     }
+    .logo {
+      width: rem(60px);
+      display: flex;
+      align-items: center;
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
   }
   .container {
     position: relative;
@@ -520,7 +529,7 @@ pre[class*="language-"] {
           color: #999;
         }
         &.ing {
-          color: blue;
+          color: #0565f0;
         }
         &.ing2::before {
           content: "추가";

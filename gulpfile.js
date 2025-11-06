@@ -1,4 +1,4 @@
-const { src, dest, series, watch, parallel, symlink } = require("gulp");
+const { src, dest, series, watch, parallel } = require("gulp");
 const fileinclude = require("gulp-file-include");
 const browserSync = require("browser-sync").create();
 const { deleteAsync } = require("del");
@@ -51,20 +51,6 @@ function clean() {
   ]);
 }
 
-// function include() {
-//   return src(PATH.HTML + "/*.html")
-//     .pipe(
-//       fileinclude({
-//         context: { cssArr: [], jsArr: [] },
-//         prefix: "@@",
-//         basepath: "@file", // ← 상대 기준
-//         indent: true,
-//       })
-//     )
-//     .pipe(dest(DEST_PATH.HTML))
-//     .pipe(browserSync.stream());
-// }
-
 // guide/html 모두: 부분 파일은 제외하고 빌드
 function include() {
   return src([PATH.HTML + "/**/*.html", "!" + PATH.HTML + "/include/**"])
@@ -80,21 +66,6 @@ function include() {
     )
     .pipe(dest(DEST_PATH.HTML));
 }
-
-// function guide() {
-//   return src(PATH.GUIDE + "/*.html")
-//     .pipe(
-//       fileinclude({
-//         context: { cssArr: [], jsArr: [] },
-//         prefix: "@@",
-//         basepath: "workspace/html",
-//         // basepath: "@file", // ← 상대 기준
-//         indent: true,
-//       })
-//     )
-//     .pipe(dest(DEST_PATH.GUIDE))
-//     .pipe(browserSync.stream());
-// }
 
 function guide() {
   return src([
@@ -138,7 +109,7 @@ function scripts() {
 }
 
 function img() {
-  return src(PATH.ASSETS.IMAGES + "/**/*")
+  return src(PATH.ASSETS.IMAGES + "/**/*", { encoding: false })
     .pipe(dest(DEST_PATH.ASSETS.IMAGES))
     .pipe(browserSync.stream());
 }
@@ -147,10 +118,11 @@ function watching() {
   watch([PATH.GUIDE + "/**/*.html", "!" + PATH.GUIDE + "/include/**"], guide);
   watch([PATH.GUIDE + "/include/**/*.html"], guide); // partial도 감시
   watch(PATH.HTML + "/**/*.html", include); // ← 각자 감시
-  watch(PATH.GUIDE + "/**/*.html", guide);
+  // watch(PATH.GUIDE + "/**/*.html", guide);
   watch(PATH.ASSETS.STYLE + "/**/*.scss", style);
   watch(PATH.ASSETS.JS + "/**/*.js", scripts);
-  watch(PATH.ASSETS.IMAGES + "/**/*", img);
+  // watch(PATH.ASSETS.IMAGES + "/**/*", img);
+  watch(PATH.ASSETS.IMAGES + "/**/*.{png,jpg,jpeg,gif,svg,webp,avif}", img);
 }
 
 exports.server = server;

@@ -1,6 +1,15 @@
 @use "modules" as *;
 
 /* ----------------------- 공통 ----------------------- */
+
 .hidden {
   @include blind;
+}
+
+// 좌우로 영역 넓히기
+.expendPad {
+  margin-left: -2rem !important;
+  margin-right: -2rem !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
 }

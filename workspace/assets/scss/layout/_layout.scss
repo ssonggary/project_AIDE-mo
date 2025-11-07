@@ -41,3 +41,40 @@
     }
   }
 }
+
+// form layout
+.form-box {
+  &__item {
+    ~ .form-box__item {
+      margin-top: rem(26px);
+    }
+  }
+}
+
+// 로그인 로고 영역
+.logo-area {
+  height: rem(150px);
+  background-color: $color-gray-2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .logo {
+    .aide {
+      width: rem(100px);
+      object-fit: cover;
+    }
+  }
+}
+
+// section
+.section {
+  &__title {
+    margin: rem(30px) 0;
+    .title {
+      font-size: rem(20px);
+      font-weight: 700;
+      line-height: rem(24px);
+      color: $color-gray-11;
+    }
+  }
+}

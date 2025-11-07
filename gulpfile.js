@@ -33,6 +33,7 @@ function server(cb) {
     server: { baseDir: "./dist" }, // ← dist 기준
     open: false,
     notify: false,
+    host: "0.0.0.0", // 👈 모든 IP에서 접근 가능
   });
   cb && cb();
 }

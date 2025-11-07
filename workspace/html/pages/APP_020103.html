@@ -4,89 +4,57 @@
   <body>
     <div class="content content--full">
       <div class="inner">
-        <div class="logo-area">
-          <h1>
-            <img src="/assets/img/common/logo_aide.png" alt="" style="width: 50px; height: 40px" /><span class="hidden"
-              >AIDE</span
-            >
+        <div class="logo-area expendPad">
+          <h1 class="logo">
+            <img class="aide" src="/assets/img/common/logo_aide.png" alt="" /><span class="hidden">AIDE</span>
           </h1>
         </div>
-        <!-- error시 .company-code에 class="erorr" 추가 -->
-        <div class="company-code">
-          <div class="company-code__form" aria-label="회사코드 6자리 입력">
-            <label for="colde-1" class="company-code__label">
-              <span class="hidden">1번째 숫자</span>
-              <input
-                class="company-code__input"
-                type="text"
-                inputmode="numeric"
-                pattern="[0-9]*"
-                maxlength="1"
-                id="colde-1"
-              />
-            </label>
-            <label for="colde-2" class="company-code__label">
-              <span class="hidden">2번째 숫자</span>
-              <input
-                class="company-code__input"
-                type="text"
-                inputmode="numeric"
-                pattern="[0-9]*"
-                maxlength="1"
-                id="colde-2"
-              />
-            </label>
-            <label for="colde-3" class="company-code__label">
-              <span class="hidden">3번째 숫자</span>
-              <input
-                class="company-code__input"
-                type="text"
-                inputmode="numeric"
-                pattern="[0-9]*"
-                maxlength="1"
-                id="colde-3"
-              />
-            </label>
-            <label for="colde-4" class="company-code__label">
-              <span class="hidden">4번째 숫자</span>
-              <input
-                class="company-code__input"
-                type="text"
-                inputmode="numeric"
-                pattern="[0-9]*"
-                maxlength="1"
-                id="colde-4"
-              />
-            </label>
-            <label for="colde-5" class="company-code__label">
-              <span class="hidden">5번째 숫자</span>
-              <input
-                class="company-code__input"
-                type="text"
-                inputmode="numeric"
-                pattern="[0-9]*"
-                maxlength="1"
-                id="colde-5"
-              />
-            </label>
-            <label for="colde-6" class="company-code__label">
-              <span class="hidden">2번째 숫자</span>
-              <input
-                class="company-code__input"
-                type="text"
-                inputmode="numeric"
-                pattern="[0-9]*"
-                maxlength="1"
-                id="colde-6"
-              />
-            </label>
+        <div class="section">
+          <div class="section__title">
+            <h2 class="title">로그인</h2>
           </div>
-          <!-- .company-code에 class="erorr"추가시 노출되는 텍스트 -->
-          <div class="notifText">
-            <span class="notifText__text"
-              >일치하는 회사코드가 존재하지 않습니다<br />
-              확인 후 다시 입력해 주세요</span
-            >
+          <div class="form-box">
+            <ul class="form-box__list">
+              <li class="form-box__item">
+                <!-- 에러 시 : .textField에 class='is-erorr' -->
+                <div class="textField">
+                  <!-- 텍스트 필드 -->
+                  <div class="textField__feild">
+                    <label class="textField__label" for="textFeild_id"> 아이디 </label>
+                    <!-- disabled, readonly시 input에 속성 추가 -->
+                    <input
+                      class="textField__input"
+                      type="text"
+                      id="textFeild_id"
+                      placeholder="아이디(이메일)를 입력해 주세요"
+                    />
+                  </div>
+                  <!-- erorr시 노출 메세지 -->
+                  <!-- <div class="notifText">
+                          <span class="notifText__text notifText__text--red">아이디가 일치하지 않습니다</span>
+                        </div> -->
+                  <!-- //erorr시 노출 메세지 -->
+                </div>
+              </li>
+              <li class="form-box__item">
+                <div class="textField">
+                  <div class="textField__feild">
+                    <label class="textField__label" for="textFeild_id"> 아이디 </label>
+                    <input
+                      class="textField__input"
+                      type="text"
+                      id="textFeild_id"
+                      placeholder="아이디(이메일)를 입력해 주세요"
+                    />
+                  </div>
+                  <!-- erorr시 노출 메세지 -->
+                  <!-- <div class="notifText">
+                          <span class="notifText__text notifText__text--red">아이디가 일치하지 않습니다</span>
+                        </div> -->
+                  <!-- //erorr시 노출 메세지 -->
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

@@ -256,11 +256,13 @@ pre[class*="language-"] {
       }
     }
     .logo {
-      width: rem(60px);
+      width: rem(120px);
       display: flex;
       align-items: center;
+      gap: 5px;
+      font-size: rem(25px);
       img {
-        width: 100%;
+        width: rem(60px);
         object-fit: cover;
       }
     }

@@ -27,6 +27,10 @@
       color: $color-erorr;
     }
   }
+  &__input-wrap {
+    position: relative;
+    width: 100%;
+  }
   &__input {
     display: block;
     width: 100%;
@@ -43,6 +47,41 @@
     }
     &:focus {
       border: 1px solid $color-gray-11;
+    }
+  }
+  &__input-icon {
+    position: absolute;
+    left: rem(16px);
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: rem(20px);
+    height: rem(20px);
+  }
+  &__button-wrap {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: rem(18px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: rem(5px);
+  }
+  &__button {
+    width: rem(20px);
+    height: rem(20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .icon--close {
+      width: rem(16px);
+      height: rem(16px);
+    }
+    &.password-view {
+      .icon {
+        background-image: url(../img/icon/icon_pw_hide.svg);
+      }
     }
   }
   .notifText {
@@ -68,6 +107,32 @@
     }
     .notifText__text {
       color: $color-erorr;
+    }
+  }
+
+  // password
+  &.is-pw-visible {
+    .textField__button.password-view {
+      .icon {
+        background-image: url(../img/icon/icon_pw_show.svg);
+      }
+    }
+  }
+
+  &--icon {
+    .textField__input {
+      position: relative;
+      padding-left: rem(42px);
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: block;
+        width: rem(20px);
+        height: rem(20px);
+        background-color: blue;
+      }
     }
   }
 }

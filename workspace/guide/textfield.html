@@ -12,21 +12,38 @@
             <span class="guide-comp__cate">기본</span>
             <div class="guide-comp__item">
               <div>
-                <div class="textField">
+                <div class="textField" data-js="textField">
                   <div class="textField__feild">
-                    <label class="textField__label" for="textFeild_1">
-                      타이틀
-                    </label>
-                    <input class="textField__input" type="text" id="textFeild_1" placeholder="플레이스홀더">
+                    <label class="textField__label" for="textFeild_1"> 타이틀 </label>
+                    <div class="textField__input-wrap">
+                      <input
+                        class="textField__input"
+                        type="text"
+                        id="textFeild_1"
+                        placeholder="플레이스홀더"
+                        data-js="textField__input"
+                      />
+                      <div class="textField__button-wrap">
+                        <button type="button" class="textField__button" data-js="textField__clear">
+                          <span class="hidden">텍스트 삭제</span> <i class="icon icon--close"></i>
+                        </button>
+                      </div>
+                    </div>
                   </div>
                   <div class="notifText">
-                    <span class="notifText__text">비밀번호는 8 ~ 20자로, 영문·숫자·특수문자를 반드시 포함해야 합니다</span>
+                    <span class="notifText__text"
+                      >비밀번호는 8 ~ 20자로, 영문·숫자·특수문자를 반드시 포함해야 합니다</span
+                    >
                   </div>
                   <div class="notifText">
-                    <span class="notifText__text notifText__text--red">비밀번호는 8 ~ 20자로, 영문·숫자·특수문자를 반드시 포함해야 합니다</span>
+                    <span class="notifText__text notifText__text--red"
+                      >비밀번호는 8 ~ 20자로, 영문·숫자·특수문자를 반드시 포함해야 합니다</span
+                    >
                   </div>
                   <div class="notifText">
-                    <span class="notifText__text notifText__text--green">비밀번호는 8 ~ 20자로, 영문·숫자·특수문자를 반드시 포함해야 합니다</span>
+                    <span class="notifText__text notifText__text--green"
+                      >비밀번호는 8 ~ 20자로, 영문·숫자·특수문자를 반드시 포함해야 합니다</span
+                    >
                   </div>
                 </div>
               </div>
@@ -36,13 +53,26 @@
             <span class="guide-comp__cate">Required</span>
             <div class="guide-comp__item">
               <div>
-                <div class="textField">
+                <div class="textField" data-js="textField">
                   <div class="textField__feild">
                     <label class="textField__label" for="textFeild_2">
                       타이틀
                       <span class="required">*</span>
                     </label>
-                    <input class="textField__input" type="text" id="textFeild_2" placeholder="플레이스홀더">
+                    <div class="textField__input-wrap">
+                      <input
+                        class="textField__input"
+                        type="text"
+                        id="textFeild_2"
+                        placeholder="플레이스홀더"
+                        data-js="textField__input"
+                      />
+                      <div class="textField__button-wrap">
+                        <button type="button" class="textField__button" data-js="textField__clear">
+                          <span class="hidden">텍스트 삭제</span> <i class="icon icon--close"></i>
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -67,12 +97,23 @@
             <span class="guide-comp__cate">유효성 체크 후 에러</span>
             <div class="guide-comp__item">
               <div>
-                <div class="textField is-erorr">
+                <div class="textField is-erorr" data-js="textField">
                   <div class="textField__feild">
-                    <label class="textField__label" for="textFeild_4">
-                      타이틀
-                    </label>
-                    <input class="textField__input" type="text" id="textFeild_4" placeholder="플레이스홀더">
+                    <label class="textField__label" for="textFeild_4"> 타이틀 </label>
+                    <div class="textField__input-wrap">
+                      <input
+                        class="textField__input"
+                        type="text"
+                        id="textFeild_4"
+                        placeholder="플레이스홀더"
+                        data-js="textField__input"
+                      />
+                      <div class="textField__button-wrap">
+                        <button type="button" class="textField__button" data-js="textField__clear">
+                          <span class="hidden">텍스트 삭제</span> <i class="icon icon--close"></i>
+                        </button>
+                      </div>
+                    </div>
                   </div>
                   <div class="notifText">
                     <span class="notifText__text">새비밀번호가 일치하지 않습니다</span>
@@ -94,18 +135,29 @@
                 <button class="code-box-copy__btn" data-clipboard-target="#textfield_code_1" title="Copy"></button>
                 <pre><code class="language-html" id="textfield_code_1">
   &lt;!-- 에러 시 : .textField에 class='is-erorr' --&gt;
-  &lt;div class="textField"&gt;
+  &lt;div class="textField textField--icon" data-js="textField"&gt;
     &lt;!-- 텍스트 필드 --&gt;
     &lt;div class="textField__feild"&gt;
-      &lt;label class="textField__label" for="textFeild_id"&gt;
-        타이틀
-      &lt;/label&gt;
+      &lt;label class="textField__label" for="textFeild_id"&gt;타이틀&lt;/label&gt;
       &lt;!-- disabled, readonly시 input에 속성 추가 --&gt;
-      &lt;input class="textField__input" type="text" id="textFeild_id" placeholder="플레이스홀더"&gt;
+      &lt;div class="textField__input-wrap"&gt;
+        &lt;input
+          class="textField__input"
+          type="text"
+          id="textFeild_id"
+          placeholder="플레이스 홀더"
+          data-js="textField__input"
+        /&gt;
+        &lt;div class="textField__button-wrap"&gt;
+          &lt;button type="button" class="textField__button" data-js="textField__clear"&gt;
+            &lt;span class="hidden"&gt;텍스트 삭제&lt;/span&gt; &lt;i class="icon icon--close"&gt;&lt;/i&gt;
+          &lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
     &lt;/div&gt;
-    &lt;!-- 안내텍스트 --&gt;
+    &lt;!-- erorr시 노출 메세지 --&gt;
     &lt;div class="notifText"&gt;
-      &lt;span class="notifText__text"&gt;안내 텍스트&lt;/span&gt;
+      &lt;span class="notifText__text notifText__text--red"&gt;아이디가 일치하지 않습니다&lt;/span&gt;
     &lt;/div&gt;
   &lt;/div&gt;
       </code></pre>
@@ -114,6 +166,8 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
 </section>
 
 @@include('./include/guide-bottom.html')

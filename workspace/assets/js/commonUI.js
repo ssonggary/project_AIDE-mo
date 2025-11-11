@@ -1,4 +1,23 @@
-// import { CodePinInput } from "/assets/js/components/codePinInput.js";
+import * as fn from "./utils/functions.js";
+import { TextField } from "./components/textfield.js";
 
-// // 자동 초기화
-// CodePinInput.autoInit('[data-module="code-pin"]');
+const UI = {
+  textField: {
+    init() {
+      this.list = document.querySelectorAll('[data-js="textField"]');
+      if (this.list.length) this.list.forEach((el) => new TextField(el));
+    },
+  },
+  init() {
+    this.textField.init();
+    if (typeof fn.setViewPortHeight === "function") fn.setViewPortHeight();
+  },
+};
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", () => UI.init(), { once: true });
+} else {
+  UI.init();
+}
+
+export default UI;

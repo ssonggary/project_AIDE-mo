@@ -1,0 +1,38 @@
+@use "modules" as *;
+
+/* checkbox 컴포넌트 ============================== */
+
+.checkBox {
+  display: inline-flex;
+  &__wrap {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+  }
+  &__check {
+    display: block;
+    width: rem(20px);
+    height: rem(20px);
+    border: 1px solid $color-gray-4;
+    border-radius: 6px;
+  }
+  &__text {
+    display: block;
+    font-size: rem(15px);
+    font-weight: 400;
+    line-height: rem(22px);
+    color: $color-gray-11;
+  }
+  &__input {
+    &:checked {
+      & + .checkBox__wrap .checkBox__check {
+        background-repeat: no-repeat;
+        border-color: $color-primary;
+        background-color: $color-primary;
+        background-image: url(../img/icon/icon_checkbox.svg);
+        background-position: 50% 50%;
+      }
+    }
+  }
+}

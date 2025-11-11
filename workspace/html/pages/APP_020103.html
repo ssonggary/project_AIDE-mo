@@ -2,7 +2,7 @@
 <html lang="ko">
   @@include('../include/head.html', {pageTitle: '로그인', cssArr: ['style']})
   <body>
-    <div class="content content--full">
+    <div class="content content--full login">
       <div class="inner">
         <div class="logo-area expendPad">
           <h1 class="logo">
@@ -17,50 +17,93 @@
             <ul class="form-box__list">
               <li class="form-box__item">
                 <!-- 에러 시 : .textField에 class='is-erorr' -->
-                <div class="textField">
+                <div class="textField textField--icon" data-js="textField">
                   <!-- 텍스트 필드 -->
                   <div class="textField__feild">
-                    <label class="textField__label" for="textFeild_id"> 아이디 </label>
+                    <label class="textField__label" for="textFeild_id">아이디</label>
                     <!-- disabled, readonly시 input에 속성 추가 -->
-                    <input
-                      class="textField__input"
-                      type="text"
-                      id="textFeild_id"
-                      placeholder="아이디(이메일)를 입력해 주세요"
-                    />
+                    <div class="textField__input-wrap">
+                      <input
+                        class="textField__input"
+                        type="text"
+                        id="textFeild_id"
+                        placeholder="아이디(이메일)를 입력해 주세요"
+                        data-js="textField__input"
+                      />
+                      <i class="textField__input-icon icon--email"></i>
+                      <!-- <div class="textField__button-wrap">
+                        <button type="button" class="textField__button" data-js="textField__clear">
+                          <span class="hidden">텍스트 삭제</span> <i class="icon icon--close"></i>
+                        </button>
+                      </div> -->
+                    </div>
+                  </div>
+                  <!-- erorr시 노출 메세지 -->
+                  <div class="notifText">
+                    <span class="notifText__text notifText__text--red">아이디가 일치하지 않습니다</span>
+                  </div>
+                  <!-- //erorr시 노출 메세지 -->
+                </div>
+              </li>
+              <li class="form-box__item">
+                <div class="textField textField--icon" data-js="textField">
+                  <div class="textField__feild">
+                    <label class="textField__label" for="textFeild_pw">비밀번호</label>
+                    <!-- disabled, readonly시 input에 속성 추가 -->
+                    <div class="textField__input-wrap">
+                      <input
+                        class="textField__input"
+                        type="password"
+                        id="textFeild_pw"
+                        placeholder="비밀번호를 입력해 주세요"
+                        data-js="textField__input"
+                      />
+                      <i class="textField__input-icon icon--password"></i>
+                      <div class="textField__button-wrap">
+                        <button
+                          type="button"
+                          class="textField__button password-view"
+                          data-js="textField__password"
+                          aria-pressed="false"
+                          aria-label="비밀번호 보기"
+                        >
+                          <i class="icon"></i>
+                        </button>
+                        <!-- <button type="button" class="textField__button" data-js="textField__clear">
+                          <span class="hidden">텍스트 삭제</span> <i class="icon icon--close"></i>
+                        </button> -->
+                      </div>
+                    </div>
                   </div>
                   <!-- erorr시 노출 메세지 -->
                   <!-- <div class="notifText">
-                          <span class="notifText__text notifText__text--red">아이디가 일치하지 않습니다</span>
+                          <span class="notifText__text notifText__text--red">비밀번호가 일치하지 않습니다</span>
                         </div> -->
                   <!-- //erorr시 노출 메세지 -->
                 </div>
               </li>
               <li class="form-box__item">
-                <div class="textField">
-                  <div class="textField__feild">
-                    <label class="textField__label" for="textFeild_id"> 아이디 </label>
-                    <input
-                      class="textField__input"
-                      type="text"
-                      id="textFeild_id"
-                      placeholder="아이디(이메일)를 입력해 주세요"
-                    />
-                  </div>
-                  <!-- erorr시 노출 메세지 -->
-                  <!-- <div class="notifText">
-                          <span class="notifText__text notifText__text--red">아이디가 일치하지 않습니다</span>
-                        </div> -->
-                  <!-- //erorr시 노출 메세지 -->
+                <div class="checkBox">
+                  <input class="checkBox__input" type="checkbox" id="checkbox_1" hidden />
+                  <label class="checkBox__wrap" for="checkbox_1">
+                    <span class="checkBox__check"></span><span class="checkBox__text">자동 로그인</span>
+                  </label>
                 </div>
               </li>
             </ul>
           </div>
         </div>
       </div>
-      <div class="button-wrap">
-        <!-- disabled 시 class="button--disabled" 추가, disabled 속성 추가 -->
-        <button class="button" type="button"><span class="button__text">확인</span></button>
+
+      <div class="">
+        <div class="button-wrap">
+          <!-- disabled 시 class="button--disabled" 추가, disabled 속성 추가 -->
+          <button class="button" type="button"><span class="button__text">로그인</span></button>
+        </div>
+        <div class="">
+          <a href="">아이디 찾기</a>
+          <a href="">비밀번호 찾기</a>
+        </div>
       </div>
     </div>
     <!-- script -->

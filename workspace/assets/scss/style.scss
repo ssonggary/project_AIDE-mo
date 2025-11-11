@@ -11,9 +11,10 @@
 @forward "base/function";
 
 /* 3. component */
+@forward "components/icon";
 @forward "components/button";
 @forward "components/textField";
-@forward "components/icon";
+@forward "components/checkbox";
 
 /* 4. layout */
 @forward "layout/layout";

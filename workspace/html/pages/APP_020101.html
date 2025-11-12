@@ -2,7 +2,7 @@
 <html lang="ko">
   @@include('../include/head.html', {pageTitle: '회사코드입력', cssArr: ['style']})
   <body>
-    <div class="content content--full">
+    <div class="content content--full company">
       <div class="inner">
         <div class="page-title">
           <h1 class="title">
@@ -84,13 +84,14 @@
               />
             </label>
           </div>
-          <!-- .company-code에 class="erorr"추가시 노출되는 텍스트 -->
-          <div class="notifText">
+          <!-- erorr시 노출되는 텍스트 -->
+          <!-- <div class="notifText">
             <span class="notifText__text"
               >일치하는 회사코드가 존재하지 않습니다<br />
               확인 후 다시 입력해 주세요</span
             >
-          </div>
+          </div> -->
+          <!-- //erorr시 노출되는 텍스트 -->
         </div>
       </div>
       <div class="button-wrap">

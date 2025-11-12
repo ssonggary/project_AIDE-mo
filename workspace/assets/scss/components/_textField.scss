@@ -16,13 +16,13 @@
     margin-bottom: 8px;
     font-size: rem(14px);
     line-height: rem(20px);
-    font-weight: 600;
+    font-weight: 700;
     color: $color-gray-9;
     line-height: rem(20px);
     .required {
       position: absolute;
       top: 2px;
-      right: -12px;
+      right: -10px;
       display: inline-block;
       color: $color-erorr;
     }
@@ -40,6 +40,7 @@
     border-radius: 8px;
     padding: rem(12px) rem(42px) rem(12px) rem(12px);
     font-size: rem(14px);
+    font-weight: 500;
     line-height: rem(20px);
     color: $color-gray-9;
     &::placeholder {
@@ -88,6 +89,7 @@
     margin-top: 8px;
     &__text {
       font-size: rem(12px);
+      font-weight: 500;
       line-height: rem(18px);
       color: $color-gray-8;
       &--red {
@@ -167,10 +169,10 @@
   }
 
   .notifText {
-    display: none;
     margin-top: rem(8px);
     &__text {
       font-size: rem(12px);
+      font-weight: 500;
       line-height: rem(18px);
       color: $color-erorr;
     }
@@ -185,4 +187,8 @@
       display: block;
     }
   }
+}
+
+/* 보안문자 ============================== */
+.securityCode {
 }

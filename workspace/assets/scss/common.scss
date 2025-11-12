@@ -13,3 +13,23 @@
   padding-left: rem(20px) !important;
   padding-right: rem(20px) !important;
 }
+
+// margin
+.mt44 {
+  margin-top: rem(44px) !important;
+}
+
+// infomation
+.infomation {
+  margin-top: rem(8px);
+  &__text {
+    font-size: rem(12px);
+    font-weight: 500;
+    line-height: rem(18px);
+  }
+  &.erorr {
+    .infomation__text {
+      color: $color-erorr;
+    }
+  }
+}

@@ -16,28 +16,47 @@
 
   &--full {
     padding: 0;
-
-    .page-title {
-      margin: rem(64px) 0 rem(30px);
-      .title {
-        font-size: rem(26px);
-        line-height: rem(34px);
-        font-family: 700;
-        color: $color-gray-11;
-      }
-      .sub-title {
-        margin-top: rem(12px);
-        font-size: rem(15px);
-        line-height: rem(22px);
-        color: #363f4d;
-      }
-    }
     .button-wrap {
       position: absolute;
       left: 0;
       right: 0;
       bottom: 0;
       padding-bottom: rem(32px);
+    }
+  }
+}
+
+// page title
+.page-title {
+  margin: rem(30px) 0 rem(30px);
+  .title {
+    font-size: rem(18px);
+    line-height: rem(22px);
+    font-weight: 700;
+    color: $color-gray-11;
+  }
+  .sub-title {
+    margin-top: rem(12px);
+    font-size: rem(15px);
+    line-height: rem(22px);
+    color: #363f4d;
+  }
+}
+// 회사코드입력 title
+.company {
+  .page-title {
+    margin: rem(64px) 0 rem(30px);
+    .title {
+      font-size: rem(26px);
+      line-height: rem(34px);
+      font-weight: 700;
+      color: $color-gray-11;
+    }
+    .sub-title {
+      margin-top: rem(12px);
+      font-size: rem(15px);
+      line-height: rem(22px);
+      color: #363f4d;
     }
   }
 }
@@ -51,17 +70,41 @@
   }
 }
 
-// 로그인 로고 영역
-.logo-area {
-  height: rem(150px);
-  background-color: $color-gray-2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  .logo {
-    .aide {
-      width: rem(100px);
-      object-fit: cover;
+// 로그인
+.login {
+  .inner {
+    padding-bottom: rem(124px);
+  }
+  .logo-area {
+    height: rem(150px);
+    background-color: $color-gray-2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    .logo {
+      width: 100%;
+      max-width: rem(375px);
+    }
+  }
+  .form-box__list {
+    .form-box__item:last-child {
+      margin-top: rem(20px);
+    }
+  }
+  .login-button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    .button-wrap {
+      position: static;
+      padding: rem(12px) rem(16px);
+    }
+    .buttonGroup {
+      padding: rem(10px) rem(10px) rem(20px);
     }
   }
 }

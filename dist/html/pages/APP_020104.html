@@ -28,47 +28,51 @@
   </head>
 
   <body>
-    <div class="content content--full login">
+    <header class="header">
+      <div class="header__inner">
+        <div class="header__title-wrap">
+          <h1 class="header__title">아이디 찾기</h1>
+        </div>
+        
+          <div class="header__action">
+            <div class="left-action">
+              <button type="button" class="action-btn before">
+                <span class="action-btn__icon"><i class="icon icon--left-arrow"></i></span>
+                <span class="action-btn__text hidden">뒤로가기</span>
+              </button>
+            </div>
+          </div>
+        
+      </div>
+    </header>
+
+    <div class="content">
       <div class="inner">
-        <div class="logo-area expendPad">
-          <h1 class="logo">
-            <!-- 협력사 로고 이미지 -->
-            <!-- AIDE logo -->
-            <img class="aide" src="/assets/img/common/logo_aide.png" alt="" /><span class="hidden">AIDE</span>
-
-            <!-- hyudai doosan infracore logo -->
-            <!-- <img class="hyudai" src="/assets/img/common/logo_hundai_doosan_infracore.png" alt="" /><span class="hidden"
-              >현대 두산 인프라코어</span
-            > -->
-
-            <!-- hyudai doosan infracore logo -->
-            <!-- <img src="/assets/img/common/logo_gs_enc.png" alt="" /><span class="hidden">gs e&c</span> -->
-
-            <!-- //협력사 로고 이미지 -->
+        <div class="page-title">
+          <h1 class="title">
+            회원가입 시 입력한 정보를 통해<br />
+            확인이 가능합니다
           </h1>
         </div>
-        <div class="section">
-          <div class="section__title">
-            <h2 class="title">로그인</h2>
-          </div>
+        <div class="section mt44">
           <div class="form-box">
             <ul class="form-box__list">
               <li class="form-box__item">
                 <!-- 에러 시 : .textField에 class='is-erorr' -->
-                <div class="textField textField--icon is-erorr" data-js="textField">
-                  <!-- 텍스트 필드 -->
+                <div class="textField" data-js="textField">
                   <div class="textField__feild">
-                    <label class="textField__label" for="textFeild_id">아이디</label>
-                    <!-- disabled, readonly시 input에 속성 추가 -->
+                    <label class="textField__label" for="textFeild_name"
+                      >성명
+                      <span class="required">*</span>
+                    </label>
                     <div class="textField__input-wrap">
                       <input
                         class="textField__input"
                         type="text"
-                        id="textFeild_id"
-                        placeholder="아이디(이메일)를 입력해 주세요"
+                        id="textFeild_name"
+                        placeholder="이름을 입력해 주세요"
                         data-js="textField__input"
                       />
-                      <i class="textField__input-icon icon--email"></i>
                       <!-- <div class="textField__button-wrap">
                         <button type="button" class="textField__button" data-js="textField__clear">
                           <span class="hidden">텍스트 삭제</span> <i class="icon icon--close"></i>
@@ -76,41 +80,25 @@
                       </div> -->
                     </div>
                   </div>
-                  <!-- erorr시 노출 메세지 -->
-                  <div class="notifText">
-                    <span class="notifText__text notifText__text--red">아이디가 일치하지 않습니다</span>
-                  </div>
-                  <!-- //erorr시 노출 메세지 -->
                 </div>
               </li>
               <li class="form-box__item">
-                <div class="textField textField--icon" data-js="textField">
+                <div class="textField" data-js="textField">
                   <div class="textField__feild">
-                    <label class="textField__label" for="textFeild_pw">비밀번호</label>
-                    <!-- disabled, readonly시 input에 속성 추가 -->
+                    <label class="textField__label" for="textFeild_tel">연락처<span class="required">*</span></label>
                     <div class="textField__input-wrap">
                       <input
                         class="textField__input"
                         type="password"
-                        id="textFeild_pw"
-                        placeholder="비밀번호를 입력해 주세요"
+                        id="textFeild_tel"
+                        placeholder="휴대폰 번호를 하이픈(-) 없이 입력해주세요"
                         data-js="textField__input"
                       />
-                      <i class="textField__input-icon icon--password"></i>
-                      <div class="textField__button-wrap">
-                        <button
-                          type="button"
-                          class="textField__button password-view"
-                          data-js="textField__password"
-                          aria-pressed="false"
-                          aria-label="비밀번호 보기"
-                        >
-                          <i class="icon"></i>
-                        </button>
-                        <!-- <button type="button" class="textField__button" data-js="textField__clear">
+                      <!-- <div class="textField__button-wrap">
+                        <button type="button" class="textField__button" data-js="textField__clear">
                           <span class="hidden">텍스트 삭제</span> <i class="icon icon--close"></i>
-                        </button> -->
-                      </div>
+                        </button>
+                      </div> -->
                     </div>
                   </div>
                   <!-- erorr시 노출 메세지 -->
@@ -121,11 +109,38 @@
                 </div>
               </li>
               <li class="form-box__item">
-                <div class="checkBox">
-                  <input class="checkBox__input" type="checkbox" id="checkbox_1" hidden />
-                  <label class="checkBox__wrap" for="checkbox_1">
-                    <span class="checkBox__check"></span><span class="checkBox__text">자동 로그인</span>
-                  </label>
+                <div class="securityCode">
+                  <div class="securityCode__wrap">
+                    <div class="securityCode__code"></div>
+                    <div class="securityCode__button-wrap">
+                      <button type="button button--icon">음성듣기</button>
+                      <button type="button button--icon">새로고침</button>
+                    </div>
+                  </div>
+                  <div class="textField" data-js="textField">
+                    <div class="textField__feild">
+                      <label class="textField__label hidden" for="textFeild_code">보안문자</label>
+                      <div class="textField__input-wrap">
+                        <input
+                          class="textField__input"
+                          type="password"
+                          id="textFeild_code"
+                          placeholder="자동등록 방지 문자를 순서대로 입력 하세요"
+                          data-js="textField__input"
+                        />
+                        <!-- <div class="textField__button-wrap">
+                        <button type="button" class="textField__button" data-js="textField__clear">
+                          <span class="hidden">텍스트 삭제</span> <i class="icon icon--close"></i>
+                        </button>
+                      </div> -->
+                      </div>
+                    </div>
+                    <!-- erorr시 노출 메세지 -->
+                    <div class="notifText">
+                      <span class="notifText__text notifText__text--red">자동등록 방지 문자가 일치하지 않습니다</span>
+                    </div>
+                    <!-- //erorr시 노출 메세지 -->
+                  </div>
                 </div>
               </li>
             </ul>

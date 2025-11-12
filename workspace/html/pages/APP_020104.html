@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+  @@include('../include/head.html', {pageTitle: '로그인', cssArr: ['style']})
+  <body>
+    @@include('../include/header.html', {title: '아이디 찾기', hasAction: true})
+    <div class="content">
+      <div class="inner">
+        <div class="page-title">
+          <h1 class="title">
+            회원가입 시 입력한 정보를 통해<br />
+            확인이 가능합니다
+          </h1>
+        </div>
+        <div class="section mt44">
+          <div class="form-box">
+            <ul class="form-box__list">
+              <li class="form-box__item">
+                <!-- 에러 시 : .textField에 class='is-erorr' -->
+                <div class="textField" data-js="textField">
+                  <div class="textField__feild">
+                    <label class="textField__label" for="textFeild_name"
+                      >성명
+                      <span class="required">*</span>
+                    </label>
+                    <div class="textField__input-wrap">
+                      <input
+                        class="textField__input"
+                        type="text"
+                        id="textFeild_name"
+                        placeholder="이름을 입력해 주세요"
+                        data-js="textField__input"
+                      />
+                      <!-- <div class="textField__button-wrap">
+                        <button type="button" class="textField__button" data-js="textField__clear">
+                          <span class="hidden">텍스트 삭제</span> <i class="icon icon--close"></i>
+                        </button>
+                      </div> -->
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="form-box__item">
+                <div class="textField" data-js="textField">
+                  <div class="textField__feild">
+                    <label class="textField__label" for="textFeild_tel">연락처<span class="required">*</span></label>
+                    <div class="textField__input-wrap">
+                      <input
+                        class="textField__input"
+                        type="password"
+                        id="textFeild_tel"
+                        placeholder="휴대폰 번호를 하이픈(-) 없이 입력해주세요"
+                        data-js="textField__input"
+                      />
+                      <!-- <div class="textField__button-wrap">
+                        <button type="button" class="textField__button" data-js="textField__clear">
+                          <span class="hidden">텍스트 삭제</span> <i class="icon icon--close"></i>
+                        </button>
+                      </div> -->
+                    </div>
+                  </div>
+                  <!-- erorr시 노출 메세지 -->
+                  <!-- <div class="notifText">
+                          <span class="notifText__text notifText__text--red">비밀번호가 일치하지 않습니다</span>
+                        </div> -->
+                  <!-- //erorr시 노출 메세지 -->
+                </div>
+              </li>
+              <li class="form-box__item">
+                <div class="securityCode">
+                  <div class="securityCode__wrap">
+                    <div class="securityCode__code"></div>
+                    <div class="securityCode__button-wrap">
+                      <button type="button button--icon">음성듣기</button>
+                      <button type="button button--icon">새로고침</button>
+                    </div>
+                  </div>
+                  <div class="textField" data-js="textField">
+                    <div class="textField__feild">
+                      <label class="textField__label hidden" for="textFeild_code">보안문자</label>
+                      <div class="textField__input-wrap">
+                        <input
+                          class="textField__input"
+                          type="password"
+                          id="textFeild_code"
+                          placeholder="자동등록 방지 문자를 순서대로 입력 하세요"
+                          data-js="textField__input"
+                        />
+                        <!-- <div class="textField__button-wrap">
+                        <button type="button" class="textField__button" data-js="textField__clear">
+                          <span class="hidden">텍스트 삭제</span> <i class="icon icon--close"></i>
+                        </button>
+                      </div> -->
+                      </div>
+                    </div>
+                    <!-- erorr시 노출 메세지 -->
+                    <div class="notifText">
+                      <span class="notifText__text notifText__text--red">자동등록 방지 문자가 일치하지 않습니다</span>
+                    </div>
+                    <!-- //erorr시 노출 메세지 -->
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="infomation erorr">
+            <p class="infomation__text">
+              일치하는 회원정보가 존재하지 않습니다<br />
+              확인 후 다시 입력해 주세요
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="login-button">
+        <div class="button-wrap">
+          <!-- disabled 시 class="button--disabled" 추가, disabled 속성 추가 -->
+          <button class="button" type="button"><span class="button__text">로그인</span></button>
+        </div>
+        <div class="buttonGroup buttonGroup--dash">
+          <div class="buttonGroup__item">
+            <a href="javascript:void(0)" class="button button--text">아이디 찾기</a>
+          </div>
+          <div class="buttonGroup__item">
+            <a href="javascript:void(0)" class="button button--text">비밀번호 찾기</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- script -->
+    @@include('../include/script.html')
+  </body>
+</html>

@@ -20,3 +20,19 @@
   padding-left: 1.3333333333rem !important;
   padding-right: 1.3333333333rem !important;
 }
+
+.mt44 {
+  margin-top: 2.9333333333rem !important;
+}
+
+.infomation {
+  margin-top: 0.5333333333rem;
+}
+.infomation__text {
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 1.2rem;
+}
+.infomation.erorr .infomation__text {
+  color: #f24d40;
+}

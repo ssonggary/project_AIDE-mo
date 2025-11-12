@@ -6,7 +6,19 @@
       <div class="inner">
         <div class="logo-area expendPad">
           <h1 class="logo">
+            <!-- 협력사 로고 이미지 -->
+            <!-- AIDE logo -->
             <img class="aide" src="/assets/img/common/logo_aide.png" alt="" /><span class="hidden">AIDE</span>
+
+            <!-- hyudai doosan infracore logo -->
+            <!-- <img class="hyudai" src="/assets/img/common/logo_hundai_doosan_infracore.png" alt="" /><span class="hidden"
+              >현대 두산 인프라코어</span
+            > -->
+
+            <!-- hyudai doosan infracore logo -->
+            <!-- <img src="/assets/img/common/logo_gs_enc.png" alt="" /><span class="hidden">gs e&c</span> -->
+
+            <!-- //협력사 로고 이미지 -->
           </h1>
         </div>
         <div class="section">
@@ -17,7 +29,7 @@
             <ul class="form-box__list">
               <li class="form-box__item">
                 <!-- 에러 시 : .textField에 class='is-erorr' -->
-                <div class="textField textField--icon" data-js="textField">
+                <div class="textField textField--icon is-erorr" data-js="textField">
                   <!-- 텍스트 필드 -->
                   <div class="textField__feild">
                     <label class="textField__label" for="textFeild_id">아이디</label>
@@ -92,17 +104,27 @@
               </li>
             </ul>
           </div>
+          <div class="infomation erorr">
+            <p class="infomation__text">
+              일치하는 회원정보가 존재하지 않습니다<br />
+              확인 후 다시 입력해 주세요
+            </p>
+          </div>
         </div>
       </div>
 
-      <div class="">
+      <div class="login-button">
         <div class="button-wrap">
           <!-- disabled 시 class="button--disabled" 추가, disabled 속성 추가 -->
           <button class="button" type="button"><span class="button__text">로그인</span></button>
         </div>
-        <div class="">
-          <a href="">아이디 찾기</a>
-          <a href="">비밀번호 찾기</a>
+        <div class="buttonGroup buttonGroup--dash">
+          <div class="buttonGroup__item">
+            <a href="javascript:void(0)" class="button button--text">아이디 찾기</a>
+          </div>
+          <div class="buttonGroup__item">
+            <a href="javascript:void(0)" class="button button--text">비밀번호 찾기</a>
+          </div>
         </div>
       </div>
     </div>

@@ -1,8 +1,51 @@
 <!DOCTYPE html>
 <html lang="ko">
-  @@include('../include/head.html', {pageTitle: '아이디 찾기', cssArr: ['style']})
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <title>로그인 | AIDE APP</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="../assets/img/favicon.ico"
+    />
+
+    <!-- <link rel="stylesheet" href="../assets/css/style.css" /> -->
+
+    <!-- 동적으로 CSS 삽입 -->
+     
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/assets/css/style.css"
+    />
+     
+  </head>
+
   <body>
-    @@include('../include/header.html', {title: '아이디 찾기', hasAction: true})
+    <header class="header">
+      <div class="header__inner">
+        <div class="header__title-wrap">
+          <h1 class="header__title">아이디 찾기</h1>
+        </div>
+        
+          <div class="header__action">
+            <div class="left-action">
+              <button type="button" class="action-btn before">
+                <span class="action-btn__icon"><i class="icon icon--left-arrow"></i></span>
+                <span class="action-btn__text hidden">뒤로가기</span>
+              </button>
+            </div>
+          </div>
+        
+      </div>
+    </header>
+
     <div class="content">
       <div class="inner">
         <div class="page-title">
@@ -121,17 +164,19 @@
 
       <div class="button-wrap">
         <div class="buttonGroup">
-          <button type="button" class="button button--gray">
+          <a href="javascript:void(0)" class="button button--gray">
             <span class="button__text">취소</span>
-          </button>
+          </a>
           <!-- disabled 시 class="button--disabled" 추가, disabled 속성 추가 -->
-          <button type="button" class="button">
+          <a href="javascript:void(0)" class="button" type="button">
             <span class="button__text">아이디 찾기</span>
-          </button>
+          </a>
         </div>
       </div>
     </div>
     <!-- script -->
-    @@include('../include/script.html')
+    <script src="/assets/js/library/jquery-3.7.1.min.js"></script>
+    <script src="/assets/js/commonUI.js" type="module"></script>
+
   </body>
 </html>

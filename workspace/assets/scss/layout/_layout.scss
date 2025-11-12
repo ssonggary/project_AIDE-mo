@@ -4,12 +4,15 @@
 .content {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  height: 100%;
+  // min-height: 100vh;
+  min-height: 100dvh;
   padding: rem(44px) 0 rem(60px);
 
   .inner {
     width: 100%;
-    min-height: 100vh;
+    height: 100%;
+    // min-height: 100vh;
     padding: 0 rem(20px) rem(94px);
     overflow-y: auto;
   }
@@ -17,7 +20,7 @@
   &--full {
     padding: 0;
     .button-wrap {
-      position: absolute;
+      position: fixed;
       left: 0;
       right: 0;
       bottom: 0;
@@ -40,6 +43,11 @@
     font-size: rem(15px);
     line-height: rem(22px);
     color: #363f4d;
+  }
+  &.type-strong {
+    .title {
+      font-weight: 400;
+    }
   }
 }
 // 회사코드입력 title
@@ -105,6 +113,7 @@
     }
     .buttonGroup {
       padding: rem(10px) rem(10px) rem(20px);
+      background-color: $color-white;
     }
   }
 }

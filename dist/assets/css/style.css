@@ -22,8 +22,16 @@
   padding-right: 1.3333333333rem !important;
 }
 
+.mt20 {
+  margin-top: 1.3333333333rem !important;
+}
+
 .mt44 {
   margin-top: 2.9333333333rem !important;
+}
+
+.fw700 {
+  font-weight: 700 !important;
 }
 
 .infomation {
@@ -36,6 +44,38 @@
 }
 .infomation.erorr .infomation__text {
   color: #f24d40;
+}
+
+.icon-info {
+  display: flex;
+  align-items: center;
+  gap: 1.0666666667rem;
+}
+.icon-info__icon {
+  width: 2.6666666667rem;
+  height: 2.6666666667rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #4f5a6d;
+  border-radius: 16px;
+}
+.icon-info__icon .icon {
+  width: 1.3333333333rem;
+  height: 1.3333333333rem;
+}
+.icon-info__text {
+  font-size: 0.9333333333rem;
+  font-weight: 500;
+  color: #363f4d;
+  line-height: 1.3333333333rem;
+}
+
+.gray-box {
+  width: 100%;
+  padding: 1.0666666667rem 1.3333333333rem;
+  border-radius: 16px;
+  background-color: #f2f5fa;
 }
 
 /* 2. 베이스 스타일 */
@@ -281,6 +321,9 @@ textarea::-ms-input-placeholder {
 .icon--email {
   background-image: url(../img/icon/icon_email.svg);
 }
+.icon--email-fill {
+  background-image: url(../img/icon/icon_mail_fill.svg);
+}
 .icon--password {
   background-image: url(../img/icon/icon_password.svg);
 }
@@ -293,6 +336,12 @@ textarea::-ms-input-placeholder {
 .icon--pw-hide {
   background-image: url(../img/icon/icon_pw_hide.svg);
 }
+.icon--listen {
+  background-image: url(../img/icon/icon_listen.svg);
+}
+.icon--reset {
+  background-image: url(../img/icon/icon_reset.svg);
+}
 
 /* 버튼 컴포넌트 ============================== */
 /* button basic ============================== */
@@ -300,6 +349,7 @@ textarea::-ms-input-placeholder {
   display: block;
   width: 100%;
   min-height: 3.3333333333rem;
+  text-align: center;
   padding: 0.9333333333rem 1.0666666667rem;
   border-radius: 8px;
   background-color: #ff8200;
@@ -355,10 +405,37 @@ textarea::-ms-input-placeholder {
   width: auto;
   min-height: auto;
   padding: 0;
+}
+.button--text .button__text {
   font-size: 0.9333333333rem;
   font-weight: 400;
   line-height: 1.3333333333rem;
   color: #363f4d;
+}
+.button {
+  /* icon + text 버튼 ============================== */
+}
+.button--icon-text {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: auto;
+  min-height: 1.7333333333rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  background-color: #ffffff;
+  border: 1px solid #dfe4ed;
+}
+.button--icon-text .button__text {
+  font-size: 0.9333333333rem;
+  font-weight: 400;
+  line-height: 1.3333333333rem;
+  color: #363f4d;
+}
+.button--icon-text .icon {
+  width: 1.0666666667rem;
+  height: 1.0666666667rem;
 }
 .button--mini {
   padding: 0.3333333333rem 0.8rem;
@@ -399,7 +476,12 @@ textarea::-ms-input-placeholder {
 
 /* buttonWrap ============================== */
 .button-wrap {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
   padding: 0.8rem 1.0666666667rem;
+  background-color: #ffffff;
 }
 
 /* text field 컴포넌트 ============================== */
@@ -416,7 +498,6 @@ textarea::-ms-input-placeholder {
   line-height: 1.3333333333rem;
   font-weight: 700;
   color: #363f4d;
-  line-height: 1.3333333333rem;
 }
 .textField__label .required {
   position: absolute;
@@ -453,7 +534,6 @@ textarea::-ms-input-placeholder {
   left: 1.0666666667rem;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 2;
   width: 1.3333333333rem;
   height: 1.3333333333rem;
 }
@@ -567,6 +647,48 @@ textarea::-ms-input-placeholder {
 }
 
 /* 보안문자 ============================== */
+.securityCode {
+  width: 100%;
+}
+.securityCode__label {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 8px;
+  font-size: 0.9333333333rem;
+  line-height: 1.3333333333rem;
+  font-weight: 700;
+  color: #363f4d;
+}
+.securityCode__label .required {
+  position: absolute;
+  top: 2px;
+  right: -10px;
+  display: inline-block;
+  color: #f24d40;
+}
+.securityCode__wrap {
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+}
+.securityCode__code {
+  display: block;
+  width: 100%;
+  min-width: 15.4666666667rem;
+  overflow: hidden;
+  border-radius: 4px;
+}
+.securityCode__button-wrap {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.securityCode .textField {
+  margin-top: 8px;
+}
+
 /* checkbox 컴포넌트 ============================== */
 .checkBox {
   display: inline-flex;
@@ -604,12 +726,13 @@ textarea::-ms-input-placeholder {
 .content {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  height: 100%;
+  min-height: 100dvh;
   padding: 2.9333333333rem 0 4rem;
 }
 .content .inner {
   width: 100%;
-  min-height: 100vh;
+  height: 100%;
   padding: 0 1.3333333333rem 6.2666666667rem;
   overflow-y: auto;
 }
@@ -617,7 +740,7 @@ textarea::-ms-input-placeholder {
   padding: 0;
 }
 .content--full .button-wrap {
-  position: absolute;
+  position: fixed;
   left: 0;
   right: 0;
   bottom: 0;
@@ -638,6 +761,9 @@ textarea::-ms-input-placeholder {
   font-size: 1rem;
   line-height: 1.4666666667rem;
   color: #363f4d;
+}
+.page-title.type-strong .title {
+  font-weight: 400;
 }
 
 .company .page-title {
@@ -692,6 +818,7 @@ textarea::-ms-input-placeholder {
 }
 .login .login-button .buttonGroup {
   padding: 0.6666666667rem 0.6666666667rem 1.3333333333rem;
+  background-color: #ffffff;
 }
 
 .section__title {

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  @@include('../include/head.html', {pageTitle: '아이디 찾기 결과', cssArr: ['style']})
+  <body>
+    @@include('../include/header.html', {title: '아이디 찾기 결과', hasAction: true})
+    <div class="content">
+      <div class="inner">
+        <div class="page-title type-strong">
+          <h1 class="title">
+            <strong class="fw700">홍길동</strong> 님<br />
+            가입정보와 일치하는 아이디입니다
+          </h1>
+        </div>
+        <div class="section">
+          <div class="gray-box">
+            <div class="icon-info">
+              <div class="icon-info__icon">
+                <i class="icon icon--email-fill"></i>
+              </div>
+              <div class="icon-info__text">ABC*****@gmail.com</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="button-wrap">
+        <!-- disabled 시 class="button--disabled" 추가, disabled 속성 추가 -->
+        <button type="button" class="button">
+          <span class="button__text">로그인</span>
+        </button>
+      </div>
+    </div>
+    <!-- script -->
+    @@include('../include/script.html')
+  </body>
+</html>

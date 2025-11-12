@@ -8,7 +8,7 @@
       content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
     />
     <meta name="format-detection" content="telephone=no" />
-    <title>로그인 | AIDE APP</title>
+    <title>아이디 찾기 | AIDE APP</title>
     <link
       rel="shortcut icon"
       type="image/x-icon"
@@ -58,7 +58,6 @@
           <div class="form-box">
             <ul class="form-box__list">
               <li class="form-box__item">
-                <!-- 에러 시 : .textField에 class='is-erorr' -->
                 <div class="textField" data-js="textField">
                   <div class="textField__feild">
                     <label class="textField__label" for="textFeild_name"
@@ -89,7 +88,7 @@
                     <div class="textField__input-wrap">
                       <input
                         class="textField__input"
-                        type="password"
+                        type="text"
                         id="textFeild_tel"
                         placeholder="휴대폰 번호를 하이픈(-) 없이 입력해주세요"
                         data-js="textField__input"
@@ -110,20 +109,29 @@
               </li>
               <li class="form-box__item">
                 <div class="securityCode">
+                  <div class="securityCode__label">보안문자 <span class="required">*</span></div>
                   <div class="securityCode__wrap">
-                    <div class="securityCode__code"></div>
+                    <!-- 보안문자 영역 : 보안 코드 삽입시 inline style 삭제 -->
+                    <div class="securityCode__code" style="background-color: #dfe4ed"></div>
+                    <!-- //보안문자 영역 -->
                     <div class="securityCode__button-wrap">
-                      <button type="button button--icon">음성듣기</button>
-                      <button type="button button--icon">새로고침</button>
+                      <button type="button" class="button button--icon-text">
+                        <i class="icon icon--listen"></i>
+                        <span class="button__text">음성듣기</span>
+                      </button>
+                      <button type="button" class="button button--icon-text">
+                        <i class="icon icon--reset"></i>
+                        <span class="button__text">새로고침</span>
+                      </button>
                     </div>
                   </div>
+                  <!-- 에러 시 : .textField에 class='is-erorr' -->
                   <div class="textField" data-js="textField">
                     <div class="textField__feild">
-                      <label class="textField__label hidden" for="textFeild_code">보안문자</label>
                       <div class="textField__input-wrap">
                         <input
                           class="textField__input"
-                          type="password"
+                          type="text"
                           id="textFeild_code"
                           placeholder="자동등록 방지 문자를 순서대로 입력 하세요"
                           data-js="textField__input"
@@ -136,16 +144,16 @@
                       </div>
                     </div>
                     <!-- erorr시 노출 메세지 -->
-                    <div class="notifText">
+                    <!-- <div class="notifText">
                       <span class="notifText__text notifText__text--red">자동등록 방지 문자가 일치하지 않습니다</span>
-                    </div>
+                    </div> -->
                     <!-- //erorr시 노출 메세지 -->
                   </div>
                 </div>
               </li>
             </ul>
           </div>
-          <div class="infomation erorr">
+          <div class="infomation erorr mt20">
             <p class="infomation__text">
               일치하는 회원정보가 존재하지 않습니다<br />
               확인 후 다시 입력해 주세요
@@ -154,18 +162,15 @@
         </div>
       </div>
 
-      <div class="login-button">
-        <div class="button-wrap">
+      <div class="button-wrap">
+        <div class="buttonGroup">
+          <button type="button" class="button button--gray">
+            <span class="button__text">취소</span>
+          </button>
           <!-- disabled 시 class="button--disabled" 추가, disabled 속성 추가 -->
-          <button class="button" type="button"><span class="button__text">로그인</span></button>
-        </div>
-        <div class="buttonGroup buttonGroup--dash">
-          <div class="buttonGroup__item">
-            <a href="javascript:void(0)" class="button button--text">아이디 찾기</a>
-          </div>
-          <div class="buttonGroup__item">
-            <a href="javascript:void(0)" class="button button--text">비밀번호 찾기</a>
-          </div>
+          <button type="button" class="button">
+            <span class="button__text">아이디 찾기</span>
+          </button>
         </div>
       </div>
     </div>

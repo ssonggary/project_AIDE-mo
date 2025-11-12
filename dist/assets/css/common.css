@@ -21,8 +21,16 @@
   padding-right: 1.3333333333rem !important;
 }
 
+.mt20 {
+  margin-top: 1.3333333333rem !important;
+}
+
 .mt44 {
   margin-top: 2.9333333333rem !important;
+}
+
+.fw700 {
+  font-weight: 700 !important;
 }
 
 .infomation {
@@ -35,4 +43,36 @@
 }
 .infomation.erorr .infomation__text {
   color: #f24d40;
+}
+
+.icon-info {
+  display: flex;
+  align-items: center;
+  gap: 1.0666666667rem;
+}
+.icon-info__icon {
+  width: 2.6666666667rem;
+  height: 2.6666666667rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #4f5a6d;
+  border-radius: 16px;
+}
+.icon-info__icon .icon {
+  width: 1.3333333333rem;
+  height: 1.3333333333rem;
+}
+.icon-info__text {
+  font-size: 0.9333333333rem;
+  font-weight: 500;
+  color: #363f4d;
+  line-height: 1.3333333333rem;
+}
+
+.gray-box {
+  width: 100%;
+  padding: 1.0666666667rem 1.3333333333rem;
+  border-radius: 16px;
+  background-color: #f2f5fa;
 }

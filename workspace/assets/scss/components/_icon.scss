@@ -16,6 +16,9 @@
   &--email {
     background-image: url(../img/icon/icon_email.svg);
   }
+  &--email-fill {
+    background-image: url(../img/icon/icon_mail_fill.svg);
+  }
   &--password {
     background-image: url(../img/icon/icon_password.svg);
   }
@@ -27,5 +30,11 @@
   }
   &--pw-hide {
     background-image: url(../img/icon/icon_pw_hide.svg);
+  }
+  &--listen {
+    background-image: url(../img/icon/icon_listen.svg);
+  }
+  &--reset {
+    background-image: url(../img/icon/icon_reset.svg);
   }
 }

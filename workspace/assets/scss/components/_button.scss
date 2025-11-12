@@ -8,6 +8,7 @@
   display: block;
   width: 100%;
   min-height: rem(50px);
+  text-align: center;
   padding: rem(14px) rem(16px);
   border-radius: 8px;
   background-color: $color-primary;
@@ -15,6 +16,7 @@
     font-size: rem(16px);
     font-weight: 700;
     line-height: rem(22px);
+
     font-family: "Pretendard";
     color: $color-white;
   }
@@ -58,10 +60,36 @@
     width: auto;
     min-height: auto;
     padding: 0;
-    font-size: rem(14px);
-    font-weight: 400;
-    line-height: rem(20px);
-    color: $color-gray-9;
+    #{$root}__text {
+      font-size: rem(14px);
+      font-weight: 400;
+      line-height: rem(20px);
+      color: $color-gray-9;
+    }
+  }
+
+  /* icon + text 버튼 ============================== */
+  &--icon-text {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    width: auto;
+    min-height: rem(26px);
+    padding: rem(6px) rem(12px);
+    border-radius: 4px;
+    background-color: $color-white;
+    border: 1px solid $color-gray-4;
+    #{$root}__text {
+      font-size: rem(14px);
+      font-weight: 400;
+      line-height: rem(20px);
+      color: $color-gray-9;
+    }
+    .icon {
+      width: rem(16px);
+      height: rem(16px);
+    }
   }
 
   &--mini {
@@ -106,5 +134,10 @@
 
 /* buttonWrap ============================== */
 .button-wrap {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
   padding: rem(12px) rem(16px);
+  background-color: $color-white;
 }

@@ -8,7 +8,7 @@
       content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
     />
     <meta name="format-detection" content="telephone=no" />
-    <title>비밀번호 찾기 | AIDE APP</title>
+    <title>비밀번호 재설정 | AIDE APP</title>
     <link
       rel="shortcut icon"
       type="image/x-icon"
@@ -30,33 +30,208 @@
   <body>
     
     <div class="content" style="padding: 20px">
-      <button type="button" class="button" data-js="modal-open" data-target="alert_01">
-        <span class="button__text">인증코드 발송완료 alert</span>
+      <button type="button" class="button" data-js="modal-open" data-target="popup_01">
+        <span class="button__text">비밀번호 재설정 popup</span>
       </button>
     </div>
 
-    <!-- alert : 화면 확인을 위해 style="display: block; opacity: 1"를 넣었습니다 제거하고 사용해주세요
-                ID와 data-target으로 alert open close를 제어합니다.
+    <!-- alert : 화면 확인을 위해 style="display: block; opacity: 1; transform: translateX(0)"를 넣었습니다 제거하고 사용해주세요
+                ID와 data-target으로 fullPopup open close를 제어합니다.
     -->
     <div
-      id="alert_01"
-      class="alert"
-      data-role="alert"
+      id="popup_01"
+      class="fullPopup"
+      data-role="fullpage"
       aria-modal="true"
       role="dialog"
-      style="display: block; opacity: 1"
+      style="display: block; opacity: 1; transform: translateX(0)"
     >
-      <div class="alert__dim" data-js="modal-dim"></div>
-      <div class="alert__dialog">
-        <div class="alert__inner">
-          <div class="alert__header"><span class="alert__title">인증코드 발송 완료</span></div>
-          <div class="alert__body">
-            <p class="alert__text">입력하신 이메일로 인증코드가 발송되었습니다</p>
+      <div class="fullPopup__dim" data-js="modal-dim"></div>
+      <div class="fullPopup__panel">
+        <div class="fullPopup__inner">
+          <div class="fullPopup__header @@headerClass">
+          	<div class="fullPopup__title-wrap"><span class="fullPopup__title">비밀번호 재설정</span></div>
+          	<div class="fullPopup__button-wrap">
+          		<button type="button" class="action-btn" data-js="modal-close" data-target="#popup_01">
+          			<span class="action-btn__icon"><i class="icon icon--close"></i></span>
+          			<span class="action-btn__text hidden">닫기</span>
+          		</button>
+          	</div>
           </div>
-          <div class="alert__footer">
+          <div class="fullPopup__body">
+            <div class="inner">
+              <div class="page-title">
+                <h1 class="title">
+                  인증코드 입력 후 새로운 비밀번호를<br />
+                  설정해주세요
+                </h1>
+              </div>
+              <div class="section mt44">
+                <div class="form-box">
+                  <ul class="form-box__list">
+                    <li class="form-box__item">
+                      <div class="company-code">
+                        <div class="company-code__title">인증코드<span class="required">*</span></div>
+                        <div class="company-code__form" aria-label="인증코드 6자리 입력">
+                          <label for="colde-1" class="company-code__label">
+                            <span class="hidden">1번째 숫자</span>
+                            <input
+                              class="company-code__input"
+                              type="text"
+                              inputmode="numeric"
+                              pattern="[0-9]*"
+                              maxlength="1"
+                              id="colde-1"
+                            />
+                          </label>
+                          <label for="colde-2" class="company-code__label">
+                            <span class="hidden">2번째 숫자</span>
+                            <input
+                              class="company-code__input"
+                              type="text"
+                              inputmode="numeric"
+                              pattern="[0-9]*"
+                              maxlength="1"
+                              id="colde-2"
+                            />
+                          </label>
+                          <label for="colde-3" class="company-code__label">
+                            <span class="hidden">3번째 숫자</span>
+                            <input
+                              class="company-code__input"
+                              type="text"
+                              inputmode="numeric"
+                              pattern="[0-9]*"
+                              maxlength="1"
+                              id="colde-3"
+                            />
+                          </label>
+                          <label for="colde-4" class="company-code__label">
+                            <span class="hidden">4번째 숫자</span>
+                            <input
+                              class="company-code__input"
+                              type="text"
+                              inputmode="numeric"
+                              pattern="[0-9]*"
+                              maxlength="1"
+                              id="colde-4"
+                            />
+                          </label>
+                          <label for="colde-5" class="company-code__label">
+                            <span class="hidden">5번째 숫자</span>
+                            <input
+                              class="company-code__input"
+                              type="text"
+                              inputmode="numeric"
+                              pattern="[0-9]*"
+                              maxlength="1"
+                              id="colde-5"
+                            />
+                          </label>
+                          <label for="colde-6" class="company-code__label">
+                            <span class="hidden">2번째 숫자</span>
+                            <input
+                              class="company-code__input"
+                              type="text"
+                              inputmode="numeric"
+                              pattern="[0-9]*"
+                              maxlength="1"
+                              id="colde-6"
+                            />
+                          </label>
+                        </div>
+                        <!-- erorr시 노출되는 텍스트 -->
+                        <!-- <div class="notifText">
+                          <span class="notifText__text">인증번호가 유효하지 않습니다</span>
+                        </div> -->
+                        <!-- //erorr시 노출되는 텍스트 -->
+                      </div>
+                    </li>
+                    <li class="form-box__item">
+                      <!-- 에러 시 : .textField에 class='is-erorr' 유효성 체크 완료시 : class='is-success' -->
+                      <div class="textField" data-js="textField">
+                        <div class="textField__feild">
+                          <label class="textField__label" for="textFeild_01"
+                            >새 비밀번호<span class="required">*</span></label
+                          >
+                          <!-- disabled, readonly시 input에 속성 추가 -->
+                          <div class="textField__input-wrap">
+                            <input
+                              class="textField__input"
+                              type="password"
+                              id="textFeild_01"
+                              placeholder="새 비밀번호를 입력해주세요"
+                              data-js="textField__input"
+                            />
+                            <div class="textField__button-wrap">
+                              <button
+                                type="button"
+                                class="textField__button password-view"
+                                data-js="textField__password"
+                                aria-pressed="false"
+                                aria-label="비밀번호 보기"
+                              >
+                                <i class="icon"></i>
+                              </button>
+                              <!-- <button type="button" class="textField__button" data-js="textField__clear">
+                          <span class="hidden">텍스트 삭제</span> <i class="icon icon--circle-close"></i>
+                        </button> -->
+                            </div>
+                          </div>
+                        </div>
+                        <div class="notifText">
+                          <span class="notifText__text"
+                            >비밀번호는 8~20자로, 영문·숫자·특수문자를 반드시 포함해야 합니다</span
+                          >
+                        </div>
+                      </div>
+                    </li>
+                    <li class="form-box__item">
+                      <!-- 에러 시 : .textField에 class='is-erorr' -->
+                      <div class="textField" data-js="textField">
+                        <div class="textField__feild">
+                          <label class="textField__label" for="textFeild_02"
+                            >새 비밀번호 확인<span class="required">*</span></label
+                          >
+                          <!-- disabled, readonly시 input에 속성 추가 -->
+                          <div class="textField__input-wrap">
+                            <input
+                              class="textField__input"
+                              type="password"
+                              id="textFeild_02"
+                              placeholder="새 비밀번호를 다시 한 번 입력해주세요"
+                              data-js="textField__input"
+                            />
+                            <div class="textField__button-wrap">
+                              <button
+                                type="button"
+                                class="textField__button password-view"
+                                data-js="textField__password"
+                                aria-pressed="false"
+                                aria-label="비밀번호 보기"
+                              >
+                                <i class="icon"></i>
+                              </button>
+                              <!-- <button type="button" class="textField__button" data-js="textField__clear">
+                          <span class="hidden">텍스트 삭제</span> <i class="icon icon--circle-close"></i>
+                        </button> -->
+                            </div>
+                          </div>
+                        </div>
+                        <div class="notifText">
+                          <span class="notifText__text notifText__text--red">새비밀번호가 일치하지 않습니다</span>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="fullPopup__footer">
             <div class="button-wrap">
-              <button type="button" class="button" data-js="modal-close" data-target="alert_01">
-                <span class="button__text">확인</span>
+              <button type="button" class="button">
+                <span class="button__text">비밀번호 재설정</span>
               </button>
             </div>
           </div>

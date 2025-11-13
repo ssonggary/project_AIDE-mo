@@ -6,7 +6,7 @@ export class ModalManager {
    * @param {string}  [opts.bodyLockClass="js-noscroll"]
    * @param {number}  [opts.alertOpenDelay=80]
    * @param {number}  [opts.fullOpenDelay=200]
-   * @param {number}  [opts.fullCloseDelay=300]
+   * @param {number}  [opts.fullCloseDelay=400]
    * @param {boolean} [opts.alertDimClose=true]
    */
   constructor(opts = {}) {
@@ -14,7 +14,7 @@ export class ModalManager {
     this.bodyLockClass = opts.bodyLockClass ?? "js-noscroll";
     this.alertOpenDelay = opts.alertOpenDelay ?? 80;
     this.fullOpenDelay = opts.fullOpenDelay ?? 200;
-    this.fullCloseDelay = opts.fullCloseDelay ?? 300;
+    this.fullCloseDelay = opts.fullCloseDelay ?? 400;
     this.alertDimClose = opts.alertDimClose ?? true;
     this.stack = [];
   }
@@ -75,7 +75,6 @@ export class ModalManager {
 
     const finalize = () => {
       host.style.display = "none";
-      host.hidden = true;
 
       // 스택 정리 및 스크롤락 해제
       this.stack = this.stack.filter((x) => x !== id);

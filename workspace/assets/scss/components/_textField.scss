@@ -74,7 +74,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    .icon--close {
+    .icon--circle-close {
       width: rem(16px);
       height: rem(16px);
     }
@@ -108,6 +108,11 @@
     }
     .notifText__text {
       color: $color-erorr;
+    }
+  }
+  &.is-success {
+    .notifText__text {
+      color: $color-success;
     }
   }
 
@@ -147,6 +152,22 @@
     align-items: center;
     justify-content: center;
     gap: 7px;
+  }
+  &__title {
+    font-size: rem(14px);
+    font-weight: 700;
+    line-height: rem(20px);
+    color: $color-gray-9;
+    display: inline-block;
+    position: relative;
+    margin-bottom: rem(8px);
+    .required {
+      position: absolute;
+      top: 2px;
+      right: -10px;
+      display: inline-block;
+      color: $color-erorr;
+    }
   }
   &__label {
     width: rem(50px);

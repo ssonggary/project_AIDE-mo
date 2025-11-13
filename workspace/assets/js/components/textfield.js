@@ -29,7 +29,7 @@ export class TextField {
 
     if (this.toggleBtn) {
       const has = this.input.value.trim().length > 0;
-      this.toggleBtn.style.display = has ? "" : "none";
+      this.toggleBtn.style.display = this.originalType === "password" && has ? "" : "none";
     }
 
     // 2) 이벤트 바인딩
@@ -67,11 +67,9 @@ export class TextField {
       if (this.clearBtn) this.clearBtn.style.display = "none";
     }
 
-    if (this.toggleBtn) this.toggleBtn.style.display = has ? "" : "none";
+    if (this.toggleBtn) this.toggleBtn.style.display = this.originalType === "password" && has ? "" : "none";
 
-    if (!has && this.input.type !== "password") {
-      this._setPasswordType();
-    }
+    if (!has) this._restoreOriginalType();
   }
 
   _onClear() {
@@ -80,6 +78,7 @@ export class TextField {
   }
 
   _onToggle() {
+    if (this.originalType !== "password") return;
     const start = this.input.selectionStart;
     const end = this.input.selectionEnd;
 
@@ -97,6 +96,7 @@ export class TextField {
 
   /* helpers for toggle */
   _setTextType() {
+    if (this.originalType !== "password") return;
     this.input.type = "text";
     this.el.classList.add("is-pw-visible");
     if (this.toggleBtn) {
@@ -106,6 +106,7 @@ export class TextField {
   }
 
   _setPasswordType() {
+    if (this.originalType !== "password") return;
     this.input.type = "password";
     this.el.classList.remove("is-pw-visible");
     if (this.toggleBtn) {
@@ -119,12 +120,19 @@ export class TextField {
     this.toggleBtn.setAttribute("aria-label", txt);
   }
 
+  _restoreOriginalType() {
+    this.input.type = this.originalType || "text";
+    if (this.originalType !== "password") {
+      this.el.classList.remove("is-pw-visible");
+    }
+  }
+
   resetValue() {
     this.input.value = "";
     this.el.classList.remove("is-value");
     if (this.clearBtn) this.clearBtn.style.display = "none";
     if (this.toggleBtn) this.toggleBtn.style.display = "none";
-    this._setPasswordType();
+    this._restoreOriginalType();
   }
 
   destroy() {

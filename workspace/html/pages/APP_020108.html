@@ -1,60 +1,34 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
-    />
-    <meta name="format-detection" content="telephone=no" />
-    <title>아이디 찾기 | AIDE APP</title>
-    <link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="../assets/img/favicon.ico"
-    />
-
-    <!-- <link rel="stylesheet" href="../assets/css/style.css" /> -->
-
-    <!-- 동적으로 CSS 삽입 -->
-     
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="/assets/css/style.css"
-    />
-     
-  </head>
-
+  @@include('../include/head.html', {pageTitle: '고객 회사 선택', cssArr: ['style']})
   <body>
-    <header class="header">
-      <div class="header__inner">
-        <div class="header__title-wrap">
-          <h1 class="header__title">아이디 찾기</h1>
-        </div>
-        
-          <div class="header__action">
-            <div class="left-action">
-              <button type="button" class="action-btn before">
-                <span class="action-btn__icon"><i class="icon icon--left-arrow"></i></span>
-                <span class="action-btn__text hidden">뒤로가기</span>
-              </button>
-            </div>
-          </div>
-        
-      </div>
-    </header>
- 
+    @@include('../include/header.html', {title: '고객 회사 선택'})
     <div class="content">
       <div class="inner">
-        <div class="page-title">
-          <h1 class="title">
-            회원가입 시 입력한 정보를 통해<br />
-            확인이 가능합니다
-          </h1>
-        </div>
-        <div class="section mt44">
+        <div class="section">
+          <div class="search">
+            <div class="textField textField--icon" data-js="textField">
+              <!-- 텍스트 필드 -->
+              <div class="textField__feild">
+                <label class="textField__label hidden" for="textFeild_search">검색</label>
+                <div class="textField__input-wrap">
+                  <input
+                    class="textField__input"
+                    type="text"
+                    id="textFeild_search"
+                    placeholder="회사명을 입력해주세요"
+                    data-js="textField__input"
+                  />
+                  <i class="textField__input-icon icon--search"></i>
+                  <div class="textField__button-wrap">
+                    <button type="button" class="textField__button" data-js="textField__clear">
+                      <span class="hidden">텍스트 삭제</span> <i class="icon icon--circle-close"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="form-box">
             <ul class="form-box__list">
               <li class="form-box__item">
@@ -153,30 +127,17 @@
               </li>
             </ul>
           </div>
-          <div class="infomation erorr mt20">
-            <p class="infomation__text">
-              일치하는 회원정보가 존재하지 않습니다<br />
-              확인 후 다시 입력해 주세요
-            </p>
-          </div>
         </div>
       </div>
 
       <div class="button-wrap">
-        <div class="buttonGroup">
-          <button type="button" class="button button--gray">
-            <span class="button__text">취소</span>
-          </button>
-          <!-- disabled 시 class="button--disabled" 추가, disabled 속성 추가 -->
-          <button type="button" class="button">
-            <span class="button__text">아이디 찾기</span>
-          </button>
-        </div>
+        <!-- disabled 시 class="button--disabled" 추가, disabled 속성 추가 -->
+        <button type="button" class="button">
+          <span class="button__text">다음</span>
+        </button>
       </div>
     </div>
     <!-- script -->
-    <script src="/assets/js/library/jquery-3.7.1.min.js"></script>
-    <script src="/assets/js/commonUI.js" type="module"></script>
-
+    @@include('../include/script.html')
   </body>
 </html>

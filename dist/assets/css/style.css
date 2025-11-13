@@ -350,6 +350,9 @@ textarea::-ms-input-placeholder {
 .icon--reset {
   background-image: url(../img/icon/icon_reset.svg);
 }
+.icon--search {
+  background-image: url(../img/icon/icon_search.svg);
+}
 
 /* 버튼 컴포넌트 ============================== */
 /* button basic ============================== */
@@ -549,7 +552,7 @@ textarea::-ms-input-placeholder {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  right: 1.2rem;
+  right: 1.0666666667rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -913,10 +916,10 @@ textarea::-ms-input-placeholder {
   pointer-events: none;
 }
 .toast-container--bottom {
-  bottom: 5.2rem;
+  bottom: 5.4666666667rem;
 }
 .toast-container--top {
-  top: 5.2rem;
+  top: 3.3333333333rem;
 }
 
 .toast {

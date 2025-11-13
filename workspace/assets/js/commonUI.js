@@ -1,6 +1,7 @@
 import * as fn from "./utils/functions.js";
 import { TextField } from "./components/textfield.js";
 import { ModalManager } from "./components/modal.js";
+import { Toast } from "./components/toast.js";
 
 const UI = {
   textField: {
@@ -17,7 +18,11 @@ const UI = {
     this.modal = new ModalManager({
       alertDimClose: false,
     });
+
     this.modal.bindByDataAttr();
+
+    this.toast = new Toast({ position: "bottom", duration: 2000, max: 1 });
+    this.toast.bindByDataAttr();
   },
 };
 

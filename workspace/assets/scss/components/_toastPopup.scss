@@ -1,0 +1,48 @@
+@use "modules" as *;
+
+/* toast 컴포넌트 ============================== */
+.toast-container {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 2000;
+  pointer-events: none;
+  &--bottom {
+    bottom: rem(82px);
+  }
+  &--top {
+    top: rem(0);
+  }
+}
+.toast {
+  display: grid;
+  place-items: center;
+  padding: 0 16px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: auto;
+  &.is-show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  &.is-hide {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  &__inner {
+    width: 100%;
+    border-radius: 8px;
+    padding: rem(16px);
+    font-size: rem(15px);
+    font-weight: 400;
+    line-height: rem(22px);
+    color: $color-white;
+    text-align: left;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.12), 0 16px 16px 0 rgba(0, 0, 0, 0.16);
+  }
+  &--default .toast__inner {
+    background: $color-gray-9;
+  }
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <title>비밀번호 찾기 | AIDE APP</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="../assets/img/favicon.ico"
+    />
+
+    <!-- <link rel="stylesheet" href="../assets/css/style.css" /> -->
+
+    <!-- 동적으로 CSS 삽입 -->
+     
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/assets/css/style.css"
+    />
+     
+  </head>
+
+  <body>
+    
+    <div class="content" style="padding: 20px">
+      <button type="button" class="button" data-js="modal-open" data-target="alert_01">
+        <span class="button__text">인증코드 발송완료 alert</span>
+      </button>
+    </div>
+
+    <!-- alert : 화면 확인을 위해 style="display: block; opacity: 1"를 넣었습니다 제거하고 사용해주세요
+                ID와 data-target으로 alert open close를 제어합니다.
+    -->
+    <div
+      id="alert_01"
+      class="alert"
+      data-role="alert"
+      aria-modal="true"
+      role="dialog"
+      style="display: block; opacity: 1"
+    >
+      <div class="alert__dim" data-js="modal-dim"></div>
+      <div class="alert__dialog">
+        <div class="alert__inner">
+          <div class="alert__header"><span class="alert__title">인증코드 발송 완료</span></div>
+          <div class="alert__body">
+            <p class="alert__text">입력하신 이메일로 인증코드가 발송되었습니다</p>
+          </div>
+          <div class="alert__footer">
+            <div class="button-wrap">
+              <button type="button" class="button" data-js="modal-close" data-target="alert_01">
+                <span class="button__text">확인</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //alert -->
+
+    <!-- script -->
+    <script src="/assets/js/library/jquery-3.7.1.min.js"></script>
+    <script src="/assets/js/commonUI.js" type="module"></script>
+
+  </body>
+</html>

@@ -1,5 +1,6 @@
 import * as fn from "./utils/functions.js";
 import { TextField } from "./components/textfield.js";
+import { ModalManager } from "./components/modal.js";
 
 const UI = {
   textField: {
@@ -8,9 +9,15 @@ const UI = {
       if (this.list.length) this.list.forEach((el) => new TextField(el));
     },
   },
+  modal: null,
+
   init() {
     this.textField.init();
     if (typeof fn.setViewPortHeight === "function") fn.setViewPortHeight();
+    this.modal = new ModalManager({
+      alertDimClose: false,
+    });
+    this.modal.bindByDataAttr();
   },
 };
 

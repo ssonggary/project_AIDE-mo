@@ -156,78 +156,9 @@ input:autofill:active {
   transition: background-color 5000s ease-in-out 0s;
 }
 
-// input[type="password"] {
-//   font-size: 20ㅔㅌ;
-// }
-
 textarea {
   resize: none; /* textarea의 크기 조절 기능을 비활성화합니다. */
 }
-
-// input,
-// textarea {
-//     caret-color: #0565f0; /* 텍스트 커서의 색상을 빨간색으로 설정합니다. */
-// }
-
-// input {
-//   &[type="text"][class*="md"],
-//   &[type="tel"][class*="md"],
-//   &[type="time"][class*="md"],
-//   &[type="text"][class*="md"],
-//   &[type="password"][class*="md"],
-//   &[type="search"][class*="md"],
-//   &[type="email"][class*="md"],
-//   &[type="file"][class*="md"],
-//   &[type="url"][class*="md"],
-//   &[type="number"][class*="md"],
-//   &[type="date"][class*="md"] {
-//     height: 50px;
-//     padding: 0 12px;
-//     border-radius: 4px;
-//     vertical-align: middle;
-//   }
-// }
-
-// input[type="number"]::-webkit-outer-spin-button,
-// input[type="number"]::-webkit-inner-spin-button {
-//   -webkit-appearance: none;
-//   margin: 0;
-// }
-
-// textarea {
-//   width: 100%;
-//   // font-size: 1.6rem;
-//   // color: #111;
-//   // padding: 5px 0;
-//   // border: 1px solid #e9e9e9;
-//   background: #fff;
-//   -webkit-appearance: none;
-//   -webkit-border-radius: 0;
-//   appearance: none;
-//   border-radius: 0px;
-
-//   &[readonly],
-//   &[disabled] {
-//     padding: 11px;
-//     font-size: 1.6rem;
-//     color: #666;
-//     font-weight: normal;
-//     line-height: 140%;
-//     height: 78px;
-//     background-color: #f9f9f9;
-//     border: 1px solid #e6e6e6;
-//   }
-
-//   &::-webkit-input-placeholder {
-//     color: #b5b5b5;
-//     font-size: 1.6rem;
-//     line-height: 100%;
-//   }
-
-//   &:focus {
-//     border: 1px solid #111;
-//   }
-// }
 
 *,
 *::before,

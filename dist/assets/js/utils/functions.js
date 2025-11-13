@@ -46,10 +46,10 @@ export function setViewPortHeight() {
 
 /* ------ scroll lock ------ */
 export function preventScroll(target = document.documentElement) {
-  target.classList.add("popup-open");
+  target.classList.add("js-noscroll");
 }
 export function allowScroll(target = document.documentElement) {
-  target.classList.remove("popup-open");
+  target.classList.remove("js-noscroll");
 }
 
 /* ------ namespace(그대로 유지 — 바닐라 이벤트 네임스페이스 대체용) ------ */

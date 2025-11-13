@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  @@include('../include/head.html', {pageTitle: '비밀번호 찾기', cssArr: ['style']})
+  <body>
+    <!-- @@include('../include/header.html', {title: '비밀번호 찾기', hasAction: true}) -->
+    <div class="content" style="padding: 20px">
+      <button type="button" class="button" data-js="modal-open" data-target="alert_01">
+        <span class="button__text">인증코드 발송완료 alert</span>
+      </button>
+    </div>
+
+    <!-- alert : 화면 확인을 위해 style="display: block; opacity: 1"를 넣었습니다 제거하고 사용해주세요
+                ID와 data-target으로 alert open close를 제어합니다.
+    -->
+    <div
+      id="alert_01"
+      class="alert"
+      data-role="alert"
+      aria-modal="true"
+      role="dialog"
+      style="display: block; opacity: 1"
+    >
+      <div class="alert__dim" data-js="modal-dim"></div>
+      <div class="alert__dialog">
+        <div class="alert__inner">
+          <div class="alert__header"><span class="alert__title">인증코드 발송 완료</span></div>
+          <div class="alert__body">
+            <p class="alert__text">입력하신 이메일로 인증코드가 발송되었습니다</p>
+          </div>
+          <div class="alert__footer">
+            <div class="button-wrap">
+              <button type="button" class="button" data-js="modal-close" data-target="alert_01">
+                <span class="button__text">확인</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //alert -->
+
+    <!-- script -->
+    @@include('../include/script.html')
+  </body>
+</html>

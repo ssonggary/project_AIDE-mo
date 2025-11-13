@@ -2,8 +2,15 @@
 
 /* ----------------------- 공통 ----------------------- */
 
+// ally
 .hidden {
   @include blind;
+}
+
+// body 스크롤 막기
+body.js-noscroll {
+  overflow: hidden;
+  touch-action: none;
 }
 
 // 좌우로 영역 넓히기

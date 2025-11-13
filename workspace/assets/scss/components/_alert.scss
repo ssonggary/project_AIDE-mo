@@ -1,0 +1,69 @@
+@use "modules" as *;
+
+/* alert 컴포넌트 ============================== */
+
+/* alert basic ============================== */
+.alert {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: none;
+  opacity: 0;
+  transition: all 0.3s;
+  &__dim {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+  }
+  &__dialog {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0 rem(20px);
+    width: 100%;
+  }
+  &__inner {
+    width: 100%;
+    height: 100%;
+    background-color: $color-white;
+    border-radius: 20px;
+  }
+  &__header {
+    width: 100%;
+    padding: rem(32px) rem(20px) rem(16px);
+  }
+  &__title {
+    font-size: rem(20px);
+    font-weight: 700;
+    line-height: rem(24px);
+    color: $color-gray-11;
+  }
+  &__body {
+    padding: 0 rem(20px) rem(20px);
+  }
+  &__text {
+    font-size: rem(16px);
+    font-weight: 400;
+    line-height: rem(22px);
+    color: $color-gray-11;
+  }
+
+  .button-wrap {
+    position: static;
+    background-color: transparent;
+    padding: rem(12px) rem(20px) rem(20px);
+  }
+  &.is-open {
+    opacity: 1;
+  }
+}

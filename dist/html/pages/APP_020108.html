@@ -41,122 +41,172 @@
       <div class="inner">
         <div class="section">
           <div class="search">
-            <div class="textField textField--icon" data-js="textField">
-              <!-- 텍스트 필드 -->
-              <div class="textField__feild">
-                <label class="textField__label hidden" for="textFeild_search">검색</label>
-                <div class="textField__input-wrap">
-                  <input
-                    class="textField__input"
-                    type="text"
-                    id="textFeild_search"
-                    placeholder="회사명을 입력해주세요"
-                    data-js="textField__input"
-                  />
-                  <i class="textField__input-icon icon--search"></i>
-                  <div class="textField__button-wrap">
-                    <button type="button" class="textField__button" data-js="textField__clear">
-                      <span class="hidden">텍스트 삭제</span> <i class="icon icon--circle-close"></i>
-                    </button>
+            <div class="search__form expendPad">
+              <div class="textField textField--icon" data-js="textField">
+                <!-- 텍스트 필드 -->
+                <div class="textField__feild">
+                  <label class="textField__label hidden" for="textFeild_search">검색</label>
+                  <div class="textField__input-wrap">
+                    <input
+                      class="textField__input"
+                      type="text"
+                      id="textFeild_search"
+                      placeholder="회사명을 입력해주세요"
+                      data-js="textField__input"
+                    />
+                    <i class="textField__input-icon icon--search"></i>
+                    <div class="textField__button-wrap">
+                      <button type="button" class="textField__button" data-js="textField__clear">
+                        <span class="hidden">텍스트 삭제</span> <i class="icon icon--circle-close"></i>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="search-result">
-            <ul class="radioBtn-list">
-              <li class="radioBtn-list__item">
-                <div class="radioBtn radioBtn--reverse-text">
-                  <input class="radioBtn__input" type="radio" name="radio_1" id="radio_1" hidden />
-                  <label class="radioBtn__wrap" for="radio_1">
-                    <span class="radioBtn__check"></span><span class="radioBtn__text">㈜한국시설공단</span>
-                  </label>
-                </div>
-              </li>
-              <li class="radioBtn-list__item">
-                <div class="radioBtn radioBtn--reverse-text">
-                  <input class="radioBtn__input" type="radio" name="radio_1" id="radio_2" hidden />
-                  <label class="radioBtn__wrap" for="radio_2">
-                    <span class="radioBtn__check"></span><span class="radioBtn__text">㈜한국시설공단</span>
-                  </label>
-                </div>
-              </li>
-              <li class="radioBtn-list__item">
-                <div class="radioBtn radioBtn--reverse-text">
-                  <input class="radioBtn__input" type="radio" name="radio_1" id="radio_3" hidden />
-                  <label class="radioBtn__wrap" for="radio_3">
-                    <span class="radioBtn__check"></span><span class="radioBtn__text">㈜한국시설공단</span>
-                  </label>
-                </div>
-              </li>
-              <li class="radioBtn-list__item">
-                <div class="radioBtn radioBtn--reverse-text">
-                  <input class="radioBtn__input" type="radio" name="radio_1" id="radio_4" hidden />
-                  <label class="radioBtn__wrap" for="radio_4">
-                    <span class="radioBtn__check"></span><span class="radioBtn__text">㈜한국시설공단</span>
-                  </label>
-                </div>
-              </li>
-              <li class="radioBtn-list__item">
-                <div class="radioBtn radioBtn--reverse-text">
-                  <input class="radioBtn__input" type="radio" name="radio_1" id="radio_5" hidden />
-                  <label class="radioBtn__wrap" for="radio_5">
-                    <span class="radioBtn__check"></span><span class="radioBtn__text">㈜한국시설공단</span>
-                  </label>
-                </div>
-              </li>
-              <li class="radioBtn-list__item">
-                <div class="radioBtn radioBtn--reverse-text">
-                  <input class="radioBtn__input" type="radio" name="radio_1" id="radio_6" hidden />
-                  <label class="radioBtn__wrap" for="radio_6">
-                    <span class="radioBtn__check"></span><span class="radioBtn__text">㈜한국시설공단</span>
-                  </label>
-                </div>
-              </li>
-              <li class="radioBtn-list__item">
-                <div class="radioBtn radioBtn--reverse-text">
-                  <input class="radioBtn__input" type="radio" name="radio_1" id="radio_7" hidden />
-                  <label class="radioBtn__wrap" for="radio_7">
-                    <span class="radioBtn__check"></span><span class="radioBtn__text">㈜한국시설공단</span>
-                  </label>
-                </div>
-              </li>
-              <li class="radioBtn-list__item">
-                <div class="radioBtn radioBtn--reverse-text">
-                  <input class="radioBtn__input" type="radio" name="radio_1" id="radio_8" hidden />
-                  <label class="radioBtn__wrap" for="radio_8">
-                    <span class="radioBtn__check"></span><span class="radioBtn__text">㈜한국시설공단</span>
-                  </label>
-                </div>
-              </li>
-              <li class="radioBtn-list__item">
-                <div class="radioBtn radioBtn--reverse-text">
-                  <input class="radioBtn__input" type="radio" name="radio_1" id="radio_9" hidden />
-                  <label class="radioBtn__wrap" for="radio_9">
-                    <span class="radioBtn__check"></span><span class="radioBtn__text">㈜한국시설공단</span>
-                  </label>
-                </div>
-              </li>
-              <li class="radioBtn-list__item">
-                <div class="radioBtn radioBtn--reverse-text">
-                  <input class="radioBtn__input" type="radio" name="radio_1" id="radio_10" hidden />
-                  <label class="radioBtn__wrap" for="radio_10">
-                    <span class="radioBtn__check"></span><span class="radioBtn__text">㈜한국시설공단</span>
-                  </label>
-                </div>
-              </li>
-            </ul>
-          </div>
-
-          <!-- 검색결과가 없을 시 -->
-          <div class="search-result none-result">
-            <div class="none-result__content">
-              <img class="none-result__img" src="/assets/img/common/reasult_none.png" alt="" />
-              <span class="none-result__text">조회 결과가 없습니다.</span>
+            <div class="search-result">
+              <ul class="radioBtn-list">
+                <li class="radioBtn-list__item">
+                  <div class="radioBtn radioBtn--reverse-text">
+                    <input class="radioBtn__input" type="radio" name="radio_1" id="radio_1" hidden />
+                    <label class="radioBtn__wrap" for="radio_1">
+                      <span class="radioBtn__check"></span><span class="radioBtn__text">㈜한국시설공단</span>
+                    </label>
+                  </div>
+                </li>
+                <li class="radioBtn-list__item">
+                  <div class="radioBtn radioBtn--reverse-text">
+                    <input class="radioBtn__input" type="radio" name="radio_1" id="radio_2" hidden />
+                    <label class="radioBtn__wrap" for="radio_2">
+                      <span class="radioBtn__check"></span><span class="radioBtn__text">㈜한국시설공단</span>
+                    </label>
+                  </div>
+                </li>
+                <li class="radioBtn-list__item">
+                  <div class="radioBtn radioBtn--reverse-text">
+                    <input class="radioBtn__input" type="radio" name="radio_1" id="radio_3" hidden />
+                    <label class="radioBtn__wrap" for="radio_3">
+                      <span class="radioBtn__check"></span><span class="radioBtn__text">㈜한국시설공단</span>
+                    </label>
+                  </div>
+                </li>
+                <li class="radioBtn-list__item">
+                  <div class="radioBtn radioBtn--reverse-text">
+                    <input class="radioBtn__input" type="radio" name="radio_1" id="radio_4" hidden />
+                    <label class="radioBtn__wrap" for="radio_4">
+                      <span class="radioBtn__check"></span><span class="radioBtn__text">㈜한국시설공단</span>
+                    </label>
+                  </div>
+                </li>
+                <li class="radioBtn-list__item">
+                  <div class="radioBtn radioBtn--reverse-text">
+                    <input class="radioBtn__input" type="radio" name="radio_1" id="radio_5" hidden />
+                    <label class="radioBtn__wrap" for="radio_5">
+                      <span class="radioBtn__check"></span><span class="radioBtn__text">㈜한국시설공단</span>
+                    </label>
+                  </div>
+                </li>
+                <li class="radioBtn-list__item">
+                  <div class="radioBtn radioBtn--reverse-text">
+                    <input class="radioBtn__input" type="radio" name="radio_1" id="radio_6" hidden />
+                    <label class="radioBtn__wrap" for="radio_6">
+                      <span class="radioBtn__check"></span><span class="radioBtn__text">㈜한국시설공단</span>
+                    </label>
+                  </div>
+                </li>
+                <li class="radioBtn-list__item">
+                  <div class="radioBtn radioBtn--reverse-text">
+                    <input class="radioBtn__input" type="radio" name="radio_1" id="radio_7" hidden />
+                    <label class="radioBtn__wrap" for="radio_7">
+                      <span class="radioBtn__check"></span><span class="radioBtn__text">㈜한국시설공단</span>
+                    </label>
+                  </div>
+                </li>
+                <li class="radioBtn-list__item">
+                  <div class="radioBtn radioBtn--reverse-text">
+                    <input class="radioBtn__input" type="radio" name="radio_1" id="radio_8" hidden />
+                    <label class="radioBtn__wrap" for="radio_8">
+                      <span class="radioBtn__check"></span><span class="radioBtn__text">㈜한국시설공단</span>
+                    </label>
+                  </div>
+                </li>
+                <li class="radioBtn-list__item">
+                  <div class="radioBtn radioBtn--reverse-text">
+                    <input class="radioBtn__input" type="radio" name="radio_1" id="radio_9" hidden />
+                    <label class="radioBtn__wrap" for="radio_9">
+                      <span class="radioBtn__check"></span><span class="radioBtn__text">㈜한국시설공단</span>
+                    </label>
+                  </div>
+                </li>
+                <li class="radioBtn-list__item">
+                  <div class="radioBtn radioBtn--reverse-text">
+                    <input class="radioBtn__input" type="radio" name="radio_1" id="radio_10" hidden />
+                    <label class="radioBtn__wrap" for="radio_10">
+                      <span class="radioBtn__check"></span><span class="radioBtn__text">㈜한국시설공단</span>
+                    </label>
+                  </div>
+                </li>
+                <li class="radioBtn-list__item">
+                  <div class="radioBtn radioBtn--reverse-text">
+                    <input class="radioBtn__input" type="radio" name="radio_1" id="radio_10" hidden />
+                    <label class="radioBtn__wrap" for="radio_10">
+                      <span class="radioBtn__check"></span><span class="radioBtn__text">㈜한국시설공단</span>
+                    </label>
+                  </div>
+                </li>
+                <li class="radioBtn-list__item">
+                  <div class="radioBtn radioBtn--reverse-text">
+                    <input class="radioBtn__input" type="radio" name="radio_1" id="radio_10" hidden />
+                    <label class="radioBtn__wrap" for="radio_10">
+                      <span class="radioBtn__check"></span><span class="radioBtn__text">㈜한국시설공단</span>
+                    </label>
+                  </div>
+                </li>
+                <li class="radioBtn-list__item">
+                  <div class="radioBtn radioBtn--reverse-text">
+                    <input class="radioBtn__input" type="radio" name="radio_1" id="radio_10" hidden />
+                    <label class="radioBtn__wrap" for="radio_10">
+                      <span class="radioBtn__check"></span><span class="radioBtn__text">㈜한국시설공단</span>
+                    </label>
+                  </div>
+                </li>
+                <li class="radioBtn-list__item">
+                  <div class="radioBtn radioBtn--reverse-text">
+                    <input class="radioBtn__input" type="radio" name="radio_1" id="radio_10" hidden />
+                    <label class="radioBtn__wrap" for="radio_10">
+                      <span class="radioBtn__check"></span><span class="radioBtn__text">㈜한국시설공단</span>
+                    </label>
+                  </div>
+                </li>
+                <li class="radioBtn-list__item">
+                  <div class="radioBtn radioBtn--reverse-text">
+                    <input class="radioBtn__input" type="radio" name="radio_1" id="radio_10" hidden />
+                    <label class="radioBtn__wrap" for="radio_10">
+                      <span class="radioBtn__check"></span><span class="radioBtn__text">㈜한국시설공단</span>
+                    </label>
+                  </div>
+                </li>
+                <li class="radioBtn-list__item">
+                  <div class="radioBtn radioBtn--reverse-text">
+                    <input class="radioBtn__input" type="radio" name="radio_1" id="radio_10" hidden />
+                    <label class="radioBtn__wrap" for="radio_10">
+                      <span class="radioBtn__check"></span><span class="radioBtn__text">㈜한국시설공단</span>
+                    </label>
+                  </div>
+                </li>
+              </ul>
             </div>
+
+            <!-- 검색결과가 없을 시 -->
+            <div class="search-result none-result">
+              <div class="none-result__content">
+                <img class="none-result__img" src="/assets/img/common/reasult_none.png" alt="" />
+                <span class="none-result__text">조회 결과가 없습니다.</span>
+              </div>
+            </div>
+            <!-- 검색결과가 없을 시 -->
           </div>
-          <!-- 검색결과가 없을 시 -->
         </div>
       </div>
 

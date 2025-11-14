@@ -517,6 +517,9 @@ textarea::-ms-input-placeholder {
   display: inline-block;
   color: #f24d40;
 }
+.textField__label.hidden {
+  position: absolute;
+}
 .textField__input-wrap {
   position: relative;
   width: 100%;
@@ -793,9 +796,6 @@ textarea::-ms-input-placeholder {
 }
 
 /* radio list ============================== */
-.radioBtn-list {
-  margin-top: 0.8rem;
-}
 .radioBtn-list__item {
   border-bottom: 1px solid #f2f5fa;
 }
@@ -1133,6 +1133,16 @@ textarea::-ms-input-placeholder {
 }
 
 /* search ============================== */
+.search {
+  position: relative;
+}
+.search__form {
+  top: 0;
+  padding-top: 0.6666666667rem;
+  padding-bottom: 0.8rem;
+  background-color: #ffffff;
+}
+
 .search-result.none-result {
   display: flex;
   align-items: center;

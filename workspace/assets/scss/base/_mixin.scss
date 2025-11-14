@@ -39,14 +39,7 @@
 }
 
 //position
-@mixin position(
-  $position,
-  $left: null,
-  $top: null,
-  $right: null,
-  $bottom: null,
-  $z: null
-) {
+@mixin position($position, $left: null, $top: null, $right: null, $bottom: null, $z: null) {
   position: $position;
   left: $left;
   top: $top;

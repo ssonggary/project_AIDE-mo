@@ -135,6 +135,16 @@
 }
 
 /* search ============================== */
+.search {
+  position: relative;
+  &__form {
+    // position: sticky;
+    top: 0;
+    padding-top: rem(10px);
+    padding-bottom: rem(12px);
+    background-color: $color-white;
+  }
+}
 .search-result {
   &.none-result {
     $root: ".none-result";

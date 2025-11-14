@@ -24,6 +24,9 @@
       display: inline-block;
       color: $color-erorr;
     }
+    &.hidden {
+      position: absolute;
+    }
   }
   &__input-wrap {
     position: relative;

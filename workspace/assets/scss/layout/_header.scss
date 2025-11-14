@@ -30,6 +30,10 @@
     font-weight: 600;
     line-height: rem(24px);
     color: $color-gray-11;
+    .logo-img {
+      width: rem(60px);
+      object-fit: cover;
+    }
   }
   &__action {
     position: absolute;
@@ -60,6 +64,14 @@
           height: rem(24px);
         }
       }
+    }
+  }
+
+  // 타이틀 위치
+  &.align-left {
+    .header__title-wrap {
+      justify-content: start;
+      padding: 0 rem(10px);
     }
   }
 }

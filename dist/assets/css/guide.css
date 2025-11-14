@@ -2056,6 +2056,10 @@ textarea::-ms-input-placeholder {
   line-height: 1.6rem;
   color: #10161f;
 }
+.header__title .logo-img {
+  width: 4rem;
+  object-fit: cover;
+}
 .header__action {
   position: absolute;
   top: 0;
@@ -2083,6 +2087,10 @@ textarea::-ms-input-placeholder {
 .header__action .action-btn.before .action-btn__icon {
   width: 1.6rem;
   height: 1.6rem;
+}
+.header.align-left .header__title-wrap {
+  justify-content: start;
+  padding: 0 0.6666666667rem;
 }
 
 /* 2. 모듈 로드 (변수, 믹스인, 함수) */

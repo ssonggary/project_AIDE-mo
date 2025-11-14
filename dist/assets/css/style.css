@@ -751,6 +751,66 @@ textarea::-ms-input-placeholder {
   background-position: 50% 50%;
 }
 
+/* radio 컴포넌트 ============================== */
+.radioBtn {
+  display: inline-flex;
+}
+.radioBtn__wrap {
+  display: inline-flex;
+  gap: 8px;
+  cursor: pointer;
+}
+.radioBtn__check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.3333333333rem;
+  height: 1.3333333333rem;
+  border: 1px solid #dfe4ed;
+  border-radius: 50%;
+}
+.radioBtn__text {
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.4666666667rem;
+  color: #363f4d;
+}
+.radioBtn__input:checked + .radioBtn__wrap .radioBtn__check {
+  background-repeat: no-repeat;
+  border-color: #ff8200;
+  background-color: #ff8200;
+}
+.radioBtn__input:checked + .radioBtn__wrap .radioBtn__check::after {
+  content: "";
+  width: 0.5333333333rem;
+  height: 0.5333333333rem;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+.radioBtn--reverse-text .radioBtn__wrap {
+  flex-direction: row-reverse;
+}
+
+/* radio list ============================== */
+.radioBtn-list {
+  margin-top: 0.8rem;
+}
+.radioBtn-list__item {
+  border-bottom: 1px solid #f2f5fa;
+}
+.radioBtn-list .radioBtn {
+  width: 100%;
+}
+.radioBtn-list .radioBtn__wrap {
+  width: 100%;
+  padding: 0.8666666667rem 0;
+  justify-content: space-between;
+}
+.radioBtn-list .radioBtn__check {
+  flex-shrink: 0;
+}
+
 /* alert 컴포넌트 ============================== */
 .alert {
   width: 100%;
@@ -983,6 +1043,7 @@ textarea::-ms-input-placeholder {
   padding-bottom: 2.1333333333rem;
 }
 
+/* page title ============================== */
 .page-title {
   margin: 2rem 0 2rem;
 }
@@ -1002,6 +1063,7 @@ textarea::-ms-input-placeholder {
   font-weight: 400;
 }
 
+/* 회사코드입력 title ============================== */
 .company .page-title {
   margin: 4.2666666667rem 0 2rem;
 }
@@ -1018,10 +1080,12 @@ textarea::-ms-input-placeholder {
   color: #363f4d;
 }
 
+/* form layout ============================== */
 .form-box__item ~ .form-box__item {
   margin-top: 1.7333333333rem;
 }
 
+/* 로그인 ============================== */
 .login .inner {
   padding-bottom: 8.2666666667rem;
 }
@@ -1057,6 +1121,7 @@ textarea::-ms-input-placeholder {
   background-color: #ffffff;
 }
 
+/* section ============================== */
 .section__title {
   margin: 2rem 0;
 }
@@ -1065,6 +1130,31 @@ textarea::-ms-input-placeholder {
   font-weight: 700;
   line-height: 1.6rem;
   color: #10161f;
+}
+
+/* search ============================== */
+.search-result.none-result {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7.3333333333rem 0;
+}
+.search-result.none-result .none-result__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.0666666667rem;
+  flex-direction: column;
+}
+.search-result.none-result .none-result__img {
+  width: 2.9333333333rem;
+  height: 2.9333333333rem;
+}
+.search-result.none-result .none-result__text {
+  font-size: 0.9333333333rem;
+  font-weight: 400;
+  line-height: 1.3333333333rem;
+  color: #92a1b7;
 }
 
 /* 헤더 컴포넌트 ============================== */

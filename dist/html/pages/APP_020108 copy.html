@@ -1,8 +1,42 @@
 <!DOCTYPE html>
 <html lang="ko">
-  @@include('../include/head.html', {pageTitle: '고객 회사 선택', cssArr: ['style']})
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <title>고객 회사 선택 | AIDE APP</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="../assets/img/favicon.ico"
+    />
+
+    <!-- <link rel="stylesheet" href="../assets/css/style.css" /> -->
+
+    <!-- 동적으로 CSS 삽입 -->
+     
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/assets/css/style.css"
+    />
+     
+  </head>
+
   <body>
-    @@include('../include/header.html', {title: '고객 회사 선택'})
+    <header class="header">
+      <div class="header__inner">
+        <div class="header__title-wrap">
+          <h1 class="header__title">고객 회사 선택</h1>
+        </div>
+        
+      </div>
+    </header>
+ 
     <div class="content">
       <div class="inner">
         <div class="section">
@@ -118,7 +152,7 @@
           <!-- 검색결과가 없을 시 -->
           <div class="search-result none-result">
             <div class="none-result__content">
-              <img class="none-result__img" src="/assets/img/common/reasult_none.png" alt="" />
+              <img class="none-result__img" src="../../assets/img/common/reasult_none.png" alt="" />
               <span class="none-result__text">조회 결과가 없습니다.</span>
             </div>
           </div>
@@ -134,6 +168,8 @@
       </div>
     </div>
     <!-- script -->
-    @@include('../include/script.html')
+    <script src="/assets/js/library/jquery-3.7.1.min.js"></script>
+    <script src="/assets/js/commonUI.js" type="module"></script>
+
   </body>
 </html>

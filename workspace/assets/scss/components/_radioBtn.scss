@@ -1,0 +1,70 @@
+@use "modules" as *;
+
+/* radio 컴포넌트 ============================== */
+
+.radioBtn {
+  display: inline-flex;
+  &__wrap {
+    display: inline-flex;
+    gap: 8px;
+    cursor: pointer;
+  }
+  &__check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: rem(20px);
+    height: rem(20px);
+    border: 1px solid $color-gray-4;
+    border-radius: 50%;
+  }
+  &__text {
+    display: block;
+    font-size: rem(15px);
+    font-weight: 500;
+    line-height: rem(22px);
+    color: $color-gray-9;
+  }
+  &__input {
+    &:checked {
+      & + .radioBtn__wrap .radioBtn__check {
+        background-repeat: no-repeat;
+        border-color: $color-primary;
+        background-color: $color-primary;
+        &::after {
+          content: "";
+          width: rem(8px);
+          height: rem(8px);
+          border-radius: 50%;
+          background-color: $color-white;
+        }
+      }
+    }
+  }
+
+  // reverse-text
+  &--reverse-text {
+    .radioBtn__wrap {
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+/* radio list ============================== */
+.radioBtn-list {
+  margin-top: rem(12px);
+  &__item {
+    border-bottom: 1px solid $color-gray-2;
+  }
+  .radioBtn {
+    width: 100%;
+  }
+  .radioBtn__wrap {
+    width: 100%;
+    padding: rem(13px) 0;
+    justify-content: space-between;
+  }
+  .radioBtn__check {
+    flex-shrink: 0;
+  }
+}

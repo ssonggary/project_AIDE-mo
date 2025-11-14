@@ -31,7 +31,7 @@
   }
 }
 
-// page title
+/* page title ============================== */
 .page-title {
   margin: rem(30px) 0 rem(30px);
   .title {
@@ -52,7 +52,8 @@
     }
   }
 }
-// 회사코드입력 title
+
+/* 회사코드입력 title ============================== */
 .company {
   .page-title {
     margin: rem(64px) 0 rem(30px);
@@ -71,7 +72,7 @@
   }
 }
 
-// form layout
+/* form layout ============================== */
 .form-box {
   &__item {
     ~ .form-box__item {
@@ -80,7 +81,7 @@
   }
 }
 
-// 로그인
+/* 로그인 ============================== */
 .login {
   .inner {
     padding-bottom: rem(124px);
@@ -120,7 +121,7 @@
   }
 }
 
-// section
+/* section ============================== */
 .section {
   &__title {
     margin: rem(30px) 0;
@@ -129,6 +130,35 @@
       font-weight: 700;
       line-height: rem(24px);
       color: $color-gray-11;
+    }
+  }
+}
+
+/* search ============================== */
+.search-result {
+  &.none-result {
+    $root: ".none-result";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: rem(110px) 0;
+
+    #{$root}__content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: rem(16px);
+      flex-direction: column;
+    }
+    #{$root}__img {
+      width: rem(44px);
+      height: rem(44px);
+    }
+    #{$root}__text {
+      font-size: rem(14px);
+      font-weight: 400;
+      line-height: rem(20px);
+      color: $color-gray-7;
     }
   }
 }

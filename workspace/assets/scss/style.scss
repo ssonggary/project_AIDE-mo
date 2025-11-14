@@ -1,16 +1,19 @@
 @charset "UTF-8";
 
-/* 1. 모듈 로드 (변수, 믹스인, 함수) */
+/* 1. library */
+@forward "library/swiper";
+
+/* 2. 모듈 로드 (변수, 믹스인, 함수) */
 @forward "modules";
 @forward "common";
 
-/* 2. 베이스 스타일 */
+/* 3. 베이스 스타일 */
 @forward "base/reset";
 @forward "base/fonts";
 @forward "base/mixin";
 @forward "base/function";
 
-/* 3. component */
+/* 4. component */
 @forward "components/icon";
 @forward "components/button";
 @forward "components/textField";
@@ -20,7 +23,7 @@
 @forward "components/fullPopup";
 @forward "components/toastPopup";
 
-/* 4. layout */
+/* 5. layout */
 @forward "layout/layout";
 @forward "layout/header";
 @forward "layout/bottomNavigation";

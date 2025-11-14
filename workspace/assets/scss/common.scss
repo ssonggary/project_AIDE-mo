@@ -81,3 +81,26 @@ body.js-noscroll {
   border-radius: 16px;
   background-color: $color-gray-2;
 }
+
+// swiper indicator-dot
+.custom-indicator {
+  position: static;
+  width: 100%;
+  font-size: 0;
+  text-align: center;
+  margin-top: rem(113px);
+
+  .swiper-pagination-bullet {
+    width: rem(6px);
+    height: rem(6px);
+    background-color: #d3d3d3;
+    border-radius: 6px;
+    transition: all 0.2s;
+    margin: 0 rem(3.5px) !important;
+    opacity: 1;
+    &.swiper-pagination-bullet-active {
+      background-color: #222;
+      width: rem(24px);
+    }
+  }
+}

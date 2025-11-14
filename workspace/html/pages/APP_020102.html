@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+  @@include('../include/head.html', {pageTitle: '온보딩', cssArr: ['style']})
+  <body>
+    <div class="content content--full onboarding">
+      <div class="inner">
+        <div class="swiper onboarding-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="onboarding__item">
+                <img class="onboarding__img" src="/assets/img/common/img_onboarding001.png" alt="" />
+                <div class="onboarding__info">
+                  <h1 class="onboarding__title">스마트 운전 지원</h1>
+                  <p class="onboarding__desc">
+                    차량 상태, 배차, 스마트키 등<br />
+                    스마트 차량 운영 기능을 제공하고<br />
+                    운전습관을 확인할 수 있도록 지원합니다
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="onboarding__item">
+                <img class="onboarding__img" src="/assets/img/common/img_onboarding002.png" alt="" />
+                <div class="onboarding__info">
+                  <h1 class="onboarding__title">위험 운전 예방 서비스</h1>
+                  <p class="onboarding__desc">
+                    AI기반 데이터 분석으로<br />
+                    운전 위험을 사전에 감지하여<br />
+                    사고와 피해를 최소화합니다
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="onboarding__item">
+                <img class="onboarding__img" src="/assets/img/common/img_onboarding003.png" alt="" />
+                <div class="onboarding__info">
+                  <h1 class="onboarding__title">사고 분석 서비스</h1>
+                  <p class="onboarding__desc">
+                    사고 관련 데이터를 AI로 분석하고<br />
+                    사고 원인을 명확히 파악하여<br />
+                    신속한 대응과 안전 관리를 지원합니다
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="custom-indicator"></div>
+        </div>
+      </div>
+
+      <div class="button-wrap">
+        <!-- disabled 시 class="button--disabled" 추가, disabled 속성 추가 -->
+        <button class="button button--line" type="button" data-js="swiprer-next">
+          <span class="button__text" data-js="button-text">다음</span>
+        </button>
+      </div>
+    </div>
+    <!-- script -->
+    @@include('../include/script.html')
+    <script>
+      const swiper = new Swiper(".onboarding-swiper", {
+        pagination: {
+          el: ".custom-indicator",
+          clickable: true,
+        },
+      });
+
+      const nextBtn = document.querySelector('[data-js="swiprer-next"]');
+      const nextBtnText = nextBtn?.querySelector('[data-js="button-text"]');
+
+      if (nextBtn && nextBtnText) {
+        // 버튼 라벨 업데이트 함수
+        const updateButton = () => {
+          if (swiper.isEnd) {
+            nextBtnText.textContent = "시작하기";
+            nextBtn.classList.remove("button--line");
+            nextBtn.classList.add("button--primary");
+          } else {
+            nextBtnText.textContent = "다음";
+            nextBtn.classList.add("button--line");
+            nextBtn.classList.remove("button--primary");
+          }
+        };
+
+        // 버튼 클릭 시 동작
+        nextBtn.addEventListener("click", () => {
+          if (!swiper.isEnd) {
+            swiper.slideNext(); // 다음 슬라이드 이동
+          } else {
+          }
+        });
+
+        swiper.on("slideChange", updateButton);
+
+        updateButton();
+      }
+    </script>
+  </body>
+</html>

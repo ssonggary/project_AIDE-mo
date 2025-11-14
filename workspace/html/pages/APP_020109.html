@@ -5,6 +5,9 @@
     @@include('../include/header.html', {title: '사용자 선택', hasAction: true})
     <div class="content">
       <div class="inner">
+        <div class="gray-area expendPad">
+          <h1 class="customer-name">㈜서울시설공단</h1>
+        </div>
         <div class="section">
           <div class="search">
             <div class="search__form expendPad">
@@ -17,7 +20,7 @@
                       class="textField__input"
                       type="text"
                       id="textFeild_search"
-                      placeholder="회사명을 입력해주세요"
+                      placeholder="운전자명/차량번호를 검색하세요"
                       data-js="textField__input"
                     />
                     <i class="textField__input-icon icon--search"></i>
@@ -167,7 +170,7 @@
             <!-- 검색결과가 없을 시 -->
             <div class="search-result none-result">
               <div class="none-result__content">
-                <img class="none-result__img" src="/assets/img/common/reasult_none.png" alt="" />
+                <img class="none-result__img" src="/assets/img/common/img_reasult_none.png" alt="" />
                 <span class="none-result__text">조회 결과가 없습니다.</span>
               </div>
             </div>

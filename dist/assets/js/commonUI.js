@@ -6,8 +6,12 @@ import { Toast } from "./components/toast.js";
 const UI = {
   textField: {
     init() {
-      this.list = document.querySelectorAll('[data-js="textField"]');
-      if (this.list.length) this.list.forEach((el) => new TextField(el));
+      const list = document.querySelectorAll('[data-js="textField"]');
+      if (!list.length) return;
+
+      list.forEach((el) => {
+        new TextField(el);
+      });
     },
   },
   modal: null,

@@ -5,18 +5,20 @@
 /* button basic ============================== */
 .button {
   $root: ".button";
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   min-height: rem(50px);
   text-align: center;
-  padding: rem(14px) rem(16px);
+  padding: 0 rem(16px);
   border-radius: 8px;
   background-color: $color-primary;
+  transition: all 0.35s;
   &__text {
     font-size: rem(16px);
     font-weight: 700;
     line-height: rem(22px);
-
     font-family: "Pretendard";
     color: $color-white;
   }
@@ -93,9 +95,10 @@
   }
 
   &--mini {
-    padding: rem(5px) rem(12px);
+    padding: 0 rem(12px);
     width: auto;
-    display: inline-block;
+    display: inline-flex;
+    height: auto;
     min-height: rem(28px);
     #{$root}__text {
       font-size: rem(13px);

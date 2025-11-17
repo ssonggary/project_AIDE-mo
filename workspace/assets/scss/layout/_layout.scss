@@ -211,3 +211,47 @@
     }
   }
 }
+
+/* 스플래쉬 ============================== */
+.splash {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__top {
+    margin-top: rem(63px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__logo {
+    width: rem(145px);
+    height: rem(75px);
+    display: flex;
+    align-items: center;
+    .image {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  &__text {
+    font-size: rem(18px);
+    font-weight: 600;
+    line-height: rem(22px);
+    color: #000;
+    margin-top: rem(4px);
+  }
+  &__visual {
+    margin-top: rem(70px);
+    width: rem(375px);
+  }
+  &__bottom {
+    padding-bottom: rem(50px);
+    margin-top: auto;
+    width: rem(100px);
+    .image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

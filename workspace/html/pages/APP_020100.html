@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html lang="ko">
-  @@include('../include/head.html', {pageTitle: '홈', cssArr: ['style']})
+  @@include('../include/head.html', {pageTitle: '스플래쉬', cssArr: ['style']})
   <body>
-    @@include('../include/header.html', {title: '타이틀', hasAction: true})
+    <div class="content content--full splash">
+      <div class="splash__top">
+        <h1 class="splash__logo">
+          <img class="image" src="/assets/img/common/logo_aide_2.png" alt="" /><span class="hidden">AIDE</span>
+        </h1>
+        <span class="splash__text">AI 기반 모빌리티 인텔리전스 서비스</span>
+      </div>
 
-    <div class="content">sdasdsad</div>
+      <div class="splash__visual">
+        <img src="/assets/img/common/splash_img001.png" alt="" />
+      </div>
 
-    @@include('../include/bottomNavigation.html')
-
+      <div class="splash__bottom">
+        <img class="image" src="/assets/img/common/logo_kigis.png" alt="" />
+      </div>
+    </div>
     <!-- script -->
     @@include('../include/script.html')
   </body>

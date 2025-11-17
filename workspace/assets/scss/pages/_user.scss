@@ -14,12 +14,22 @@
   padding-top: rem(58px);
   &__text-wrap {
     margin-top: rem(40px);
+    text-align: center;
   }
   &__title {
+    display: block;
     font-size: rem(18px);
     font-weight: 600;
     line-height: rem(22px);
     color: $color-gray-9;
+  }
+  &__desc {
+    display: block;
+    font-size: rem(15px);
+    font-weight: 400;
+    line-height: rem(22px);
+    color: $color-gray-8;
+    margin-top: 14px;
   }
 }
 
@@ -60,6 +70,24 @@
     width: rem(65px);
     height: rme(65px);
     object-fit: cover;
+  }
+  &.red {
+    .fade-out {
+      background: rgba(242, 77, 64, 0.4);
+      &::before,
+      &::after {
+        background: rgba(242, 77, 64, 0.4);
+      }
+    }
+  }
+  &.green {
+    .fade-out {
+      background: rgba(39, 189, 107, 0.4);
+      &::before,
+      &::after {
+        background: rgba(39, 189, 107, 0.4);
+      }
+    }
   }
 }
 

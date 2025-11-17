@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="ko">
-  @@include('../include/head.html', {pageTitle: '주변차량 검색', cssArr: ['style']})
+  @@include('../include/head.html', {pageTitle: '주변차량 검색 실패', cssArr: ['style']})
   <body>
     @@include('../include/header.html', {title: '스마트키', hasAction: true})
 
     <div class="content bottom-nav">
       <div class="smartKey-ani">
-        <div class="animation-wrap">
+        <div class="animation-wrap red">
           <div class="fade-out"></div>
-          <img class="core-img" src="/assets/img/common/smartkey_img001.png" alt="" />
+          <img class="core-img" src="/assets/img/common/smartkey_img002.png" alt="" />
         </div>
         <div class="smartKey-ani__text-wrap">
-          <span class="smartKey-ani__title">차량를 찾고 있어요</span>
-          <span class="smartKey-ani__desc"></span>
+          <span class="smartKey-ani__title">차량을 찾을 수 없어요</span>
+          <span class="smartKey-ani__desc"
+            >차량이 가까이에 있는지 확인한 뒤, <br />
+            재시도하거나 연결 상태를 점검해 주세요</span
+          >
         </div>
       </div>
 

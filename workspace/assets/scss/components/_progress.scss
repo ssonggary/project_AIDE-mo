@@ -1,0 +1,63 @@
+@use "modules" as *;
+
+/* progress bar scss ============================== */
+.progress {
+  margin-top: rem(40px);
+  &__track {
+    position: relative;
+    width: 100%;
+    height: 8px;
+    border-radius: 99px;
+    background-color: #f7f8fa;
+  }
+  &__bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 0%;
+    border-radius: 99px;
+    background: linear-gradient(90deg, #ff9426 2.72%, #ff8200 100.35%);
+    transition: width 0.2s linear;
+    &::after {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      display: block;
+      content: "";
+      width: rem(14px);
+      height: rem(14px);
+      border-radius: 50%;
+      border: 4px solid $color-primary;
+      background-color: $color-white;
+    }
+  }
+  &__thumb {
+    position: absolute;
+    // top: -30px;
+    // left: -5px;
+    // transform: translate(-50% -50%);
+    width: rem(44px);
+    height: rem(44px);
+  }
+  &__icon {
+    display: block;
+    width: rem(44px);
+    height: rem(44px);
+    background-image: url(/assets/img/common/progress_icon_car.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+  &__labels {
+    margin-top: 4px;
+    display: flex;
+    justify-content: space-between;
+    font-size: rem(10px);
+    font-weight: 700;
+    line-height: rem(16px);
+    color: $color-gray-7;
+  }
+}

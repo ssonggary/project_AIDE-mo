@@ -105,6 +105,13 @@
       line-height: rem(2px);
     }
   }
+  &.h-md {
+    min-height: rem(44px);
+    #{$root}__text {
+      font-size: rem(15px);
+      font-weight: 500;
+    }
+  }
 }
 
 /* buttonGroup ============================== */

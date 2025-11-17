@@ -82,6 +82,14 @@ body.js-noscroll {
   background-color: #f2f5fa;
 }
 
+.shadow-box {
+  width: 100%;
+  padding: 1.2rem 1.6rem;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.08), 0 2px 24px 0 rgba(0, 0, 0, 0.08);
+}
+
 .custom-indicator {
   position: static;
   width: 100%;
@@ -101,4 +109,44 @@ body.js-noscroll {
 .custom-indicator .swiper-pagination-bullet.swiper-pagination-bullet-active {
   background-color: #222;
   width: 1.6rem;
+}
+
+.banner {
+  margin-left: -1.3333333333rem !important;
+  margin-right: -1.3333333333rem !important;
+  background-color: #f2f5fa;
+}
+.banner__inner {
+  display: flex;
+  align-items: center;
+  padding: 1.2rem 1.6rem;
+}
+.banner__link {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 1.0666666667rem;
+}
+.banner__icon {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+.banner__text {
+  display: block;
+  font-size: 0.9333333333rem;
+  font-weight: 400;
+  line-height: 1.3333333333rem;
+  color: #10161f;
+}
+.banner__close {
+  display: block;
+  width: 1.3333333333rem;
+  height: 1.3333333333rem;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+.banner__close .icon {
+  background-size: 16px;
+  background-position: center;
+  filter: invert(68%) sepia(17%) saturate(358%) hue-rotate(176deg) brightness(90%) contrast(93%);
 }

@@ -31,12 +31,109 @@
     <header class="header align-left">
       <div class="header__inner">
         <div class="header__title-wrap">
-          <h1 class="header__title"><img class="logo-img" src="/assets/img/common/logo_aide.png" alt="" /></h1>
+          <h1 class="header__title">
+            <img class="logo-img" src="/assets/img/common/logo_aide.png" alt="" /> <span class="hidden">AIDE</span>
+          </h1>
         </div>
       </div>
     </header>
 
-    <div class="content">asdasdasd</div>
+    <div class="content dashbord">
+      <div class="inner">
+        <!-- banner -->
+        <div class="banner">
+          <div class="banner__inner">
+            <a class="banner__link" href="#none">
+              <img class="banner__icon" src="/assets/img/icon/icon_megaphone.svg" alt="" />
+              <div class="banner__text-warap">
+                <span class="banner__text">과속·급제동은 사고의 지름길! </span>
+                <span class="banner__text">부드러운 운전 습관을 지켜주세요</span>
+              </div>
+            </a>
+            <button type="button" class="banner__close">
+              <i class="icon icon--close"></i><span class="hidden">닫기</span>
+            </button>
+          </div>
+        </div>
+        <!-- //banner -->
+
+        <section class="title-box">
+          <article class="title-box__item">
+            <h3 class="title-box__title">고장신고/배차 현황</h3>
+            <div class="shadow-box">
+              <!-- 배차 준비중인 경우 -->
+              <!-- <div class="dispatch">
+                <div class="dispatch__title-wrap">
+                  <div class="dispatch__icon">
+                    <img class="icon" src="/assets/img/common/dashbord_icon_search.svg" alt="" />
+                  </div>
+                  <span class="dispatch__title">지금 배차 준비 중이에요</span>
+                </div>
+                <div class="dispatch__desc">
+                  배차 가능한 차량을 확인하고 있어요<br />
+                  조금만 기다리면 새 차량이 배정될 거예요!
+                </div>
+              </div> -->
+              <!-- //배차 준비중인 경우 -->
+
+              <!-- 배차 완료인 경우 -->
+              <div class="dispatch">
+                <div class="dispatch__title-wrap">
+                  <div class="dispatch__icon">
+                    <img class="icon" src="/assets/img/common/dashbord_icon_complete.svg" alt="" />
+                  </div>
+                  <span class="dispatch__title">배차가 완료되었어요</span>
+                </div>
+                <div class="dispatch__desc">
+                  차량 배차가 완료되었습니다<br />
+                  위치 확인 후 운행을 시작해 주세요
+                </div>
+                <div class="dispatch__button">
+                  <button type="button" class="button button--secondary h-md">
+                    <span class="button__text">배차 정보 보기</span>
+                  </button>
+                </div>
+              </div>
+              <!-- //배차 완료인 경우 -->
+            </div>
+          </article>
+          <article class="title-box__item">
+            <h3 class="title-box__title">오늘 얼마나 달렸을까요?</h3>
+            <div class="shadow-box">
+              <div class="mileage">
+                <div class="mileage__text-wrap">
+                  <div class="mileage__title">
+                    <i class="icon icon--message"></i>
+                    <span class="title">잠깐 쉬었다 가요</span>
+                  </div>
+                  <p class="mileage__desc">
+                    장시간 주행은 집중력이 떨어질 수 있어요<br />가까운 휴게소에서 잠시 여유를!
+                  </p>
+                </div>
+                <div
+                  class="progress"
+                  data-js-progress
+                  data-progress-percent="80"
+                  data-progress-duration="1500"
+                  data-progress-scroll="true"
+                >
+                  <div class="progress__track" data-js-progress-track>
+                    <div class="progress__bar" data-js-progress-bar></div>
+                    <div class="progress__thumb" data-js-progress-thumb>
+                      <span class="progress__icon"></span>
+                    </div>
+                  </div>
+                  <div class="progress__labels">
+                    <span class="progress__label progress__label--min">0H</span>
+                    <span class="progress__label progress__label--max">8H</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
+      </div>
+    </div>
 
     <div class="buttomNavigation">
     		<div class="buttomNavigation__inner">

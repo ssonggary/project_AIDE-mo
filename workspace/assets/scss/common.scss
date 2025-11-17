@@ -81,6 +81,14 @@ body.js-noscroll {
   border-radius: 16px;
   background-color: $color-gray-2;
 }
+// shadow box
+.shadow-box {
+  width: 100%;
+  padding: rem(18px) rem(24px);
+  background-color: $color-white;
+  border-radius: 16px;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.08), 0 2px 24px 0 rgba(0, 0, 0, 0.08);
+}
 
 // swiper indicator-dot
 .custom-indicator {
@@ -101,6 +109,47 @@ body.js-noscroll {
     &.swiper-pagination-bullet-active {
       background-color: #222;
       width: rem(24px);
+    }
+  }
+}
+
+// banner
+.banner {
+  margin-left: rem(-20px) !important;
+  margin-right: rem(-20px) !important;
+  background-color: $color-gray-2;
+  &__inner {
+    display: flex;
+    align-items: center;
+    padding: rem(18px) rem(24px);
+  }
+  &__link {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: rem(16px);
+  }
+  &__icon {
+    width: rem(24px);
+    height: rem(24px);
+  }
+  &__text {
+    display: block;
+    font-size: rem(14px);
+    font-weight: 400;
+    line-height: rem(20px);
+    color: $color-gray-11;
+  }
+  &__close {
+    display: block;
+    width: rem(20px);
+    height: rem(20px);
+    margin-left: auto;
+    flex-shrink: 0;
+    .icon {
+      background-size: 16px;
+      background-position: center;
+      filter: invert(68%) sepia(17%) saturate(358%) hue-rotate(176deg) brightness(90%) contrast(93%);
     }
   }
 }

@@ -241,8 +241,11 @@
     margin-top: rem(4px);
   }
   &__visual {
-    margin-top: rem(70px);
     width: rem(375px);
+    display: flex;
+    align-items: center;
+    flex: 1;
+    margin: rem(20px) 0;
   }
   &__bottom {
     padding-bottom: rem(50px);
@@ -253,5 +256,23 @@
       height: 100%;
       object-fit: cover;
     }
+  }
+}
+
+/* title-box ============================== */
+.title-box {
+  margin-top: rem(24px);
+  &__item {
+    & ~ .title-box__item {
+      margin-top: rem(32px);
+    }
+  }
+  &__title {
+    display: block;
+    font-size: rem(18px);
+    font-weight: 600;
+    line-height: rem(22px);
+    color: $color-gray-11;
+    padding: rem(10px) rem(4px);
   }
 }

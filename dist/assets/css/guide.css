@@ -872,6 +872,14 @@ body.js-noscroll {
   background-color: #f2f5fa;
 }
 
+.shadow-box {
+  width: 100%;
+  padding: 1.2rem 1.6rem;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.08), 0 2px 24px 0 rgba(0, 0, 0, 0.08);
+}
+
 .custom-indicator {
   position: static;
   width: 100%;
@@ -891,6 +899,46 @@ body.js-noscroll {
 .custom-indicator .swiper-pagination-bullet.swiper-pagination-bullet-active {
   background-color: #222;
   width: 1.6rem;
+}
+
+.banner {
+  margin-left: -1.3333333333rem !important;
+  margin-right: -1.3333333333rem !important;
+  background-color: #f2f5fa;
+}
+.banner__inner {
+  display: flex;
+  align-items: center;
+  padding: 1.2rem 1.6rem;
+}
+.banner__link {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 1.0666666667rem;
+}
+.banner__icon {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+.banner__text {
+  display: block;
+  font-size: 0.9333333333rem;
+  font-weight: 400;
+  line-height: 1.3333333333rem;
+  color: #10161f;
+}
+.banner__close {
+  display: block;
+  width: 1.3333333333rem;
+  height: 1.3333333333rem;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+.banner__close .icon {
+  background-size: 16px;
+  background-position: center;
+  filter: invert(68%) sepia(17%) saturate(358%) hue-rotate(176deg) brightness(90%) contrast(93%);
 }
 
 /* 3. 베이스 스타일 */
@@ -1165,6 +1213,9 @@ textarea::-ms-input-placeholder {
 .icon--search {
   background-image: url(../img/icon/icon_search.svg);
 }
+.icon--message {
+  background-image: url(../img/icon/icon_message.svg);
+}
 
 /* 2. 모듈 로드 (변수, 믹스인, 함수) */
 /* 버튼 컴포넌트 ============================== */
@@ -1274,6 +1325,13 @@ textarea::-ms-input-placeholder {
 .button--mini .button__text {
   font-size: 0.8666666667rem;
   line-height: 0.1333333333rem;
+}
+.button.h-md {
+  min-height: 2.9333333333rem;
+}
+.button.h-md .button__text {
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 /* buttonGroup ============================== */
@@ -1838,6 +1896,66 @@ textarea::-ms-input-placeholder {
   background: #363f4d;
 }
 
+/* 2. 모듈 로드 (변수, 믹스인, 함수) */
+/* progress bar scss ============================== */
+.progress {
+  margin-top: 2.6666666667rem;
+}
+.progress__track {
+  position: relative;
+  width: 100%;
+  height: 8px;
+  border-radius: 99px;
+  background-color: #f7f8fa;
+}
+.progress__bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 0%;
+  border-radius: 99px;
+  background: linear-gradient(90deg, #ff9426 2.72%, #ff8200 100.35%);
+  transition: width 0.2s linear;
+}
+.progress__bar::after {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  display: block;
+  content: "";
+  width: 0.9333333333rem;
+  height: 0.9333333333rem;
+  border-radius: 50%;
+  border: 4px solid #ff8200;
+  background-color: #ffffff;
+}
+.progress__thumb {
+  position: absolute;
+  width: 2.9333333333rem;
+  height: 2.9333333333rem;
+}
+.progress__icon {
+  display: block;
+  width: 2.9333333333rem;
+  height: 2.9333333333rem;
+  background-image: url(/assets/img/common/progress_icon_car.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.progress__labels {
+  margin-top: 4px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.6666666667rem;
+  font-weight: 700;
+  line-height: 1.0666666667rem;
+  color: #92a1b7;
+}
+
 /* 5. layout */
 /* 2. 모듈 로드 (변수, 믹스인, 함수) */
 /* ----------------------- 레이아웃 ----------------------- */
@@ -2060,8 +2178,11 @@ textarea::-ms-input-placeholder {
   margin-top: 0.2666666667rem;
 }
 .splash__visual {
-  margin-top: 4.6666666667rem;
   width: 25rem;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  margin: 1.3333333333rem 0;
 }
 .splash__bottom {
   padding-bottom: 3.3333333333rem;
@@ -2072,6 +2193,22 @@ textarea::-ms-input-placeholder {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* title-box ============================== */
+.title-box {
+  margin-top: 1.6rem;
+}
+.title-box__item ~ .title-box__item {
+  margin-top: 2.1333333333rem;
+}
+.title-box__title {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.4666666667rem;
+  color: #10161f;
+  padding: 0.6666666667rem 0.2666666667rem;
 }
 
 /* 2. 모듈 로드 (변수, 믹스인, 함수) */
@@ -2225,6 +2362,76 @@ textarea::-ms-input-placeholder {
 /* 6. page */
 /* 2. 모듈 로드 (변수, 믹스인, 함수) */
 /* 사용자 페이지 scss ============================== */
+/* 대시보드 ============================== */
+.dispatch__title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5333333333rem;
+}
+.dispatch__icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  background-color: #fff3e7;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dispatch__icon .icon {
+  width: 1.3333333333rem;
+  height: 1.3333333333rem;
+}
+.dispatch__title {
+  font-size: 1.0666666667rem;
+  font-weight: 600;
+  line-height: 1.4666666667rem;
+  color: #363f4d;
+}
+.dispatch__desc {
+  position: relative;
+  font-size: 0.9333333333rem;
+  font-weight: 400;
+  line-height: 1.3333333333rem;
+  color: #4f5a6d;
+  padding-left: 2.9333333333rem;
+  margin-top: 8px;
+}
+.dispatch__desc::before {
+  position: absolute;
+  top: 0;
+  left: 16px;
+  content: "";
+  display: block;
+  width: 4px;
+  height: 100%;
+  background-color: #f2f5fa;
+}
+.dispatch__button {
+  margin-top: 1.0666666667rem;
+}
+
+.mileage__title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.mileage__title .icon {
+  width: 1.3333333333rem;
+  height: 1.3333333333rem;
+}
+.mileage__title .title {
+  font-size: 1.0666666667rem;
+  font-weight: 600;
+  line-height: 1.4666666667rem;
+  color: #363f4d;
+}
+.mileage__desc {
+  font-size: 0.9333333333rem;
+  font-weight: 400;
+  line-height: 1.3333333333rem;
+  color: #4f5a6d;
+}
+
 /* 스마트키 ============================== */
 .smartKey-ani {
   width: 100%;

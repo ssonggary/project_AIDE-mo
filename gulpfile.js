@@ -14,6 +14,7 @@ const PATH = {
       STYLE: "./workspace/assets/scss",
       JS: "./workspace/assets/js",
       LIB: "./workspace/assets/lib",
+      LOTTIE: "./workspace/assets/lottie",
     },
   },
   DEST_PATH = {
@@ -25,6 +26,7 @@ const PATH = {
       STYLE: "./dist/assets/css",
       JS: "./dist/assets/js",
       LIB: "./dist/assets/lib",
+      LOTTIE: "./dist/assets/lottie",
     },
   };
 
@@ -48,6 +50,7 @@ function clean() {
     DEST_PATH.ASSETS.STYLE,
     DEST_PATH.ASSETS.JS,
     DEST_PATH.ASSETS.IMAGES,
+    DEST_PATH.ASSETS.LOTTIE,
     "!dist/assets/fonts/**",
   ]);
 }
@@ -115,6 +118,10 @@ function img() {
     .pipe(browserSync.stream());
 }
 
+function lottie() {
+  return src(PATH.ASSETS.LOTTIE + "/**/*").pipe(dest(DEST_PATH.ASSETS.LOTTIE));
+}
+
 function watching() {
   watch([PATH.GUIDE + "/**/*.html", "!" + PATH.GUIDE + "/include/**"], guide);
   watch([PATH.GUIDE + "/include/**/*.html"], guide); // partial도 감시
@@ -124,6 +131,7 @@ function watching() {
   watch(PATH.ASSETS.JS + "/**/*.js", scripts);
   // watch(PATH.ASSETS.IMAGES + "/**/*", img);
   watch(PATH.ASSETS.IMAGES + "/**/*.{png,jpg,jpeg,gif,svg,webp,avif}", img);
+  watch(PATH.ASSETS.LOTTIE + "/**/*", lottie);
 }
 
 exports.server = server;
@@ -133,10 +141,11 @@ exports.guide = guide;
 exports.style = style;
 exports.scripts = scripts; // ← 이름 반영
 exports.img = img;
+exports.lottie = lottie;
 exports.watching = watching;
 
 const prepare = series(clean);
-const assets = series(include, guide, style, scripts, img); // ← [] 제거
+const assets = series(include, guide, style, scripts, img, lottie); // ← [] 제거
 const build = series(prepare, assets);
 const live = parallel(server, watching);
 

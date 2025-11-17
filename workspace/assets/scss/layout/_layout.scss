@@ -22,6 +22,13 @@
       padding-bottom: rem(94px);
     }
   }
+  &.bottom-nav {
+    padding-bottom: calc(rem(84px) + rem(60px));
+    .button-wrap {
+      bottom: rem(60px);
+      padding-bottom: rem(22px);
+    }
+  }
 }
 
 /* page title ============================== */

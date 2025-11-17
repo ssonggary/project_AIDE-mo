@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  @@include('../include/head.html', {pageTitle: '주변차량 검색', cssArr: ['style']})
+  <body>
+    @@include('../include/header.html', {title: '스마트키', hasAction: true})
+
+    <div class="content bottom-nav">
+      <div class="smartKey-ani">
+        <div class="animation-wrap">
+          <div class="fade-out"></div>
+          <img class="core-img" src="/assets/img/common/smartkey_img001.png" alt="" />
+        </div>
+        <div class="smartKey-ani__text-wrap">
+          <span class="smartKey-ani__title">차량를 찾고 있어요</span>
+          <span class="smartKey-ani__desc"></span>
+        </div>
+      </div>
+
+      <div class="button-wrap">
+        <!-- disabled 시 class="button--disabled" 추가, disabled 속성 추가 -->
+        <button type="button" class="button">
+          <span class="button__text">다음</span>
+        </button>
+      </div>
+    </div>
+
+    @@include('../include/bottomNavigation.html')
+
+    <!-- script -->
+    @@include('../include/script.html')
+  </body>
+</html>

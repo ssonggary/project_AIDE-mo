@@ -8,7 +8,7 @@
       content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
     />
     <meta name="format-detection" content="telephone=no" />
-    <title>홈 | AIDE APP</title>
+    <title>대시보드 | AIDE APP</title>
     <link
       rel="shortcut icon"
       type="image/x-icon"
@@ -28,26 +28,31 @@
   </head>
 
   <body>
-    <header class="header">
+    <header class="header align-left">
       <div class="header__inner">
         <div class="header__title-wrap">
-          <h1 class="header__title">타이틀</h1>
+          <h1 class="header__title"><img class="logo-img" src="/assets/img/common/logo_aide.png" alt="" /></h1>
         </div>
-        
-          <div class="header__action">
-            <div class="left-action">
-              <button type="button" class="action-btn before">
-                <span class="action-btn__icon"><i class="icon icon--left-arrow"></i></span>
-                <span class="action-btn__text hidden">뒤로가기</span>
-              </button>
-            </div>
-          </div>
-        
       </div>
     </header>
- 
 
-    <div class="content">sdasdsad</div>
+    <div class="content">
+      asdasdasd
+      <div
+        id="lottie-pop"
+        data-js-lottie
+        data-js-lottie-path="/assets/lottie/lottie_test.json"
+        data-js-lottie-autoplay="true"
+        style="width: 100%; height: 100%"
+      ></div>
+      <div
+        id="lottie-pop02"
+        data-js-lottie
+        data-js-lottie-path="/assets/lottie/lottie_test02.json"
+        data-js-lottie-autoplay="true"
+        style="width: 100%; height: 100%"
+      ></div>
+    </div>
 
     <div class="buttomNavigation">
     		<div class="buttomNavigation__inner">
@@ -90,7 +95,25 @@
     <!-- script -->
     <script src="/assets/js/library/jquery-3.7.1.min.js"></script>
     <script src="/assets/js/library/swiper.js"></script>
+    <script src="/assets/js/library/lottie.min.js"></script>
     <script src="/assets/js/commonUI.js" type="module"></script>
 
+
+    <script>
+      const lottieAni = lottie.loadAnimation({
+        container: document.getElementById("lottie-pop"), // 필수, 애니메이션 들어가는 곳
+        path: "/assets/lottie/lottie_test.json", // 필수(url 또는 json파일 다운로드 경로)
+        renderer: "svg", // 필수
+        // loop: false, // 반복재생
+        // autoplay: false, // 자동재생
+      });
+      const lottieAni2 = lottie.loadAnimation({
+        container: document.getElementById("lottie-pop02"), // 필수, 애니메이션 들어가는 곳
+        path: "/assets/lottie/lottie_test02.json", // 필수(url 또는 json파일 다운로드 경로)
+        renderer: "svg", // 필수
+        // loop: false, // 반복재생
+        // autoplay: false, // 자동재생
+      });
+    </script>
   </body>
 </html>

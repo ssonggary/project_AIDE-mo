@@ -1860,6 +1860,13 @@ textarea::-ms-input-placeholder {
 .content--full .inner {
   padding-bottom: 6.2666666667rem;
 }
+.content.bottom-nav {
+  padding-bottom: 9.6rem;
+}
+.content.bottom-nav .button-wrap {
+  bottom: 4rem;
+  padding-bottom: 1.4666666667rem;
+}
 
 /* page title ============================== */
 .page-title {
@@ -2104,6 +2111,7 @@ textarea::-ms-input-placeholder {
   width: 100%;
   height: 4rem;
   padding-bottom: 0.6666666667rem;
+  border-top: 1px solid #ebebeb;
 }
 .buttomNavigation__inner {
   width: 100%;
@@ -2170,6 +2178,77 @@ textarea::-ms-input-placeholder {
   color: #92a1b7;
 }
 
+/* 6. page */
+/* 2. 모듈 로드 (변수, 믹스인, 함수) */
+/* 사용자 페이지 scss ============================== */
+/* 스마트키 ============================== */
+.smartKey-ani {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 3.8666666667rem;
+}
+.smartKey-ani__text-wrap {
+  margin-top: 2.6666666667rem;
+}
+.smartKey-ani__title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.4666666667rem;
+  color: #363f4d;
+}
+
+.animation-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 15.6666666667rem;
+  height: 15.6666666667rem;
+}
+.animation-wrap .fade-out {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 4.3333333333rem;
+  height: 4.3333333333rem;
+  border-radius: 50%;
+  background: rgba(255, 130, 0, 0.4);
+}
+.animation-wrap .fade-out::before, .animation-wrap .fade-out::after {
+  content: "";
+  position: absolute;
+  background: rgba(255, 130, 0, 0.4);
+  width: 4.3333333333rem;
+  height: 4.3333333333rem;
+  border-radius: 50%;
+  animation: fade 2.5s infinite linear;
+}
+.animation-wrap .fade-out::after {
+  opacity: 0;
+  animation: fade 2.5s 1s infinite linear;
+}
+.animation-wrap .core-img {
+  position: absolute;
+  z-index: 5;
+  width: 4.3333333333rem;
+  height: rme(65px);
+  object-fit: cover;
+}
+
+@keyframes fade {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(3.5);
+    opacity: 0;
+  }
+}
 /* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript */
 /**
  * prism.js default theme for JavaScript, CSS and HTML

@@ -8,7 +8,7 @@
       content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
     />
     <meta name="format-detection" content="telephone=no" />
-    <title>대시보드 | AIDE APP</title>
+    <title>주변차량 검색 | AIDE APP</title>
     <link
       rel="shortcut icon"
       type="image/x-icon"
@@ -28,15 +28,43 @@
   </head>
 
   <body>
-    <header class="header align-left">
+    <header class="header">
       <div class="header__inner">
         <div class="header__title-wrap">
-          <h1 class="header__title"><img class="logo-img" src="/assets/img/common/logo_aide.png" alt="" /></h1>
+          <h1 class="header__title">스마트키</h1>
         </div>
+        
+          <div class="header__action">
+            <div class="left-action">
+              <button type="button" class="action-btn before">
+                <span class="action-btn__icon"><i class="icon icon--left-arrow"></i></span>
+                <span class="action-btn__text hidden">뒤로가기</span>
+              </button>
+            </div>
+          </div>
+        
       </div>
     </header>
 
-    <div class="content">asdasdasd</div>
+    <div class="content bottom-nav">
+      <div class="smartKey-ani">
+        <div class="animation-wrap">
+          <div class="fade-out"></div>
+          <img class="core-img" src="/assets/img/common/smartkey_img001.png" alt="" />
+        </div>
+        <div class="smartKey-ani__text-wrap">
+          <span class="smartKey-ani__title">차량를 찾고 있어요</span>
+          <span class="smartKey-ani__desc"></span>
+        </div>
+      </div>
+
+      <div class="button-wrap">
+        <!-- disabled 시 class="button--disabled" 추가, disabled 속성 추가 -->
+        <button type="button" class="button">
+          <span class="button__text">다음</span>
+        </button>
+      </div>
+    </div>
 
     <div class="buttomNavigation">
     		<div class="buttomNavigation__inner">

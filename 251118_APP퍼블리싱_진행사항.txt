@@ -1,0 +1,23 @@
+** 경우시즈테크 AIDE APP 구축 준비
+
+[고객사] 경우시스테크 공유 드라이브
+https://drive.google.com/drive/folders/1J-iv6mtTc0xJ8YF_4rpdZMI3LOVIe9Kd
+
+[내부용]UXUI 공정관리 공유 드라이브
+https://drive.google.com/drive/folders/12XYWyixA6gkohmc-TDEfZicn6oNDj_2a?usp=sharing
+
+개발 git (publish 브랜치에서 publish 폴더에 작업)
+http://bizmine.iptime.org:7445/Bonobo.Git.Server/Repository/Detail/cc028b59-3017-49f0-9b42-526e9126ab53
+
+퍼블 가이드
+- 가이드 : guide/guide.html
+- 퍼블리스트 : guide/lists.html
+
+작업 환경 (파일내 README 확인 요망)
+gulp
+scss
+javascript
+
+플러그인
+swiper.js
+

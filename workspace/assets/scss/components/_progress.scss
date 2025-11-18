@@ -36,11 +36,12 @@
   }
   &__thumb {
     position: absolute;
-    // top: -30px;
-    // left: -5px;
-    // transform: translate(-50% -50%);
+    top: 50%;
+    left: 0;
+    transform: translate(-63%, -120%);
     width: rem(44px);
     height: rem(44px);
+    transition: left 0.2s linear;
   }
   &__icon {
     display: block;
@@ -59,5 +60,10 @@
     font-weight: 700;
     line-height: rem(16px);
     color: $color-gray-7;
+  }
+  &__info {
+    border-top: 1px solid $color-gray-2;
+    margin-top: rem(16px);
+    padding-top: rem(16px);
   }
 }
